@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rrss</title>
+</head>
+
+<body>
+    <header>
+        <h1>Enlace Redes Sociales</h1>
+    </header>
+
+    <br></br>
+    <section style="display: flex;">
+        <div>
+            <div>
+                <img src="./imagenes/Facebook.png" alt="Imagen logo Facebook">
+            </div>
+            <div>
+                <a href="http://facebook.com">Enlace Facebook</a>
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="./imagenes/Twitter.png" alt="Imagen logo Twitter">
+            </div>
+            <div>
+                <a href="http://twitter.com">Enlace Twitter</a>
+            </div>
+        </div>
+    </section>
+    <a href="./principal.php">Volver pagina Principal</a>
+
+
+</body>
+
+</html>

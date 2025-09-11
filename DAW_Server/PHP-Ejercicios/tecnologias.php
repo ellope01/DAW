@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tecnologias</title>
+</head>
+<body>
+    <header>
+        <h1>Tecnologías usadas</h1>
+    </header>
+
+    <p>Las tecnologias que he usado en web son: </p>
+    <section>
+        <ul>
+            <li>React</li>
+            <li>Angular</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Spring Boot</li>
+            <li>JavaScript</li>
+        </ul>
+    </section>
+
+    <a href="./principal.php">Volver pagina Principal</a>
+  
+</body>
+</html>
