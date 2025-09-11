@@ -32,4 +32,4 @@ switch(true){
         salario = salarioFinal;
 }
 
-console.log(`${nombre}, su sueldo cambia de ${salario}€ a ${salarioFinal}€`)
+window.alert(`${nombre}, su sueldo cambia de ${salario} a ${salarioFinal}`)
