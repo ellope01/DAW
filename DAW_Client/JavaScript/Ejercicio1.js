@@ -33,3 +33,4 @@ switch(true){
 }
 
 window.alert(`${nombre}, su sueldo cambia de ${salario} a ${salarioFinal}`)
+
