@@ -11,7 +11,20 @@ const intervaloNumerico = {
         }
         while(numero <= `${this.numeroMaximo}`);
         return arrayNumeros
+    },
+    set numeros(arrayAleatorios){
+        let arrayNumeros;
+        do{
+            numero = `${this.numeroMinimo}`;
+            arrayNumeros[numero++]
+        }
+        while(numero <= `${this.numeroMaximo}`);
+        return arrayNumeros
     }
 };
+let arrayAleatorios=[]
+for(i=1;i<=5;i++){
+    arrayAleatorios.push(numero.random())
+}
 console.log(intervaloNumerico.ncomprendidos)
 
