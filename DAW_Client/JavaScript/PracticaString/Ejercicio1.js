@@ -1,26 +1,21 @@
-/*
-Seguir ofreciendo hasta que el usuario desee cancelar
-*/
-do{
-const cadena1 = prompt("Introduce la primera cadena ")
-const cadena2 = prompt("Introduce la segunda cadena ")
+do {
+    const cadena1 = prompt("Introduce la primera cadena:");
+    const cadena2 = prompt("Introduce la segunda cadena:");
 
-let cadena1SE = cadena1.trim()
-let cadena2SE = cadena2.trim()
+    let cadena1SE = cadena1.trim();
+    let cadena2SE = cadena2.trim();
 
-const compararFrases = (cadena1SE, cadena2SE) => {
-    let sn
-    if (cadena1SE === cadena2SE){
-        sn = "si"
-    }else{sn="no"}
-    return sn
-}
+    const compararFrases = (c1, c2) => {
+        let resultado;
+        if (c1 === c2) {
+            resultado = "sí";
+        } else {
+            resultado = "no";
+        }
+        return resultado;
+    };
+    
+    let resultado = compararFrases(cadena1SE, cadena2SE);
 
-let respuesta = compararFrases(cadena1SE,cadena2SE)
-
-window.confirm("¿Quieres comparar otras cadenas?")
-
-
-window.alert(`Los textos ${cadena1} y ${cadena2} ${respuesta} son iguales`)
-}
-while(true)
+    alert(`Los textos "${cadena1SE}" y "${cadena2SE}" ${resultado === "sí" ? "son iguales" : "no son iguales"}.`);
+} while (confirm("¿Quieres comparar más textos?"));

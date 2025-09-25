@@ -1,17 +1,18 @@
-//Ejercicio 1 -> ejercicio que multiplique el numero por si mismo hasta que de infinito
+let numero = parseFloat(prompt("Introduce un número diferente de -1 a 1:"));
 
-//let numero = window.prompt("Introduce el número")
-let numero = -265.31
-let numeroInfinito
-let numeroInicial = numero*2
-let contador=0
-
-do{
-    numeroInfinito = numero * numeroInicial
-    numeroInicial = numeroInfinito
-    contador++
-    console.log( `${numero} x ${numeroInfinito/numero} es: ${numeroInfinito}` )
+// Miramos que no este entre 1 y -1
+while (numero > -1 && numero < 1) {
+    numero = parseFloat(prompt("Número inválido. Introduce un número fuera del rango -1 a 1:"));
 }
-while(numeroInfinito !== Infinity )
 
-console.log(`El número de operaciones necesarias han sido ${contador}`)
+let numeroInicial = numero; 
+let resultado = numero;      
+let contador = 0;
+
+do {
+    resultado = resultado * numeroInicial;  
+    contador++;
+    console.log(`${numero} x ${resultado / numeroInicial} = ${resultado}`);
+} while (resultado !== Infinity && resultado !== -Infinity); 
+
+console.log(`El número de operaciones necesarias han sido ${contador}`);
