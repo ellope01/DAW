@@ -1,31 +1,24 @@
+do{
+    numeroAleatorio= Math.floor(Math.random()*11);
+    let intentos=0;
+    let acertado=false;
 
-do {
-    //generamos el numero aleatorio
-    const numeroAleatorio = Math.floor(Math.random() * 11); // 0-10
-    let intentos = 0;
-    let acertado = false;
-
-    while (!acertado) {
-        let entrada = prompt("Adivina un número entre 0 y 10:");
-        //se compurba si la entrada esta vacia 
-        if (entrada === null || entrada.trim() === "") {
-            if (!confirm("¿Quieres seguir jugando?")) {
+    while(!acertado){
+        let numeroEntrada = prompt("Adivina un número entre 0 y 10:");
+        if(numeroEntrada === null || numeroEntrada === ' '){
+            if (!confirm("¿Quieres seguir jugando?")) { 
                 acertado = true;
                 break;
             } else {
                 continue;
             }
         }
-
-        //se combierte el numero a entero y se mira si es valido o no
-        let numero = parseInt(entrada, 10);
+        let numero = parseInt(numeroEntrada, 10);
 
         if (isNaN(numero) || numero < 0 || numero > 10) {
             alert("Número no válido. Debe ser un entero entre 0 y 10.");
             continue;
         }
-
-        //se hace un contador de intentos y se da pistas sobre el numero
         intentos++;
 
         if (numero < numeroAleatorio) {
@@ -37,4 +30,6 @@ do {
             acertado = true;
         }
     }
-} while (confirm("¿Quieres jugar otra vez?"));
+
+
+}while(confirm("¿Quieres jugar otra vez?"));

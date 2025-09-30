@@ -25,4 +25,4 @@ switch (true) {
         salarioFinal = salario;
 }
 
-alert(`${nombre}, su sueldo cambia de ${salario.toFixed(2)}€ a ${salarioFinal.toFixed(2)}€`);
+alert(`${nombre}, su sueldo cambia de ${salario}€ a ${salarioFinal}€`);
