@@ -7,7 +7,7 @@ const intervaloNumerico = {
     numeroMinimo: numeroMinimo,
     numeroMaximo: numeroMaximo,
 
-    //propiedad get genera array de numeros entre ek maximo y el minimo
+    //propiedad get genera array de numeros entre el maximo y el minimo
     get ncomprendidos() {
         let arrayNumeros = [];
         let numero = this.numeroMinimo;
@@ -29,7 +29,7 @@ const intervaloNumerico = {
 console.log("Intervalo inicial:", intervaloNumerico.numeroMinimo, "-", intervaloNumerico.numeroMaximo);
 console.log("Array inicial:", intervaloNumerico.ncomprendidos);
 
-// GGeneran 5 numero aleatorios entre el 1 y el 100
+// Generan 5 numero aleatorios entre el 1 y el 100
 let arrayAleatorios = [];
 for (let i = 0; i < 5; i++) {
     arrayAleatorios.push(Math.floor(Math.random() * 100) + 1);
