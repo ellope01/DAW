@@ -1,16 +1,22 @@
 const texto = prompt("Introduce el texto a cifrar:");
-let desplazamiento;
 
+let desplazamiento;
 do {
-    desplazamiento = parseInt(prompt("Introduce el número de desplazamiento (entero):"), 10);
+    let input = prompt("Introduce el número de desplazamiento (entero):");
+    desplazamiento = parseInt(input);
 } while (isNaN(desplazamiento));
 
 let textoCifrado = "";
+let posicionesUnicode = "";
+
 
 for (let i = 0; i < texto.length; i++) {
-    let codigo = texto.charCodeAt(i);
-    let nuevoCodigo = codigo + desplazamiento;
+    let codigoOriginal = texto.charCodeAt(i);
+    let nuevoCodigo = codigoOriginal + desplazamiento;   
+    // Guardar posición numérica Unicode
+    posicionesUnicode += nuevoCodigo;    
+    // Guardar nuevo carácter 
     textoCifrado += String.fromCharCode(nuevoCodigo);
 }
-
-alert(`El texto "${texto}" se ha convertido en "${textoCifrado}".`);
+let resultadoFinal = textoCifrado + posicionesUnicode;
+alert(`"${texto}" se ha convertido en ${resultadoFinal}`);

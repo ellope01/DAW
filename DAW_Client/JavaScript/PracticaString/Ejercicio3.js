@@ -1,7 +1,12 @@
 const cad1 = prompt("Introduce la primera cadena:");
 const cad2 = prompt("Introduce la segunda cadena:");
 
-let trabajar = cad1.length >= cad2.length ? cad1 : cad2;
+let trabajar;
+if (cad1.length >= cad2.length) {
+    trabajar = cad1;
+} else {
+    trabajar = cad2;
+}
 
 alert(`Trabajaremos sobre: "${trabajar}"`);
 
