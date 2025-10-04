@@ -22,7 +22,6 @@ function mostrarReloj() {
     dateHora = date.toLocaleTimeString('es-ES', opcionesHora);
 
 
-    console.log(dateFecha);
     fecha.textContent = dateFecha;
     hora.textContent = dateHora;
 
