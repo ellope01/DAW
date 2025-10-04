@@ -1,14 +1,30 @@
 function mostrarReloj() {
     const hora = document.querySelector('#hora');
-    const fecha = document.getElementById('fecha')
-    hora.parentElement.classList.toggle('.animar');
-    
-    borde.classList.toggle(".animar");
+    let opcionesHora = {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZone: 'Europe/Madrid'
+    };
+    let opcionesFecha = {
+        weekday: 'short',
+        day: '2-digit',
+        month: 'short'
+    };
+
+    const fecha = document.getElementById('fecha');
+
     let date = new Date();
 
-    dateFecha = date.toDateString()
-    dateHora = date.toLocaleDateString()
+    dateFecha = date.toLocaleDateString('es-ES', { ...opcionesFecha, timeZone: 'Europe/Madrid' });
 
+    dateHora = date.toLocaleTimeString('es-ES', opcionesHora);
+
+
+    console.log(dateFecha);
     fecha.textContent = dateFecha;
     hora.textContent = dateHora;
+
+    hora.parentElement.classList.toggle('animar');
 }
