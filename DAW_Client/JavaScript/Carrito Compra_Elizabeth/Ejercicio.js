@@ -5,6 +5,11 @@ let cursoSeleccionado = document.querySelector();
 
 const btnsAgregarCarrito = document.querySelectorAll('.miBoton')
 
+//Ponerlo siempre al principio para cargar la pagina y evitar descordinación
+document.addEventListener('DOMContentLoaded');
+
+
+
 btnsAgregarCarrito.forEach(function(btnsAgregarCarrito) {
     btnAgragarCarrito.addEventListener('click', function() {
         console.log('Botón clickeado:', btnsAgregarCarrito.textContent);
@@ -31,13 +36,24 @@ if(listaCarrito){
 btnAgragarCarrito.addEventListener("click",() =>{
     const titulo = document.createElement(infoCurso.titulo);
     const precio = document.createElement(infoCurso.precio);
+    const imagen = document.createElement(infoCurso.imagen);
+
+    carrito.appendChild(imagen)
     carrito.appendChild(titulo)
     carrito.appendChild(precio)
 }
 )
-let cursoExiste;
-if(cursoExiste){
-    //tenemos que añadir uno a la cantidad
-}else{
-    //agregamos uno nuevo
+
+const existe = carrito.some(curso = curso.cursoSeleccionado === infoCurso.id)
+if(carrito !== null){
+    //cuando el carrito tiene elementos
+    if(existe){
+        let cont = btnsAgregarCarrito.infoCurso.contador;
+        cont ++;
+        let contCambiado = contador.textContent = cont;
+        carrito.appendChild(carrito.infoCurso.contador(contCambiado))
+
+    }else{
+        let curso = carrito.push;
+    }
 }
