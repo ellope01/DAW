@@ -1,8 +1,8 @@
 // Se obtienen los elementos principales del formulario desde el HTML:
-const formulario = document.querySelector('#cotizar-seguro'); 
-const selectGama = document.querySelector('#gama');            
-const selectYear = document.querySelector('#year');            
-const resultado = document.querySelector('#resultado');        
+const formulario = document.querySelector('#cotizar-seguro');
+const selectGama = document.querySelector('#gama');
+const selectYear = document.querySelector('#year');
+const resultado = document.querySelector('#resultado');
 
 // Calcula el año actual
 const max = new Date().getFullYear();
@@ -11,17 +11,17 @@ const min = max - 20;
 // Creamos select de los Años
 for (let i = max; i >= min; i--) {
   const option = document.createElement('option');
-  option.value = i;           
-  option.textContent = i;     
-  selectYear.appendChild(option); 
+  option.value = i;
+  option.textContent = i;
+  selectYear.appendChild(option);
 }
 class Poliza {
   // Constructor 
   constructor(gama, anyo, cobertura) {
-    this.gama = gama;         
-    this.anyo = anyo;         
-    this.cobertura = cobertura; 
-    this.importe = 0;         
+    this.gama = gama;
+    this.anyo = anyo;
+    this.cobertura = cobertura;
+    this.importe = 0;
   }
 
   calcularSeguro() {
@@ -30,9 +30,9 @@ class Poliza {
 
     // Incremento según la gama del coche
     switch (this.gama) {
-      case '1': incrementoGama = 0.05; break; 
-      case '2': incrementoGama = 0.15; break; 
-      case '3': incrementoGama = 0.30; break; 
+      case '1': incrementoGama = 0.05; break;
+      case '2': incrementoGama = 0.15; break;
+      case '3': incrementoGama = 0.30; break;
     }
 
     // Incremento por antigüedad 
@@ -76,7 +76,7 @@ class Poliza {
 }
 
 formulario.addEventListener('submit', e => {
-  e.preventDefault(); 
+  e.preventDefault();
 
   const gama = selectGama.value;
   const anyo = selectYear.value;
