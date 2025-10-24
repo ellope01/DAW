@@ -1,14 +1,16 @@
 const formulario = document.querySelector('#formulario');
 const btnAgregar = formulario.querySelector('input[type=submit]');
+const divListaTareas = document.querySelector('#lista-tareas');
 
 const listaTareas = [];
 
-function validarTareas() {
-    const tarea = formulario.querySelector('#tarea').value;
-    if (tarea.length >= 31) {
+function validarTareas(errorTarea) {
+    if (errorTarea.length >= 31) {
         return "La tarea es demasiado larga ...";
-    } else if (tarea === "") {
+    } else if (errorTarea === "") {
         return "No has puesto ninguna tarea ...";
+    } else if (listaTareas.some(ele => ele.includes(errorTarea.toUpperCase()))) {
+        return "Tareas duplicadas"
     }
     return null;
 }
@@ -16,20 +18,41 @@ function validarTareas() {
 function mostrarMensajeError(mensaje) {
     if (mensaje !== null) {
         const divMensj = document.createElement('div');
-        divMensj.classList.add('error');
+        divMensj.classList.add('error'); //ponemos el css ya creado
 
         divMensj.textContent = mensaje;
-        document.querySelector('#contenido').appendChild(divMensj);
-        setTimeout(() => divMensj.remove(), 1500);
+        document.querySelector('#contenido').appendChild(divMensj); //para que se fuarde al final
+        setTimeout(() => divMensj.remove(), 1900); //dejamos un tiempo de 1900 milisegundos y luego borramos el mensaje
     }
+}
+
+
+//funcion para agregar tareas a las listas 
+function agregarTarea(mensajeTarea) {
+    if (!listaTareas.some(ele => ele.includes(mensajeTarea.toUpperCase()))) {
+        listaTareas.push(mensajeTarea.toUpperCase());
+        console.log(listaTareas);
+    }
+
+}
+
+//funcion para mostrar la lista de tareas
+function mostrarListaTareas() {
+
+}
+
+//funcion mara eliminar las tareas
+function eliminarTareas() {
+
 }
 
 
 document.addEventListener('DOMContentLoaded', function () {
     formulario.addEventListener('submit', function (e) {
+        const tarea = formulario.querySelector('#tarea').value;
         e.preventDefault();
-        const mensaje = validarTareas();
+        const mensaje = validarTareas(tarea);
         mostrarMensajeError(mensaje);
-        
+        agregarTarea(tarea)
     })
 });
