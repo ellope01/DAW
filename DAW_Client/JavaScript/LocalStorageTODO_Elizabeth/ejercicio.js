@@ -9,7 +9,7 @@ function validarTareas(errorTarea) {
         return "La tarea es demasiado larga ...";
     } else if (errorTarea === "") {
         return "No has puesto ninguna tarea ...";
-    } else if (listaTareas.some(ele => ele.includes(errorTarea.toUpperCase()))) {
+    } else if (listaTareas.some(ele => ele === errorTarea.toUpperCase())) {
         return "Tareas duplicadas"
     }
     return null;
@@ -26,22 +26,30 @@ function mostrarMensajeError(mensaje) {
     }
 }
 
-
 //funcion para agregar tareas a las listas 
 function agregarTarea(mensajeTarea, errorTarea) {
     if (errorTarea === null) {
-        console.log('entra null')
         listaTareas.push(mensajeTarea.toUpperCase());
         console.log(listaTareas);
-    }else {
-        console.log('entra else')
     }
 
 }
 
 //funcion para mostrar la lista de tareas
 function mostrarListaTareas() {
+    divListaTareas.innerHTML = ""; //para limpiar lo que habia antes
+    listaTareas.forEach(tarea => {
+        const li = document.createElement('li');
+        li.textContent = tarea;
 
+        const span = document.createElement('span');
+        span.textContent = 'X';
+        span.classList.add('borrar-tarea');
+
+        li.appendChild(span);
+        divListaTareas.appendChild(li);
+
+    })
 }
 
 //funcion mara eliminar las tareas
@@ -56,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         const mensaje = validarTareas(tarea);
         mostrarMensajeError(mensaje);
-        agregarTarea(tarea, mensaje)
+        agregarTarea(tarea, mensaje);
+        mostrarListaTareas()
     })
 });
