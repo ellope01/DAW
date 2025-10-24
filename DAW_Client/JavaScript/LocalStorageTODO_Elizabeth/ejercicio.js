@@ -28,10 +28,13 @@ function mostrarMensajeError(mensaje) {
 
 
 //funcion para agregar tareas a las listas 
-function agregarTarea(mensajeTarea) {
-    if (!listaTareas.some(ele => ele.includes(mensajeTarea.toUpperCase()))) {
+function agregarTarea(mensajeTarea, errorTarea) {
+    if (errorTarea === null) {
+        console.log('entra null')
         listaTareas.push(mensajeTarea.toUpperCase());
         console.log(listaTareas);
+    }else {
+        console.log('entra else')
     }
 
 }
@@ -53,6 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         const mensaje = validarTareas(tarea);
         mostrarMensajeError(mensaje);
-        agregarTarea(tarea)
+        agregarTarea(tarea, mensaje)
     })
 });
