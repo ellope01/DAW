@@ -39,7 +39,7 @@ function mostrarListaTareas() {
     listaTareas.forEach(tarea => {
         const li = document.createElement('li');
         li.textContent = tarea;
-
+        li.style.marginLeft = "2cm";
         const span = document.createElement('span');
         span.textContent = 'X';
         span.classList.add('borrar-tarea');
