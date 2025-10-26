@@ -2,42 +2,40 @@ const formulario = document.querySelector('#formulario');
 const btnAgregar = formulario.querySelector('input[type=submit]');
 const divListaTareas = document.querySelector('#lista-tareas');
 
-const listaTareas = [];
+let listaTareas = JSON.parse(localStorage.getItem('tareas')) || [];
 
 function validarTareas(errorTarea) {
     if (errorTarea.length >= 31) {
         return "La tarea es demasiado larga ...";
-    } else if (errorTarea === "") {
+    } else if (errorTarea.trim() === "") {
         return "No has puesto ninguna tarea ...";
     } else if (listaTareas.some(ele => ele === errorTarea.toUpperCase())) {
-        return "Tareas duplicadas"
+        return "Tareas duplicadas";
     }
     return null;
 }
 
 function mostrarMensajeError(mensaje) {
-    if (mensaje !== null) {
+    if (mensaje !== null && !document.querySelector('.error')) {
         const divMensj = document.createElement('div');
-        divMensj.classList.add('error'); //ponemos el css ya creado
-
+        divMensj.classList.add('error');
         divMensj.textContent = mensaje;
-        document.querySelector('#contenido').appendChild(divMensj); //para que se fuarde al final
-        setTimeout(() => divMensj.remove(), 1900); //dejamos un tiempo de 1900 milisegundos y luego borramos el mensaje
+        document.querySelector('#contenido').appendChild(divMensj);
+        setTimeout(() => divMensj.remove(), 1900);
     }
 }
 
-//funcion para agregar tareas a las listas 
+
 function agregarTarea(mensajeTarea, errorTarea) {
     if (errorTarea === null) {
         listaTareas.push(mensajeTarea.toUpperCase());
+        localStorage.setItem('tareas', JSON.stringify(listaTareas)); 
         console.log(listaTareas);
     }
-
 }
 
-//funcion para mostrar la lista de tareas
 function mostrarListaTareas() {
-    divListaTareas.innerHTML = ""; //para limpiar lo que habia antes
+    divListaTareas.innerHTML = ""; 
     listaTareas.forEach(tarea => {
         const li = document.createElement('li');
         li.textContent = tarea;
@@ -48,23 +46,36 @@ function mostrarListaTareas() {
 
         li.appendChild(span);
         divListaTareas.appendChild(li);
-
-    })
+    });
 }
 
-//funcion mara eliminar las tareas
 function eliminarTareas() {
-
+    divListaTareas.addEventListener('click', function(e){
+        if (e.target.classList.contains('borrar-tarea')) {
+            const tareaTexto = e.target.parentElement.firstChild.textContent;
+            const indice = listaTareas.indexOf(tareaTexto);
+            if (indice !== -1) {
+                listaTareas.splice(indice, 1);
+                localStorage.setItem('tareas', JSON.stringify(listaTareas));
+                mostrarListaTareas();
+            }
+        }
+    });
 }
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    mostrarListaTareas();
+
     formulario.addEventListener('submit', function (e) {
-        const tarea = formulario.querySelector('#tarea').value;
         e.preventDefault();
+        const tarea = formulario.querySelector('#tarea').value;
         const mensaje = validarTareas(tarea);
         mostrarMensajeError(mensaje);
         agregarTarea(tarea, mensaje);
-        mostrarListaTareas()
-    })
+        mostrarListaTareas();
+        formulario.reset(); 
+    });
+    
+    eliminarTareas();
 });
