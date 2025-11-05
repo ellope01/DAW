@@ -1,6 +1,4 @@
 //todo lo relacionado con la validación y llamada a función conexión API
-
-
 const formulario = document.querySelector('#formulario');
 const nombreCliente = formulario.querySelector('#nombre');
 const correoCliente = formulario.querySelector('#email');
