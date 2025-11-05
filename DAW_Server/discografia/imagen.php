@@ -15,6 +15,7 @@
     //Cargamos la imagen
     if($ext === 'png'){
         $image = imagecreatefrompng($_FILES['upfile']['tmp_name']);
+        $tipo = 'png';
     }else{
         $image = imagecreatefromjpeg($_FILES['upfile']['tmp_name']);
     }
@@ -30,11 +31,16 @@
             "La imagen es demasiado grande, el máximo permitivo es 360x480px"
         );
     }else{
-        $profileImage = imagescale(
+        $imagenGrande = imagescale(
             $image, 360, 480
         );
-        $loggedImage = imagescale(
+        $imagenEnana = imagescale(
             $image, 72, 96
         );
+        if($tipo === 'png'){
+            imagepng(); //guardar imagen de formato png
+        }else{
+            imagejpeg(); //guardar imagen de formato jpg
+        }
     }
 ?>
