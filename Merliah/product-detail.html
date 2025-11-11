@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestido Floral - Merliah</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h1>MERLIAH</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="#nuevo">Nuevo</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <a href="cart.html" class="cart-icon">🛒</a>
+                <a href="login.html" class="user-icon">👤</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="product-detail">
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="images/products/default.jpg" alt="Vestido Floral">
+            </div>
+            <div class="thumbnails">
+                <img src="images/products/default.jpg" alt="Vista 2">
+                <img src="images/products/default.jpg" alt="Vista 3">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1>Vestido Floral Veraniego</h1>
+            <p class="price">€29.99</p>
+            <p class="description">
+                Vestido ligero perfecto para el verano. Con estampado floral y tejido transpirable. 
+                Ideal para días soleados en la playa o paseos urbanos.
+            </p>
+            
+            <div class="size-selector">
+                <label>Talla:</label>
+                <div class="sizes">
+                    <button class="size-btn">XS</button>
+                    <button class="size-btn active">S</button>
+                    <button class="size-btn">M</button>
+                    <button class="size-btn">L</button>
+                    <button class="size-btn">XL</button>
+                </div>
+            </div>
+
+            <div class="quantity-selector">
+                <label>Cantidad:</label>
+                <div class="quantity-controls">
+                    <button class="qty-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="qty-btn">+</button>
+                </div>
+            </div>
+
+            <button class="add-to-cart large">Añadir al Carrito</button>
+            
+            <div class="product-details">
+                <h3>Detalles del Producto</h3>
+                <ul>
+                    <li>100% Algodón</li>
+                    <li>Lavable a máquina</li>
+                    <li>Color: Azul Marino con flores blancas</li>
+                    <li>Longitud: Mid</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

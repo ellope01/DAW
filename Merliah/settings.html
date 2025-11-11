@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes - Merliah</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h1>MERLIAH</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="#nuevo">Nuevo</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <a href="cart.html" class="cart-icon">🛒</a>
+                <a href="settings.html" class="user-icon active">👤</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="settings-main">
+        <h2>Mi Cuenta</h2>
+        
+        <div class="settings-container">
+            <div class="settings-nav">
+                <button class="settings-tab active" data-tab="personal">Datos Personales</button>
+                <button class="settings-tab" data-tab="security">Seguridad</button>
+                <button class="settings-tab" data-tab="orders">Mis Pedidos</button>
+            </div>
+
+            <div class="settings-content">
+                <div id="personal" class="tab-content active">
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="fullName">Nombre Completo</label>
+                            <input type="text" id="fullName" value="María García" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="maria@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" value="+34 612 345 678">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Dirección</label>
+                            <textarea id="address">Calle Principal 123, Madrid</textarea>
+                        </div>
+                        
+                        <button type="submit" class="save-btn">Guardar Cambios</button>
+                    </form>
+                </div>
+
+                <div id="security" class="tab-content">
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="currentPassword">Contraseña Actual</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newPassword">Nueva Contraseña</label>
+                            <input type="password" id="newPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmNewPassword">Confirmar Nueva Contraseña</label>
+                            <input type="password" id="confirmNewPassword" required>
+                        </div>
+                        
+                        <button type="submit" class="save-btn">Cambiar Contraseña</button>
+                    </form>
+                </div>
+
+                <div id="orders" class="tab-content">
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <h4>Pedido #001</h4>
+                            <p>Fecha: 15/06/2024</p>
+                            <p>Total: €59.97</p>
+                            <p>Estado: Entregado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
