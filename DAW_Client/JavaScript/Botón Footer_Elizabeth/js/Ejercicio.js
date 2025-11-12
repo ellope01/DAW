@@ -11,7 +11,7 @@ function clickarBoton() {
         footer.classList.toggle('activo');
         if (footer.classList.contains('activo')) {
             boton.style.backgroundColor = "red";
-        } else {
+        } else { 
             boton.style.backgroundColor = "white";
         }
     });
