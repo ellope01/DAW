@@ -18,7 +18,7 @@ body {
     text-align: left;
 }
 
-#header {
+header {
     font-family: Courier;
     color: #ffffff;
     font-size: 1.1em;
@@ -33,7 +33,7 @@ h1 {
     padding: 20px 100px 20px 100px;
 }
 
-#nav {
+nav {
     font-family: Courier;
     color: #c0c0c0;
     font-size: 1.4em;
@@ -54,41 +54,43 @@ li {
     cursor: default;
 }
 
-#nav a {
+nav a {
     text-decoration: none;
     color: #ffa500;
 }
 
-#nav a:hover {
+nav a:hover {
     color: #ffffff;
 }
 
-#contenidos {
+/*nth significa el ... elemento*/
+
+li:nth-child(1) {
     background-image: url("../imgs/book.png");
     background-repeat: no-repeat;
     background-position: center 10px;
 }
 
-#videos {
+li:nth-child(2) {
     background-image: url("../imgs/film.png");
     background-repeat: no-repeat;
     background-position: center 10px;
 }
 
-#contacto {
+li:nth-child(3) {
     background-image: url("../imgs/mail.png");
     background-repeat: no-repeat;
     background-position: center 10px;
 }
 
-#content {
+#page > div {
     font-family: verdana;
     font-size: 0.8em;
     background-image: url("../imgs/lgrey008.jpg");
     height: 502px;
 }
 
-.article {
+article {
     width: 240px;
     border: 1px solid #d3d3d3;
     background-color: #ffffff;
@@ -99,7 +101,7 @@ li {
     float: left;
 }
 
-.article_header {
+article div:first-child {
     border-bottom: 1px solid #999999;
 }
 
@@ -108,7 +110,7 @@ h2 {
     font-size: 1.2em;
 }
 
-#footer {
+footer {
     clear: both;
     color: #ffffff;
     font-size: 0.7em;
@@ -119,6 +121,11 @@ h2 {
     padding-bottom: 15px;
 }
 
-#footer a {
+footer a {
     color: #ffffff;
 }
+
+
+/*
+La diferencia entre first-child es que es mas legible pero el otro es más flexible
+*/
