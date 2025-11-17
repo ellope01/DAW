@@ -137,7 +137,7 @@ function mostrarConsumo() {
 
 
     const titulo = document.createElement('h3');
-    titulo.classList.add('my-4', 'text-center');
+    titulo.classList.add('col-m6','card','py-2','px-3','shadow');
     titulo.textContent = 'Consumicion';
     contenedorResumen.appendChild(titulo);
 
