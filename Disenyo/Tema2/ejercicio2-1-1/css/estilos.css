@@ -47,6 +47,7 @@ li {
     margin-bottom: 20px;
     margin-left: 100px;
     padding-top: 80px;
+    padding-bottom: 20px;
     list-style: none;
     display: inline-block;
     text-align: center;
@@ -60,6 +61,24 @@ li {
 
 #nav a:hover {
     color: #ffffff;
+}
+
+#contenidos {
+    background-image: url("../imgs/book.png");
+    background-repeat: no-repeat;
+    background-position: center 10px;
+}
+
+#videos {
+    background-image: url("../imgs/film.png");
+    background-repeat: no-repeat;
+    background-position: center 10px;
+}
+
+#contacto {
+    background-image: url("../imgs/mail.png");
+    background-repeat: no-repeat;
+    background-position: center 10px;
 }
 
 #content {
