@@ -1,16 +1,36 @@
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Guitarra from "./components/Guitarra";
+import { db } from "./data/db";
 
 function App() {
 
+    const [data, setData] = useState([]);
+    const [carrito, setCarrito] = useState([]);
+
+    function anyadirAlCarrito(articulo){
+        setCarrito(carrito => [...carrito,articulo])
+    }
+
+    useEffect(() => {
+        setData(db)
+    }, []);
+
     return (
         <>
-            <Header/>
+            <Header />
             <main className="container-xl mt-5">
                 <h2 className="text-center">Nuestra Colección</h2>
 
                 <div className="row mt-5">
-                    <Guitarra/>
+                    {data.map(element => (
+                        <Guitarra
+                            key={element.id}
+                            guitarraObj={element}
+                            //carrito={carrito}
+                            anyadirAlCarrito={anyadirAlCarrito}
+                        />
+                    ))}
                 </div>
             </main>
 
