@@ -34,18 +34,22 @@ nav {
 #informacion {
     background-color: rgb(178, 252, 255);
     float: left;
-    width: 730px;
-    height: 500px;
+    width: 720px;
+    height: 497px;
     line-height: 500px;
+    border-right: 10px solid #cbeb99;
+    border-bottom: #cbeb99 3px solid;
 
 }
 
 #lateral {
     background-color: rgb(182, 182, 241);
     float: right;
-    height: 500px;
+    height: 497px;
     line-height: 500px;
     width: 250px;
+    border-bottom: #cbeb99 3px solid;
+
 }
 
 footer {
