@@ -1,5 +1,11 @@
-export default function Header() {
-    //const nombre = "Elizabeth";
+import { useMemo } from "react"
+
+export default function Header({ carrito, eliminarDelCarrito, agregarCarrito, eliminarCarrito }) {
+
+    const carritoVacio = useMemo(() => carrito.length === 0, [carrito])
+    //const carritoTotal = () => carrito.reduce((total, element) => total + (element.cantidad * element.price), 0)
+    const carritoTotal = useMemo(() => carrito.reduce((total, element) => total + (element.cantidad * element.price), 0), [carrito])
+
     return (
         <>
             <header className="py-5 header">
@@ -17,56 +23,72 @@ export default function Header() {
                                 <img className="img-fluid" src="./public/img/carrito.png" alt="imagen carrito" />
 
                                 <div id="carrito" className="bg-white p-3">
-                                    <p className="text-center">El carrito esta vacio</p>
-                                    <table className="w-100 table">
-                                        <thead>
-                                            <tr>
-                                                <th>Imagen</th>
-                                                <th>Nombre</th>
-                                                <th>Precio</th>
-                                                <th>Cantidad</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <img className="img-fluid" src="./public/img/guitarra_02.jpg" alt="imagen guitarra" />
-                                                </td>
-                                                <td>SRV</td>
-                                                <td className="fw-bold">
-                                                    299€
-                                                </td>
-                                                <td className="flex align-items-start gap-4">
-                                                    <button
-                                                        type="button"
-                                                        className="btn btn-dark"
-                                                    >
-                                                        -
-                                                    </button>
-                                                    1
-                                                    <button
-                                                        type="button"
-                                                        className="btn btn-dark"
-                                                    >
-                                                        +
-                                                    </button>
-                                                </td>
-                                                <td>
-                                                    <button
-                                                        className="btn btn-danger"
-                                                        type="button"
-                                                    >
-                                                        X
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    {carritoVacio ? (
+                                        <p className="text-center">El carrito esta vacio</p>
+                                    ) : (
+                                        <>
+                                            <table className="w-100 table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Imagen</th>
+                                                        <th>Nombre</th>
+                                                        <th>Precio</th>
+                                                        <th>Cantidad</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {carrito.map(element =>
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-fluid" src={`/img/${element.image}.jpg`} alt="imagen guitarra" />
+                                                            </td>
+                                                            <td>{element.name}</td>
+                                                            <td className="fw-bold">
+                                                                {element.price}$
+                                                            </td>
+                                                            <td className="flex align-items-start gap-4">
+                                                                <button
+                                                                    type="button"
+                                                                    className="btn btn-dark"
+                                                                    onClick={() => eliminarCarrito()}
+                                                                >
+                                                                    -
+                                                                </button>
+                                                                {element.cantidad}
+                                                                <button
+                                                                    type="button"
+                                                                    className="btn btn-dark"
+                                                                    onClick={() => agregarCarrito()}
+                                                                >
+                                                                    +
+                                                                </button>
+                                                            </td>
+                                                            <td>
+                                                                <button
+                                                                    className="btn btn-danger"
+                                                                    onClick={() => eliminarDelCarrito(element.id)}
 
-                                    <p className="text-end">Total pagar: <span className="fw-bold">899€</span></p>
-                                    <button className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
+                                                                >
+                                                                    X
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    )}
+                                                </tbody>
+                                            </table>
+
+                                            <p className="text-end">Total pagar: <span className="fw-bold">{carritoTotal}</span></p>
+
+                                        </>
+                                    )}
+                                    <button
+                                        className="btn btn-dark w-100 mt-3 p-2"
+                                        type="button"
+                                    >Vaciar Carrito</button>
+
                                 </div>
+
                             </div>
                         </nav>
                     </div>

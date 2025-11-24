@@ -3,22 +3,63 @@ import Header from "./components/Header";
 import Guitarra from "./components/Guitarra";
 import { db } from "./data/db";
 
+
+
 function App() {
 
-    const [data, setData] = useState([]);
-    const [carrito, setCarrito] = useState([]);
 
-    function anyadirAlCarrito(articulo){
-        setCarrito(carrito => [...carrito,articulo])
+    const carritoInicial = () => {
+        const localStorageCarrito = localStorage.getItem('carrito')
+        return (localStorageCarrito !== null) ? JSON.parse(localStorageCarrito):[]
+    }
+    const [data, setData] = useState([]);
+    const [carrito, setCarrito] = useState(carritoInicial)
+
+    function anyadirAlCarrito(articulo) {
+        const articuloExistente = carrito.findIndex(element => articulo.id === element.id);
+        if (articuloExistente >= 0) {
+            const copiaCarrito = [...carrito];
+            copiaCarrito[articuloExistente].cantidad++;
+            setCarrito(copiaCarrito);
+        } else {
+            articulo.cantidad = 1;
+            setCarrito(carrito => [...carrito, articulo])
+        }
     }
 
+
+    function eliminarDelCarrito(id){
+        const nuevoCarrito = () => carrito.filter(element => element.id !== id);
+        setCarrito(nuevoCarrito);
+    }
+
+    function agregarCarrito(id){
+        const nuevoCarrito = () => carrito.filter(element => element.cantidad++);
+        setCarrito(nuevoCarrito);
+    }
+
+        function eliminarCarrito() {
+        const nuevoCarrito = carrito.filter(element => element.cantidad > 1)
+            .map(element => ({
+                ...element, 
+                cantidad: element.cantidad - 1
+            }));
+        setCarrito(nuevoCarrito);
+    }
+
+
     useEffect(() => {
-        setData(db)
-    }, []);
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+    }, [carrito]);
 
     return (
         <>
-            <Header />
+            <Header
+                carrito={carrito}
+                eliminarDelCarrito = {eliminarDelCarrito}
+                agregarCarrito = {agregarCarrito}
+                eliminarCarrito = {eliminarCarrito}
+            />
             <main className="container-xl mt-5">
                 <h2 className="text-center">Nuestra Colección</h2>
 
