@@ -6,6 +6,7 @@
 body {
     background-color: rgb(250, 235, 215);
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 
 }
 
@@ -22,7 +23,7 @@ header {
 
 p {
     text-align: center;
-    font-size: 23px;
+    font-size: 25px;
 }
 
 nav {
@@ -34,21 +35,18 @@ nav {
 #informacion {
     background-color: rgb(178, 252, 255);
     float: left;
-    width: 720px;
-    height: 497px;
+    width: 780px;
+    height: 500px;
     line-height: 500px;
-    border-right: 10px solid #cbeb99;
-    border-bottom: #cbeb99 3px solid;
 
 }
 
 #lateral {
     background-color: rgb(182, 182, 241);
     float: right;
-    height: 497px;
+    height: 500px;
     line-height: 500px;
-    width: 250px;
-    border-bottom: #cbeb99 3px solid;
+    width: 200px;
 
 }
 
