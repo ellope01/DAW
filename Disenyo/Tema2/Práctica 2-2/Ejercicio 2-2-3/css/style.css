@@ -37,7 +37,7 @@ header {
 
 #main {
     background-color: rgb(220, 131, 255);
-    float: right;
+    float: left;
     width:80%;
     height: 100%;
     align-self: center;
