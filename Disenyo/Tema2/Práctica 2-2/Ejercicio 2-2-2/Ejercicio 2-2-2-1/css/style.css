@@ -47,7 +47,7 @@ p {
 
 #lateral {
     background-color: rgb(182, 182, 241);
-    float: right;
+    float: left;
     height: 500px;
     line-height: 500px;
     width: 150px;
