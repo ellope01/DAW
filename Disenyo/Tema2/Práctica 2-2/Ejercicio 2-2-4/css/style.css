@@ -9,18 +9,6 @@ body {
     font-family: sans-serif;
 }
 
-il, p {
-    color: white;
-}
-
-header ul{
-    display: inline;
-}
-
-#aside ul{
-    display: block;
-}
-
 #container {
     max-width: 1920px;
     max-height: 1080px;
@@ -29,11 +17,27 @@ header ul{
     width: 100%;
 }
 
+li, p {
+    color: white;
+}
+
+header ul li{
+    display: inline;
+    font-size: 100%;
+    margin-right: 5%;
+}
+
+#aside ul li{
+    display: block;
+    font-size: 150%;
+}
+
 
 header {
     background-color: rgb(48, 143, 36);
     height: 10%;
     line-height: 380%;
+    text-align: center;
 }
 
 #aside {
@@ -41,7 +45,7 @@ header {
     float: left;
     width: 20%;
     height: 100%;
-    line-height: 150%;
+    line-height: 500%;
 }
 
 #main {
