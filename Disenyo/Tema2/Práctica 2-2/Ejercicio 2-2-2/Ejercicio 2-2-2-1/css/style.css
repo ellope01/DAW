@@ -17,8 +17,8 @@ body {
 
 header {
     background-color: rgb(243, 176, 164);
-    height: 100px;
-    line-height: 100px;
+    height: 90px;
+    line-height: 90px;
 }
 
 
@@ -48,7 +48,7 @@ p {
 #lateral {
     background-color: rgb(182, 182, 241);
     float: right;
-    height: 497px;
+    height: 500px;
     line-height: 500px;
     width: 150px;
 

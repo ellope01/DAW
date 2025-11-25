@@ -6,6 +6,7 @@
 body {
     background-color: rgb(250, 235, 215);
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 
 }
 
@@ -13,12 +14,13 @@ body {
     width: 980px;
     margin: 0px auto;
     background-color: rgb(191, 225, 140);
+    font-size: 0;
 }
 
 header {
     background-color: rgb(243, 176, 164);
-    height: 100px;
-    line-height: 100px;
+    height: 90px;
+    line-height: 90px;
 }
 
 
@@ -28,10 +30,11 @@ p {
     font-size: 23px;
 }
 
+
 #menu {
     background-color: rgb(255, 239, 147);
     display: inline-block;
-    width: 145px;
+    width: 151px;
     height: 200px;
     line-height: 200px;
     vertical-align: top;
@@ -49,9 +52,9 @@ p {
 #lateral {
     background-color: rgb(182, 182, 241);
     display: inline-block;
-    height: 497px;
+    height: 500px;
     line-height: 500px;
-    width: 145px;
+    width: 153px;
 
 }
 
