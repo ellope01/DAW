@@ -30,7 +30,7 @@ header {
 #aside {
     background-color: #6299a7;
     float: left;
-    width: 260px;
+    width: 20%;
     height: 100%;
     line-height: 150%;
 }
@@ -38,36 +38,36 @@ header {
 #main {
     background-color: rgb(220, 131, 255);
     float: right;
-    width: 720px;
+    width:80%;
     height: 100%;
     align-self: center;
 }
 
 #rojo {
     border: red 5px solid;
-    width: 690px;
-    margin-top: 25px;
+    width: 95%;
+    margin-top: 3%;
     height: 42%;
-    margin-left: 10px;
+    margin-left: 2%;
 }
 
 #azul1 {
     border: blue 5px solid;
-    width: 300px;
+    width: 45%;
     height: 80%;
     float: left;
-    margin-top: 22px;
-    margin-left: 22px;
+    margin-top: 2.5%;
+    margin-left: 2.5%;
 }
 
 
 #azul2 {
     border: blue 5px solid;
-    width: 200px;
+    width: 29%;
     height: 80%;
     float: left;
-    margin-top: 22px;
-    margin-left: 15px;
+    margin-top: 3%;
+    margin-left: 2.5%;
 }
 
 
@@ -76,5 +76,5 @@ footer {
     background-color: rgb(255, 128, 105);
     height: 5%;
     clear: both;
-    line-height: 30px;
+    line-height: 180%;
 }
