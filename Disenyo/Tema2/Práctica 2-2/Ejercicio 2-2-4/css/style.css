@@ -9,17 +9,26 @@ body {
     font-family: sans-serif;
 }
 
-p {
+il, p {
     color: white;
 }
 
-#container {
-    width: 980px;
-    margin: 0 auto;
-    background-color: #cbeb99;
-    height: 80vh;
-
+header ul{
+    display: inline;
 }
+
+#aside ul{
+    display: block;
+}
+
+#container {
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+    height: 80vh;
+    width: 100%;
+}
+
 
 header {
     background-color: rgb(48, 143, 36);
@@ -30,44 +39,44 @@ header {
 #aside {
     background-color: #6299a7;
     float: left;
-    width: 260px;
+    width: 20%;
     height: 100%;
     line-height: 150%;
 }
 
 #main {
     background-color: rgb(220, 131, 255);
-    float: right;
-    width: 720px;
+    float: left;
+    width: 80%;
     height: 100%;
     align-self: center;
 }
 
 #rojo {
     border: red 5px solid;
-    width: 690px;
-    margin-top: 25px;
+    width: 95%;
+    margin-top: 2%;
     height: 42%;
-    margin-left: 10px;
+    margin-left: 3%;
 }
 
 #azul1 {
     border: blue 5px solid;
-    width: 300px;
+    width: 45%;
     height: 80%;
     float: left;
-    margin-top: 22px;
-    margin-left: 22px;
+    margin-top: 2%;
+    margin-left: 3%;
 }
 
 
 #azul2 {
     border: blue 5px solid;
-    width: 200px;
+    width: 29%;
     height: 80%;
     float: left;
-    margin-top: 22px;
-    margin-left: 15px;
+    margin-top: 2%;
+    margin-left: 2%;
 }
 
 
@@ -76,5 +85,5 @@ footer {
     background-color: rgb(255, 128, 105);
     height: 5%;
     clear: both;
-    line-height: 30px;
+    line-height: 170%;
 }
