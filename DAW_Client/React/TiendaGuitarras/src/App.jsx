@@ -7,12 +7,12 @@ import { db } from "./data/db";
 
 function App() {
 
-
     const carritoInicial = () => {
         const localStorageCarrito = localStorage.getItem('carrito')
         return (localStorageCarrito !== null) ? JSON.parse(localStorageCarrito):[]
     }
-    const [data, setData] = useState([]);
+    
+    //const [data, setData] = useState(db);
     const [carrito, setCarrito] = useState(carritoInicial)
 
     function anyadirAlCarrito(articulo) {
