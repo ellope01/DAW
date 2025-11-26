@@ -4,13 +4,29 @@
 Para ello vamos a necesitar los siguientes pasos
 
 - Lo primero que tenemos que hacer es ponerlo en modo desarrollador
-- Accedemos a las plantillas del correo y creamos una nueva
+- Accedemos a las plantillas del correo electrónico y creamos una nueva
 
-Añadir imagen de la página
 
-- En aplicar a : Orden ventas
+- En aplicar a : Orden de ventas
 - Asunto: pedido de venta
 - Contenido: 
+    nombreEmpresa 
+    Recuerda pagar el pedido antes del: Fecha Pago
+    Gracias por tu su compra. nombreEmpresa
+
+Donde esta nombreEmpresa y Fecha Pago, nos saldran los datos que queremos visualizar, sin tener que poner como object.name o object.partnner_id.name , para que quede más visual a la hora de escribirla.
+
+Nos tendria que quedar así
+
+![Imagen Ejemplo Plantilla](./imagenes/imagen1.png)
+
+*Para poder ver la fecha de pago primero habrá que ponerla en el pedido*
+
+Para poder visualizarlo solo tenemos que darle a vista previa, que en mi caso se verías así
+
+![Imagen Ejemplo Vista Previa](./imagenes/Imagen2.png)
+
+
 Se pone en modo desarrollador 
 Accedemos a plantillas de correo
 creamos una nueva
