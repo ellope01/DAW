@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: 2px solid black;
+}
+
+body {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#container {
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+    height: 80vh;
+    width: 100%;
+}
+
+header {
+    height: 10%;
+    line-height: 380%;
+    text-align: center;
+}
+
+#logo{
+    text-align: left;
+    float:left;
+    margin: 0% 15px;
+    width: 12%;
+    height: 15%;
+}
+
+#botones{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
