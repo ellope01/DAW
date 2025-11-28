@@ -4,7 +4,7 @@
 
 Para ello vamos a necesitar los siguientes pasos
 
-- Lo primero que tenemos que hacer es ponerlo en modo desarrollador
+- Lo primero que tenemos que hacer es ponerlo en modo desarrollador (para saber que estamos en modo desarrollador debe de sale un bicho al lado de los mennsajes)
 - Accedemos a las plantillas del correo electrónico y creamos una nueva
 
 
