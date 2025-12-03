@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, onMounted, warn, watch } from "vue";
+import { ref, reactive, onMounted, watch } from "vue";
 import { db } from "./data/guitarra";
 import Guitarra from "./components/Guitarra.vue";
 import Header from "./components/Header.vue";
