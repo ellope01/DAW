@@ -25,7 +25,7 @@
 <script setup>
 import { ref } from "vue";
 
-const emit = defineEmits(["incrementar","agregar-carrito"]);
+const emits = defineEmits(["incrementar","agregar-carrito"]);
 
 const props = defineProps({
   guitarra: {

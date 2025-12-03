@@ -1,8 +1,9 @@
 <script setup>
-import { ref, reactive, onMounted } from "vue";
+import { ref, reactive, onMounted, warn, watch } from "vue";
 import { db } from "./data/guitarra";
 import Guitarra from "./components/Guitarra.vue";
 import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 /*const state = reactive({
   guitarras: db,
 });*/
@@ -16,6 +17,8 @@ console.log(guitarras.value);
 onMounted(() => {
   guitarras.value = db; //ref
   guitarraGrande.value = guitarras.value[4];
+  localStorage.getItem('carrito', JSON.stringify(carrito))
+
   //state.guitarras = db; //reactive
 });
 
@@ -30,10 +33,27 @@ const agregarCarrito = (guitarra) => {
     carrito.value.push(guitarra);
   }
 };
+
+const guardarLocalStorage = () => {
+  const localStorageCarrito = localStorage.getItem("carrito");
+  return localStorageCarrito !== null ? JSON.parse(localStorageCarrito) : [];
+};
+
+watch(
+  carrito,
+  () => {
+    guardarLocalStorage();
+  },
+  { deep: true }
+);
 </script>
 
 <template>
-  <Header v-bind:carrito="carrito" v-bind:guitarraGrande="guitarraGrande"/>
+  <Header
+    v-bind:carrito="carrito"
+    v-bind:guitarraGrande="guitarraGrande"
+    @agregar-carrito="agregarCarrito"
+  />
   <main class="container-xl mt-5">
     <h2 class="text-center">Nuestra Colección</h2>
 
@@ -45,12 +65,5 @@ const agregarCarrito = (guitarra) => {
       />
     </div>
   </main>
-
-  <footer class="bg-dark mt-5 py-5">
-    <div class="container-xl">
-      <p class="text-white text-center fs-4 mt-4 m-md-0">
-        GuitarLA - Todos los derechos Reservados
-      </p>
-    </div>
-  </footer>
+  <Footer />
 </template>
