@@ -1,59 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Ejercicio 2-3-2</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejercicio 2-3-2</title>
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
-    <div id="container">
-        <header>
-            <div id="logo">
-                <p>LOGO</p>
-            </div>
-            <div id="OpcionesBotones">
-                <div id="opciones">
-                    <div id="opcion">
-                        <p>Opción 1</p>
-                    </div>
-                    <div id="opcion">
-                        <p>Opción 2</p>
-                    </div>
-                    <div id="opcion">
-                        <p>Opción 3</p>
-                    </div>
-                </div>
-                <div id="botones">
-                    <div id="boton">
-                        <p>Botón 1</p>
-                    </div>
-                    <div id="boton">
-                        <p>Botón 2</p>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <Section>
-            <div id="section1">
+  <div class="page">
 
-            </div>
-            <div id="section2">
+    <header class="header">
+      <div class="logo-box">Logo</div>
 
-            </div>
-            <div id="section3">
+      <nav class="top-menu">
+        <div class="menu-item">OPCION 1</div>
+        <div class="menu-item">OPCION 2</div>
+        <div class="menu-item">OPCION 3</div>
+      </nav>
 
-            </div>
-            <div id="section4">
+      <div class="top-buttons">
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </header>
 
-            </div>
-            <div id="section5">
+    <!-- bloque superior: dos columnas -->
+    <section class="top-section">
+      <div class="left-top">
+        <div class="lt-line lt-line-1"></div>
+        <div class="lt-line lt-line-2"></div>
+        <div class="lt-line lt-line-3"></div>
 
-            </div>
-        </Section>
-        <footer>
+        <div class="lt-row">
+          <div class="lt-small"></div>
+          <div class="lt-medium"></div>
+        </div>
+      </div>
 
-        </footer>
-    </div>
+      <div class="right-top"></div>
+    </section>
+
+    <!-- bloque medio: dos columnas con elemento centrado en la derecha -->
+    <section class="middle-section">
+      <div class="middle-left"></div>
+
+      <div class="middle-right">
+        <div class="mr-card"></div>
+        <div class="mr-line"></div>
+        <div class="mr-line"></div>
+        <div class="mr-line"></div>
+      </div>
+    </section>
+
+    <!-- bloque inferior grande: dos columnas -->
+    <section class="lower-section">
+      <div class="lower-left">
+        <div class="ll-big"></div>
+        <div class="ll-medium"></div>
+        <div class="ll-small"></div>
+      </div>
+
+      <div class="lower-right"></div>
+    </section>
+
+    <!-- galería de 3 tarjetas -->
+    <section class="cards-section">
+      <div class="search-bar"></div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-img"></div>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-small"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-img"></div>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-small"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-img"></div>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-small"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- bloque ancho central con caja centrada de lineas -->
+    <section class="wide-center">
+      <div class="wc-inner">
+        <div class="wc-small"></div>
+        <div class="wc-line"></div>
+        <div class="wc-line"></div>
+        <div class="wc-line"></div>
+      </div>
+    </section>
+
+    <!-- footer con cuatro columnas de pequeñas filas -->
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <div class="fcol">
+          <div class="frow"></div>
+          <div class="frow"></div>
+          <div class="frow"></div>
+          <div class="frow"></div>
+        </div>
+
+        <div class="fcol">
+          <div class="frow"></div>
+          <div class="frow"></div>
+          <div class="frow"></div>
+          <div class="frow"></div>
+        </div>
+
+        <div class="fcol">
+          <div class="frow"></div>
+          <div class="frow"></div>
+          <div class="frow"></div>
+          <div class="frow"></div>
+        </div>
+
+        <div class="fcol">
+          <div class="frow"></div>
+          <div class="frow"></div>
+          <div class="frow"></div>
+          <div class="frow"></div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="fb-left"></div>
+        <div class="fb-right"></div>
+      </div>
+    </footer>
+
+  </div>
 </body>
+</html>
