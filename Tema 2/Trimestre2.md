@@ -50,21 +50,15 @@ Nos quedaría una cosa asi
 Ahora cada vez que confirmemos el pedido se tiene que generar automaticamente esta acción, pero aun nos queda un paso que es crear la automatización. Para ello debemos hacer los siguiente:
 - Nos tenemos que ir a aplicaciones, borrar lo que nos sale por defecto y buscar autom, y  **activamos base_automation**
 - Volvemos a tecnico y nos ponemos en regla de automatización
+- Creamos una nueva
+    - Nombre: envío mail venta automatica
+    - Modelo: pedido de ventas
+    - Activador: El estado esta establecido como - orden de venta
+    - Lo demás se queda igual
+    - Ejecutar acciones existentes y seleccionamos la creada
 
 
 
-
-
-
-
-Volvemos al tecnico y nos ponemos en reglas de automatizacion, 
-Creamos una nueva
-    Nombre: envío mail venta automatica
-    Modelo: pedido de ventas
-    Activador: El estado esta establecido como - orden de venta
-    Lo demás lo dejamos igual.
-    Ejecitar acciones existentes
-    Y seleccionamos lo que habiamos creado
 
 
 
@@ -107,3 +101,8 @@ Creamos una nueva
     Lo demás lo dejamos igual.
     Ejecitar acciones existentes
     Y seleccionamos lo que habiamos creado
+
+
+
+
+//algo tipo e-comerce
