@@ -23,6 +23,7 @@ body {
     margin-right: auto;
     text-align: left;
     border-radius: 20px;
+    box-shadow: 10px 10px 10px gray;
 }
 
 header {
@@ -123,6 +124,8 @@ article div:first-child {
 h2 {
     padding: 10px;
     font-size: 1.2em;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 2px 2px 2px gray;
 }
 
 footer {
