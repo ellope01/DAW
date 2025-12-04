@@ -1,0 +1,368 @@
+/* Outline obligatorio en todas las cajas */
+* {
+  outline: 2px solid black;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  width: 1080px;
+  height: 1920px;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  width: 1070px;
+  margin: 10px auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header {
+  height: 70px;
+}
+
+.logo-box {
+  font-family: 'Times New Roman', Times, serif;
+  width: 170px;
+  height: 36px;
+  float: left;
+  line-height: 35px;
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+.top-menu {
+  float: right;
+  margin-top: 15px;
+  width: 300px;
+  height: 36px;
+
+}
+
+.menu-item {
+  font-family: 'Times New Roman', Times, serif;
+  width: 60px;
+  margin-left: 25px;
+  margin-top: 7px;
+  line-height: 20px;
+  height: 20px;
+  padding-left: 10px;
+  font-size: 11px;
+  float: left;
+}
+
+.top-buttons {
+  float: right;
+  margin-right: 20px;
+  margin-top: 15px;
+  width: 300px;
+  height: 36px;
+}
+
+.top-buttons .btn {
+  width: 100px;
+  height: 20px;
+  float: left;
+  margin-left: 25px;
+  line-height: 20px;
+  padding-left: 30px;
+  background-color: rgb(223, 223, 223);
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+
+.top-section {
+  height: 300px;
+}
+
+.left-top {
+  width: 50%;
+  height: 100%;
+  padding: 28px 30px;
+  float: left;
+}
+
+.right-top {
+  width: 50%;
+  height: 300px;
+  float: left;
+}
+
+/* líneas en la columna izquierda */
+.lt-line {
+  height: 25px;
+  margin-bottom: 7px;
+  width: 70%;
+}
+
+.lt-line-1 {
+  width: 55%;
+}
+
+.lt-line-2 {
+  width: 85%;
+}
+
+.lt-line-3 {
+  width: 85%;
+}
+
+.lt-line-4 {
+  width: 40%;
+}
+
+.lt-small,
+.lt-medium {
+  height: 25px;
+  float: left;
+  width: 150px;
+}
+
+
+/* ---------- BLOQUE MEDIO (dos columnas con FLOAT) ---------- */
+.middle-section {
+  height: 300px;
+}
+
+.middle-left,
+.middle-right {
+  width: 45%;
+  height: 300px;
+  float: left;
+}
+
+.middle-right {
+  width: 55%;
+  position: relative;
+}
+
+.mr-card {
+  width: 250px;
+  height: 90px;
+  top: 10%;
+  position: relative;
+  left: 20%;
+  margin-bottom: 50px;
+}
+
+.mr-line {
+  width: 60%;
+  height: 25px;
+  margin: 25px auto;
+}
+
+
+
+
+
+.lower-section {
+  height: 300px;
+}
+
+.lower-left,
+.lower-right {
+  width: 32%;
+  height: 300px;
+  float: left;
+}
+
+.lower-left {
+  padding: 30px;
+  width: 68%;
+}
+
+.ll-big,
+.ll-medium,
+.ll-small {
+  margin-bottom: 25px;
+  margin-left: 100px;
+}
+
+.ll-big {
+  margin-top: 15px;
+  width: 420px;
+  height: 80px;
+}
+
+.ll-medium {
+  width: 420px;
+  height: 36px;
+  margin-bottom: 18px;
+}
+
+.ll-small {
+  width: 160px;
+  height: 36px;
+}
+
+.cards-section {
+  padding: 10px 30px;
+  height: 490px;
+}
+
+.search-bar {
+  width: 450px;
+  height: 30px;
+  margin-bottom: 8px;
+}
+
+.search-bar2 {
+  width: 300px;
+  height: 10px;
+  margin-bottom: 12px;
+}
+
+.card {
+  width: 300px;
+  float: left;
+  margin-right: 30px;
+}
+
+.card:last-child {
+  margin-right: 0;
+}
+
+.card-img {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 7px;
+}
+
+.card-line {
+  width: 285px;
+  height: 15px;
+  margin-left: 7px;
+  margin-bottom: 10px;
+}
+
+.card-line2 {
+  width: 285px;
+  height: 20px;
+  margin-left: 7px;
+  margin-bottom: 10px;
+}
+
+.card-small {
+  width: 70px;
+  height: 15px;
+  margin-bottom: 20px;
+  margin-left: 7px;
+}
+
+
+
+.wide-center {
+  height: 200px;
+  position: relative;
+}
+
+
+.wc-inner {
+  width: 745px;
+  height: 150px;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+
+.wc-cont {
+  width: 410px;
+  height: 120px;
+  position: absolute;
+  top: 10%;
+  left: 23%;
+}
+
+.wc-small,
+.wc-line {
+  margin: 0 auto 10px;
+  margin-top: 10px;
+  width: 400px;
+}
+
+.wc-small {
+  height: 20px;
+}
+
+.wc-line {
+  height: 30px;
+}
+
+
+
+.up-footer {
+  padding: 20px 30px;
+  height: 200px;
+}
+
+
+.fcol {
+  width: 230px;
+  padding: 8px;
+  float: left;
+}
+
+.fcol:last-child {
+  width: 320px;
+  height: 164px;
+}
+
+.frow {
+  height: 30px;
+  margin-bottom: 7px;
+}
+
+.site-footer {
+  height: 50px;
+}
+
+.footer-bottom {
+  height: 5px;
+  width: 99%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  clear: both;
+}
+
+.caja {
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#cajaizq {
+  width: 25%;
+  height: 25px;
+  float: left;
+  margin: 5px;
+}
+
+#cajader {
+  width: 25%;
+  height: 25px;
+  float: right;
+  margin: 5px;
+}
+
+
+/* ---------- LIMPIAR FLOATS ---------- */
+.top-section::after,
+.middle-section::after,
+.lower-section::after,
+.cards::after,
+.footer-cols::after,
+.footer-bottom::after {
+  content: "";
+  display: table;
+  clear: both;
+}
