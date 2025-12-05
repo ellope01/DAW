@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -21,6 +25,7 @@ body {
 
 .header {
   height: 70px;
+  position: relative;
 }
 
 .logo-box {
@@ -34,88 +39,106 @@ body {
   padding-left: 10px;
 }
 
-.top-menu {
-  float: right;
-  margin-top: 15px;
-  width: 300px;
-  height: 36px;
+div[style*="background-color: rgb(212, 212, 212)"] {
+    background-color: rgb(243, 242, 242) !important;
+  position: absolute;
+  left: 500px;
+  top: 0;
+  height: 70px;
+  padding: 0;
+  width: 520px;
+  box-sizing: border-box;
+  overflow: hidden; 
+}
 
+.top-menu {
+  float: left;
+  margin-top: 25px;
+  margin-left: 10px; 
+  width: auto; 
+  height: 36px;
 }
 
 .menu-item {
-  width: 60px;
-  margin-left: 25px;
+  width: 50px; 
+  margin-left: 15px; 
   margin-top: 7px;
   line-height: 20px;
   height: 20px;
-  padding-left: 10px;
-  font-size: 14px;
+  padding-left: 5px; 
+  font-size: 12px;
   float: left;
 }
 
 .top-buttons {
   float: right;
-  margin-right: 20px;
-  margin-top: 15px;
-  width: 450px;
+  margin-top: 17px;
+  margin-right: 10px; 
+  width: 280px; 
   height: 45px;
 }
 
 .top-buttons .btn {
-  width: 150px;
+  width: 125px;
   height: 30px;
   float: left;
   border-radius: 5px;
-  margin-left: 25px;
-  line-height: 20px;
-  padding-left: 35px;
+  line-height: 30px; 
+  padding-left: 15px;
   margin-top: 7px;
-  font-size: 15px;
+  margin-left: 15px; 
+  font-size: 12px;
+  text-align: left;
 }
 
+
+.top-buttons .btn:first-child {
+  margin-left: 0; 
+}
 
 .top-section {
   height: 300px;
 }
 
 .left-top {
-  width: 50%;
+  width: 46.7%;
   height: 100%;
   padding: 28px 30px;
   float: left;
 }
 
 .right-top {
-  width: 43%;
+  width: 48.7%;
   height: 300px;
+  text-align: center;
   float: left;
-  background-color: rgb(207, 207, 207);
-  border-radius: 15px;
+  background-color: rgb(243, 242, 242);
 }
 
 .lt-line {
-  height: 50px;
+  height: 40px;
   margin-bottom: 7px;
   width: 70%;
 }
 
 .lt-line-1 {
-  width: 60%;
+  width: 70%;
   height: 7px;
   color: blueviolet;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .lt-line-2 {
-  width: 65%;
-  font-size: 50px;
-  height: 130px;
+  width: 85%;
+  font-size: 40px;
+  height: 100px;
   margin-bottom: 5px;
 }
 
 .lt-line-3 {
-  width: 65%;
-  height: 70px;
+  width: 75%;
+  height: 40px;
+  font-size: 12px;
 }
 
 .lt-line-4 {
@@ -123,22 +146,24 @@ body {
   background-color: blueviolet;
   color: white;
   border-radius: 5px;
-  padding-left: 25px;
-  line-height: 45px;
+  padding-left: 20px;
+  line-height: 30px;
+  font-size: 12px;
+  height: 30px;
 
-  
+
 }
 
 .lt-small,
 .lt-medium {
-  height: 25px;
+  height: 20px;
   float: left;
   width: 150px;
 }
 
 
 .middle-section {
-  height: 350px;
+  height: 250px;
 }
 
 .middle-left,
@@ -148,9 +173,13 @@ body {
   float: left;
 }
 
+.middle-left{
+  text-align: center;
+}
 .middle-right {
   width: 55%;
   position: relative;
+  height: auto;
 }
 
 .mr-card {
@@ -160,21 +189,32 @@ body {
   top: 10%;
   position: relative;
   left: 20%;
-  margin-bottom: 80px;
+  margin-bottom: 30px;/
 }
 
 .mr-line {
   width: 450px;
-  height: 80px;
+  padding: 1px;
+  height: auto;
   margin-left: 125px;
+  margin-bottom: 15px;
+}
+
+.mr-line p {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 
-
-
-
 .lower-section {
-  height: 300px;
+  margin-left: 150px;
+  height: 340px;
+  width: 800px;
+  background-color: rgb(243, 242, 242);
+  clear: both;
+  margin-bottom: 1px;
+  border-radius: 15px;
+
 }
 
 .lower-left,
@@ -192,25 +232,33 @@ body {
 .ll-big,
 .ll-medium,
 .ll-small {
-  margin-bottom: 25px;
-  margin-left: 100px;
+  margin-bottom: 40px;
+  margin-left: 50px;
 }
 
 .ll-big {
   margin-top: 15px;
   width: 420px;
   height: 80px;
+  font-size: 40px;
+
 }
 
 .ll-medium {
-  width: 420px;
+  width: 400px;
   height: 36px;
-  margin-bottom: 18px;
+  font-size: 14px;
 }
 
 .ll-small {
-  width: 160px;
-  height: 36px;
+  background-color: blueviolet;
+  margin-top: 20px;
+  padding-left: 25px;
+  color: white;
+  width: 200px;
+  height: 60px;
+  line-height: 55px;
+  border-radius: 5px;
 }
 
 .cards-section {
@@ -221,12 +269,14 @@ body {
 .search-bar {
   width: 450px;
   height: 30px;
+  font-size: 30px;
   margin-bottom: 8px;
 }
 
 .search-bar2 {
   width: 300px;
   height: 10px;
+  font-size: 12px;
   margin-bottom: 12px;
 }
 
@@ -244,34 +294,59 @@ body {
   width: 100%;
   height: 300px;
   margin-bottom: 7px;
+  border-radius: 5px;
+  ;
 }
 
 .card-line {
   width: 285px;
   height: 15px;
   margin-left: 7px;
+  font-size: 12px;
   margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.card-line p:first-child {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.card-line p:last-child {
+  float: right;
+  margin: 0;
+  padding: 0;
 }
 
 .card-line2 {
   width: 285px;
+  font-size: 12px;
   height: 20px;
   margin-left: 7px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  font-weight: bold;
 }
 
 .card-small {
   width: 70px;
+  font-weight: bold;
+  color: blueviolet;
+  font-size: 12px;
+  ;
   height: 15px;
   margin-bottom: 20px;
   margin-left: 7px;
 }
 
 
-
 .wide-center {
+  margin-left: 100px;
+  width: 800px;
   height: 200px;
   position: relative;
+  background-color: blueviolet;
+  border-radius: 15px;
 }
 
 
@@ -280,7 +355,7 @@ body {
   height: 150px;
   position: absolute;
   top: 15%;
-  left: 15%;
+  left: 3%;
 }
 
 .wc-cont {
@@ -292,18 +367,60 @@ body {
 }
 
 .wc-small,
-.wc-line {
+.wc-line,
+.wc-line2 {
   margin: 0 auto 10px;
   margin-top: 10px;
   width: 400px;
 }
 
 .wc-small {
+  margin-top: 20px;
   height: 20px;
+  color: white;
+  font-size: 12px;
 }
 
 .wc-line {
   height: 30px;
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+}
+
+.wc-line2 {
+  height: 50px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.wc-line2 p {
+  float: left;
+
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 50px;
+  /* Centra verticalmente */
+  height: 50px;
+}
+
+.wc-line2 button {
+  float: right;
+  background-color:blueviolet;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  font-size: 12px;
+  margin-top: 10px;
+  height: 30px;
+  line-height: 14px;
 }
 
 
@@ -327,6 +444,7 @@ body {
 
 .frow {
   height: 30px;
+  font-size: 13px;
   margin-bottom: 7px;
 }
 
@@ -354,11 +472,13 @@ body {
   height: 25px;
   float: left;
   margin: 5px;
+  font-size: 10px;
 }
 
 #cajader {
   width: 25%;
   height: 25px;
+  font-size: 10px;
   float: right;
   margin: 5px;
 }
