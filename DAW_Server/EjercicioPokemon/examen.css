@@ -1,0 +1,290 @@
+
+
+/* Fuente y reset ligero (NO usar selectores demasiado globales que rompan todo) */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Giorgia", Georgia, serif;
+    background: #f6f6f6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+/* ---------------------------
+   LIMPIEZA DE ESTILOS PROBLEMÁTICOS
+   (fuerza que no haya floats/posiciones viejas)
+   --------------------------- */
+header, nav, footer, #iniciales, .pokemon-container, aside, article, section, table, img {
+    float: none !important;
+    position: relative !important;
+}
+
+/* Evita que los selectores globales del viejo CSS afecten */
+div, table, article, section, aside {
+    width: auto !important;
+    height: auto !important;
+    background-image: none !important;
+}
+
+/* Reset imágenes en tablas (evita transform/rotates que chocan con layout) */
+table img {
+    float: none !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* ---------------------------
+   HEADER / NAV / FOOTER
+   --------------------------- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 20px;
+    height: 80px;
+    border-radius: 12px 12px 0 0;
+    background-color: #ff8c00; /* fallback */
+    color: #003366;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    font-weight: bold;
+    text-align: left;
+}
+
+/* header img */
+header img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* nav */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    height: 48px;
+    background-color: wheat;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+nav strong a {
+    color: #ff8c00;
+    text-decoration: none;
+    padding: 0 12px;
+    font-weight: bold;
+}
+
+/* footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    border-radius: 0 0 12px 12px;
+    background-color: #ff8c00;
+    color: #003366;
+    padding: 10px 20px;
+}
+
+/* ---------------------------
+   CONTENEDOR PRINCIPAL #iniciales
+   --------------------------- */
+#iniciales {
+    width: 100%;
+    min-height: calc(100vh - 210px); /* deja espacio para header/nav/footer */
+    padding: 30px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ---------------------------
+   TARJETA PRINCIPAL (POKEMON)
+   --------------------------- */
+.pokemon-container {
+    width: 100%;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border: 4px solid transparent; /* color dinámico en inline style o embed */
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* ---------------------------
+   CABECERA DE LA TARJETA
+   --------------------------- */
+.pokemon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-bottom: 6px;
+    border-bottom: 3px solid rgba(0,0,0,0.06);
+}
+
+/* ---------------------------
+   LAYOUT PRINCIPAL: GRID
+   --------------------------- */
+.main-content {
+    display: grid;
+    grid-template-columns: minmax(280px, 340px) 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+/* Adaptativo */
+@media (max-width: 992px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------------------------
+   PANEL IZQUIERDO (IMAGEN + INFO)
+   --------------------------- */
+.left-panel {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+/* Imagen */
+.pokemon-image {
+    width: 240px;
+    height: 240px;
+    border-radius: 12px;
+    padding: 12px;
+    background: radial-gradient(circle at 30% 30%, #ffffff 0%, #f5f5f5 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+}
+
+.pokemon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* info rows */
+.basic-info { width: 100%; }
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* description */
+.description-box {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff9e6;
+    border-left: 4px solid rgba(0,0,0,0.06);
+    font-style: italic;
+}
+
+/* ---------------------------
+   PANEL DERECHO (GRID DE CARDS)
+   --------------------------- */
+.right-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+}
+
+/* tarjetas */
+.stats-card, .abilities-card, .moves-card, .details-card {
+    background: white;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-top: 4px solid transparent; /* color dinámico */
+}
+
+/* títulos de tarjetas */
+.card-title {
+    margin: 0 0 12px 0;
+    padding-bottom: 8px;
+    font-weight: 700;
+}
+
+/* estadisticas */
+.stat-item { margin-bottom: 12px; }
+.stat-bar {
+    width: 100%;
+    height: 16px;
+    background: #ececec;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.stat-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.8s ease;
+}
+
+/* habilidades y movimientos */
+.abilities-list, .moves-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.ability, .move {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #f0f0f0;
+}
+
+/* detalles */
+.details-list { display: flex; flex-direction: column; gap: 8px; }
+.detail-item { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f3f3; }
+
+/* navegacion botones */
+.navigation { display:flex; gap:12px; flex-wrap:wrap; justify-content:space-between; }
+.nav-btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 18px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* ---------------------------
+   UTILIDADES (por si hay reglas antiguas) 
+   --------------------------- */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
