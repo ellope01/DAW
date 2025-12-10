@@ -1,11 +1,43 @@
 <script setup>
 import Presupuesto from "./components/Presupuesto.vue";
-import { ref } from "vue";
+import ControlPresupuesto from "./components/ControlPresupuesto.vue";
+import Modal from "./components/Modal.vue";
+import iconoNuevoGasto from "../src/assets/nuevo-gasto.svg";
+
+import { reactive, ref } from "vue";
 
 const presupuesto = ref(0);
+const disponible = ref(0);
+const modal = reactive({
+  mostrar: false,
+  animar: false,
+});
+
+const gasto = reactive({
+  nombre: "",
+  cantidad: "",
+  categoria: "",
+  id: null,
+  fecha: new Date(),
+});
 
 const definirPresupuesto = (cantidad) => {
   presupuesto.value = cantidad;
+  disponible.value = presupuesto.value;
+};
+
+const mostrarModal = () => {
+  modal.mostrar = true;
+  setTimeout(() => {
+    modal.animar = true;
+  }, 500);
+};
+
+const ocultarModal = () => {
+  modal.animar = false;
+  setTimeout(() => {
+    modal.mostrar = false;
+  }, 500);
 };
 </script>
 
@@ -13,10 +45,31 @@ const definirPresupuesto = (cantidad) => {
   <header>
     <h1>Planificador de Gastos</h1>
     <div class="contenedor-header contenedor sombra">
-      <Presupuesto v-if="presupuesto === 0"
-      @definir-presupuesto="definirPresupuesto"/>
+      <Presupuesto
+        v-if="presupuesto === 0"
+        @definir-presupuesto="definirPresupuesto"
+      />
+      <ControlPresupuesto
+        v-if="presupuesto > 0"
+        v-bind:presupuesto="presupuesto"
+        v-bind:disponible="disponible"
+      />
     </div>
   </header>
+  <main v-if="presupuesto > 0">
+    <div class="crear-gasto" @click="mostrarModal()">
+      <img :src="iconoNuevoGasto" alt="icono nuevo gasto" />
+    </div>
+    <Modal
+      :modal="modal"
+      v-if="modal.mostrar === true"
+      @ocultar-modal="ocultarModal"
+      v-modal:nombre="gasto.nombre"
+      v-modal:cantidad="gasto.cantidad"
+      v-modal:categoria="gasto.categoria"
+    
+    />
+  </main>
 </template>
 
 <style>
@@ -72,5 +125,14 @@ header h1 {
   background-color: var(--blanco);
   border-radius: 1.2rem;
   padding: 5rem;
+}
+.crear-gasto {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+}
+.crear-gasto img {
+  width: 5rem;
+  cursor: pointer;
 }
 </style>
