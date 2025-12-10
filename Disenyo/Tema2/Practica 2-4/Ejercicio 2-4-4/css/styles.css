@@ -50,11 +50,16 @@ header {
   /* Altura del encabezado en 10% de la altura de la ventana */
   height: 15vh;
   /* outline: none; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header>div {
   padding-top: 3vh;
   height: 7vh;
+  justify-content: space-between;
+
   /* outline: none; */
 }
 
@@ -63,8 +68,6 @@ header>div {
   height: 3vh;
   padding-top: 10px;
   padding-left: 20px;
-  /* El logo se alinea a la izquierda */
-  float: left;
   /* Logo en negrita */
   font-weight: bold;
   /* Tamaño de fuente aumentado */
@@ -73,9 +76,9 @@ header>div {
 
 #menu_botones {
   width: 60%;
+  display: flex;
+  align-items: center;
   height: 4vh;
-  /* El menú de navegación se alinea a la derecha */
-  float: right;
   /* outline: none; */
 }
 
@@ -83,7 +86,9 @@ header>div {
 #menu_botones div {
   width: 50%;
   height: 4vh;
-  float: left;
+  justify-content: end;
+  align-items: end;
+  flex-direction: row;
   /* outline: none; */
 }
 
@@ -122,6 +127,7 @@ header>div {
   /* Texto en negrita */
   font-weight: bold;
   font-size: 1.2rem;
+  display: flex;
 }
 
 #iniciarsesion {
