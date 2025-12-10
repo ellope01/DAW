@@ -49,7 +49,6 @@ body {
 header {
   /* Altura del encabezado en 10% de la altura de la ventana */
   height: 15vh;
-  /* outline: none; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,38 +57,34 @@ header {
 header>div {
   padding-top: 3vh;
   height: 7vh;
-  justify-content: space-between;
-
-  /* outline: none; */
 }
 
 #logo {
-  width: 150px;
+  width: 20%;
   height: 3vh;
   padding-top: 10px;
   padding-left: 20px;
-  /* Logo en negrita */
   font-weight: bold;
-  /* Tamaño de fuente aumentado */
   font-size: 1.3rem;
 }
 
 #menu_botones {
-  width: 60%;
+  width: 90%;
   display: flex;
-  align-items: center;
+  justify-content: end;
+  flex-direction: row;
   height: 4vh;
-  /* outline: none; */
+  gap: 150px;;
 }
 
 #menu_botones nav,
 #menu_botones div {
   width: 50%;
   height: 4vh;
-  justify-content: end;
-  align-items: end;
+  display: flex;
   flex-direction: row;
-  /* outline: none; */
+    align-content: end;
+
 }
 
 #menu_botones nav ul {
@@ -97,12 +92,12 @@ header>div {
   list-style: none;
   height: 4vh;
   margin-left: 20%;
+  display: flex;
+  flex-direction: row;
   /* outline: none; */
 }
 
 #menu_botones nav ul li {
-  /* Los elementos del menú se alinean horizontalmente */
-  display: inline-block;
   /* Espaciado entre elementos del menú */
   margin-left: 5%;
   margin-right: 5%;
@@ -118,6 +113,8 @@ header>div {
   /* outline: none; */
   /* Se eliminan los bordes de los botones */
   border: none;
+  display: flex;
+  flex-direction: row;
   /* Se agregan márgenes internos a los botones */
   padding: 15px 20px;
   /* Espaciado entre los botones */
@@ -127,7 +124,6 @@ header>div {
   /* Texto en negrita */
   font-weight: bold;
   font-size: 1.2rem;
-  display: flex;
 }
 
 #iniciarsesion {
