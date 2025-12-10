@@ -29,7 +29,6 @@ const validarPresupuesto = () => {
   if(presupuestoInicial.value <= 0 || presupuestoInicial.value === ''){
     error.value="¡Presupuesto no valido!";
     setTimeout(()=>{
-        console.log("hoa")
         presupuestoInicial.value = 0;
         error.value='';
     },3000);
