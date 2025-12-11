@@ -55,9 +55,12 @@ header {
 }
 
 header>div {
-  padding-top: 3vh;
-  height: 7vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 
 #logo {
   width: 20%;
@@ -74,7 +77,8 @@ header>div {
   justify-content: end;
   flex-direction: row;
   height: 4vh;
-  gap: 150px;;
+  gap: 150px;
+  ;
 }
 
 #menu_botones nav,
@@ -83,7 +87,7 @@ header>div {
   height: 4vh;
   display: flex;
   flex-direction: row;
-    align-content: end;
+  align-content: end;
 
 }
 
@@ -91,7 +95,7 @@ header>div {
   /* Se eliminan los puntos en la lista del menú */
   list-style: none;
   height: 4vh;
-  margin-left: 20%;
+  margin-left: 70%;
   display: flex;
   flex-direction: row;
   /* outline: none; */
@@ -143,12 +147,12 @@ header>div {
 #quesomos {
   /* Alto de la sección al 90% de la altura de la ventana */
   height: 90vh;
+  display: flex;
   /* outline: none; */
 }
 
 #quesomos article {
   height: 90vh;
-  float: left;
   /* outline: none; */
 }
 
@@ -232,13 +236,13 @@ header>div {
 
 #tudecides {
   height: 90vh;
+  display: flex;
   /* outline: none; */
 }
 
 #tudecides-izq {
   height: 90vh;
   width: 40%;
-  float: left;
   background-image: url(../imgs/foto3.jpg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -248,7 +252,8 @@ header>div {
 #tudecides-der {
   height: 90vh;
   width: 60%;
-  float: left;
+  display: flex;
+  flex-direction: column;
   /* outline: none; */
 }
 
@@ -262,22 +267,33 @@ header>div {
   /* outline: none; */
 }
 
-#contendor-crezca-i {
-  width: 5%;
-  height: 40vh;
-  float: left;
+#contendor-crezca {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 7%;
   margin-left: 20%;
+  height: 40vh;
+}
+
+
+#contendor-crezca-i {
+  width: 6%;
+  height: 40vh;
   background-image: url(../imgs/foto-nums.jpg);
   background-repeat: no-repeat;
   background-size: contain;
+  margin-top: 15%;
   /* outline: none; */
 }
 
 #contendor-crezca-d {
-  width: 65%;
+  width: 85%;
   height: 40vh;
-  float: left;
-  margin-left: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   /* outline: none; */
 }
 
@@ -288,7 +304,7 @@ header>div {
 
 #contendor-crezca-d p {
   font-size: 1.13rem;
-  margin-top: 1vh;
+  margin-top: 0.5vh;
   outline: none;
 }
 
@@ -317,13 +333,16 @@ header>div {
   /* Bordes redondeados */
   border-radius: 3.2rem;
   margin-top: 20vh;
+  display: flex;
   outline: none;
 }
 
 #manda-recibe-izq {
   height: 70vh;
   width: 60%;
-  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   /* outline: none; */
 }
 
@@ -369,7 +388,6 @@ header>div {
 #manda-recibe-der {
   height: 70vh;
   width: 40%;
-  float: left;
   background-image: url(../imgs/foto4.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -407,8 +425,12 @@ header>div {
   margin-left: 4%;
   height: 75vh;
   width: 30%;
-  float: left;
   /* outline: none; */
+}
+
+#educacion-articulos {
+  display: flex;
+  gap: 3%;
 }
 
 /* Reescribo margen del primer articulo */
@@ -449,15 +471,28 @@ header>div {
   /* outline: none; */
 }
 
-.arts-linea1>.arts-fecha {
-  float: left;
-  /* outline: none; */
+.arts-linea1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  /* outline: 1px solid red; */
+}
+
+.arts-linea1>.arts-fecha,
+.arts-linea1>.arts-tipo {
+  float: none;
+  margin: 0;
 }
 
 .arts-linea1>.arts-tipo {
-  float: right;
-  /* outline: none; */
+  flex: 0 0 auto;
 }
+
+.arts-linea1>.arts-fecha {
+  flex: 1 1 auto;
+}
+
 
 .arts-linea2 {
   margin-left: 1vh;
@@ -566,6 +601,8 @@ header>div {
   padding: 5vh;
   padding-bottom: 1vh;
   font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
   /* outline: none; */
 }
 
@@ -573,13 +610,11 @@ header>div {
 #cp-columna2,
 #cp-columna3 {
   width: 25%;
-  float: left;
   /* outline: none; */
 }
 
 #cp-columna4 {
   width: 25%;
-  float: left;
   /* outline: none; */
 }
 
@@ -617,26 +652,26 @@ footer hr {
 
 #ult-fila {
   margin-top: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   /* outline: none; */
 }
 
-#uf-izq {
-  float: left;
-  /* outline: none; */
-}
 
 /* #uf-izq p {
   outline: none;
 } */
 
 #uf-der {
-  float: right;
   width: 22%;
+  display: flex;
+  flex-direction: row;
+
   /* outline: none; */
 }
 
 #uf-der p {
-  float: left;
   margin-left: 9%;
   margin-bottom: 4vh;
   /* outline: none; */
