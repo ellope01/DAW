@@ -65,14 +65,13 @@ import Alerta from "./Alerta.vue";
 import { ref } from "vue";
 
 const error = ref("");
-const gasto = ref([]);
 
 const emit = defineEmits([
   "ocultar-modal",
   "update:nombre",
   "update:cantidad",
   "update:categoria",
-  "guarda-Gasto"
+  "guardar-Gasto",
 ]);
 const props = defineProps({
   modal: {
@@ -104,8 +103,13 @@ const validarGasto = () => {
     setTimeout(() => {
       error.value = "";
     }, 2000);
+  } else {
+    error.value = "El gasto se ha guardado correctamente";
+    setTimeout(() => {
+      error.value = "";
+    }, 2000);
+    emit("guardar-gasto");
   }
-  emit("guarda-Gasto")
 };
 </script>
 

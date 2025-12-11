@@ -44,8 +44,8 @@ const ocultarModal = () => {
 
 const guardarGasto = () => {
   console.log(gasto);
-  gasto["id"] = generarID;
-  gastos.push({...gasto})
+  gasto.id = generarID();
+  gastos.value.push({ ...gasto });
 };
 </script>
 
@@ -72,11 +72,14 @@ const guardarGasto = () => {
       :modal="modal"
       v-if="modal.mostrar === true"
       @ocultar-modal="ocultarModal"
-      @guardar-Gasto="guardarGasto"
+      @guardar-gasto="guardarGasto"
       v-model:nombre="gasto.nombre"
       v-model:cantidad="gasto.cantidad"
       v-model:categoria="gasto.categoria"
     />
+    <div class="listado-gastos contenedor">
+      <h2>{{ gastos.length > 0 ? "Gastos:" : "NO hay gastos" }}</h2>
+    </div>
   </main>
 </template>
 
@@ -142,5 +145,12 @@ header h1 {
 .crear-gasto img {
   width: 5rem;
   cursor: pointer;
+}
+.listado-gastos {
+  margin-top: 10rem;
+}
+.listado-gastos h2 {
+  font-weight: 900;
+  color: var(--gris-oscuro);
 }
 </style>
