@@ -9,11 +9,11 @@
     </div>
     <div
       class="contenedor contenedor-formulario"
-      :class="[modal.animar ? 'animar' : 'cerrado']"
+      :class="[modal.animar ? 'animar' : 'cerrar']"
     >
-      <form class="nuevo-gasto" @submit.prevent="validarGasto">
+      <form class="nuevo-gasto" @submit.prevent="validarGasto()">
         <legend>Añadir Gasto</legend>
-        <Alerta v-if="error">
+        <Alerta v-if="error !== ''">
           {{ error }}
         </Alerta>
         <div class="campo">
@@ -65,12 +65,14 @@ import Alerta from "./Alerta.vue";
 import { ref } from "vue";
 
 const error = ref("");
+const gasto = ref([]);
 
 const emit = defineEmits([
   "ocultar-modal",
   "update:nombre",
   "update:cantidad",
   "update:categoria",
+  "guarda-Gasto"
 ]);
 const props = defineProps({
   modal: {
@@ -94,9 +96,16 @@ const props = defineProps({
 const validarGasto = () => {
   if (!props.nombre || !props.cantidad || !props.categoria) {
     error.value = "TODOS LOS CAMPOS SON OBLIGATORIOS";
-  } else if (props.cantidad <= 0) {
+    setTimeout(() => {
+      error.value = "";
+    }, 2000);
+  } else if (props.cantidad < 0) {
     error.value = "LA CANTIDAD DEBE DE SER SUPERIOR A 0";
+    setTimeout(() => {
+      error.value = "";
+    }, 2000);
   }
+  emit("guarda-Gasto")
 };
 </script>
 

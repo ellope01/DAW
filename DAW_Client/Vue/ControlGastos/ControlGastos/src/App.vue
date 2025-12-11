@@ -3,7 +3,7 @@ import Presupuesto from "./components/Presupuesto.vue";
 import ControlPresupuesto from "./components/ControlPresupuesto.vue";
 import Modal from "./components/Modal.vue";
 import iconoNuevoGasto from "../src/assets/nuevo-gasto.svg";
-
+import { generarID } from "./helpers";
 import { reactive, ref } from "vue";
 
 const presupuesto = ref(0);
@@ -20,6 +20,8 @@ const gasto = reactive({
   id: null,
   fecha: new Date(),
 });
+
+const gastos = ref([]);
 
 const definirPresupuesto = (cantidad) => {
   presupuesto.value = cantidad;
@@ -38,6 +40,12 @@ const ocultarModal = () => {
   setTimeout(() => {
     modal.mostrar = false;
   }, 500);
+};
+
+const guardarGasto = () => {
+  console.log(gasto);
+  gasto["id"] = generarID;
+  gastos.push({...gasto})
 };
 </script>
 
@@ -64,10 +72,10 @@ const ocultarModal = () => {
       :modal="modal"
       v-if="modal.mostrar === true"
       @ocultar-modal="ocultarModal"
-      v-modal:nombre="gasto.nombre"
-      v-modal:cantidad="gasto.cantidad"
-      v-modal:categoria="gasto.categoria"
-    
+      @guardar-Gasto="guardarGasto"
+      v-model:nombre="gasto.nombre"
+      v-model:cantidad="gasto.cantidad"
+      v-model:categoria="gasto.categoria"
     />
   </main>
 </template>

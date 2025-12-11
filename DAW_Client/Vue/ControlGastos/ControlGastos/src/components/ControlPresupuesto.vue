@@ -1,8 +1,7 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
 import imagen from "../assets/grafico.jpg";
-import moneda from "../helpers/index";
-
+import { cambioMoneda } from "../helpers/index";
 const props = defineProps({
     presupuesto: {
         type: Number,
@@ -24,11 +23,11 @@ const props = defineProps({
       <button class="reset-app">Resetear app</button>
       <p>
         <span>Presupuesto: </span>
-        {{moneda(presupuesto)}}
+        {{cambioMoneda(presupuesto)}}
       </p>
       <p>
         <span>Disponible: </span>
-        {{moneda(disponible)}}
+        {{cambioMoneda(disponible)}}
       </p>
       <p>
         <span>Gastado: </span>
