@@ -5,12 +5,14 @@ import Modal from "./components/Modal.vue";
 import iconoNuevoGasto from "../src/assets/nuevo-gasto.svg";
 import { generarID } from "./helpers";
 import Gasto from "./components/Gasto.vue";
-import { reactive, ref, watch } from "vue";
+import Filtro from "./components/Filtro.vue";
+import { reactive, ref, watch, computed } from "vue";
 
 const presupuesto = ref(0);
 const disponible = ref(0);
 const gastos = ref([]);
 const gastado = ref(0);
+const filtro = ref('');
 const modal = reactive({
   mostrar: false,
   animar: false,
@@ -26,11 +28,15 @@ const gasto = reactive({
 watch(
   gastos,
   () => {
-    const total = gastos.value.reduce((total, gasto) => {
-      return total + gasto.cantidad;
-    }, 0);
-    gastado.value = total;
-    disponible.value = presupuesto.value - gastado.value;
+    if (modal.mostrar === false) {
+      reiniciarGasto();
+    } else {
+      const total = gastos.value.reduce((total, gasto) => {
+        return total + gasto.cantidad;
+      }, 0);
+      gastado.value = total;
+      disponible.value = presupuesto.value - gastado.value;
+    }
   },
   {
     deep: true,
@@ -65,7 +71,16 @@ const guardarGasto = () => {
     gasto.id = generarID();
     gastos.value.push({ ...gasto });
   }
-  ocultarModal();
+  reiniciarGasto();
+};
+
+const reiniciarGasto = () => {
+  (gasto.nombre = ""),
+    (gasto.cantidad = 0),
+    (gasto.categoria = ""),
+    (gasto.id = null),
+    (gasto.fecha = new Date()),
+    ocultarModal();
 };
 
 const seleccionarGasto = (id) => {
@@ -79,6 +94,22 @@ const seleccionarGasto = (id) => {
   mostrarModal();
   return encontrar;
 };
+
+const borrarGasto = (id) => {
+  const index = gastos.value.findIndex((g) => g.id === id);
+  if (index !== -1) {
+    gastos.value.splice(index, 1);
+  }
+  ocultarModal();
+};
+
+const filtroGastos = computed(() => {
+  if (!filtro.value) {
+    return gastos.value;
+  }
+  return gastos.value.filter(g => g.categoria === filtro.value);
+});
+
 </script>
 
 <template>
@@ -107,15 +138,18 @@ const seleccionarGasto = (id) => {
         v-if="modal.mostrar === true"
         @ocultar-modal="ocultarModal"
         @guardar-gasto="guardarGasto"
+        @borrar-gasto="borrarGasto"
         v-model:nombre="gasto.nombre"
         v-model:cantidad="gasto.cantidad"
         v-model:categoria="gasto.categoria"
+        v-model:id="gasto.id"
         v-bind:disponible="disponible"
       />
+      <Filtro v-model:filtro="filtro" />
       <div class="listado-gastos contenedor">
         <h2>{{ gastos.length > 0 ? "Gastos:" : "NO hay gastos" }}</h2>
         <Gasto
-          v-for="g in gastos"
+          v-for="g in filtroGastos"
           :gasto="g"
           :key="g.id"
           @seleccionar-gasto="seleccionarGasto"

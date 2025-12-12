@@ -12,7 +12,7 @@
       :class="[modal.animar ? 'animar' : 'cerrar']"
     >
       <form class="nuevo-gasto" @submit.prevent="validarGasto()">
-        <legend>Añadir Gasto</legend>
+        <legend>{{ id ? "Guardar Cambios" : "Añadir Gasto" }}</legend>
         <Alerta v-if="error !== ''">
           {{ error }}
         </Alerta>
@@ -53,8 +53,11 @@
             <option value="gastos">Gastos Varios</option>
           </select>
         </div>
-        <input type="submit" value="Añadir Gasto" />
+        <input type="submit" :value="[id ? 'Guardar Cambios' : 'Añadir']" />
       </form>
+      <button type="button" class="btn-eliminar" v-if="id !== null" @click="$emit('borrar-gasto',props.id)">
+        Eliminar Gasto
+      </button>
     </div>
   </div>
 </template>
@@ -71,7 +74,8 @@ const emit = defineEmits([
   "update:nombre",
   "update:cantidad",
   "update:categoria",
-  "guardar-Gasto",
+  "guardar-gasto",
+  "borrar-gasto"
 ]);
 const props = defineProps({
   modal: {
@@ -86,6 +90,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  id: {
+    type: [String, null],
+    required: true,
+  },
   nombre: {
     type: String,
     required: true,
@@ -95,6 +103,8 @@ const props = defineProps({
     required: true,
   },
 });
+
+const cantidadAntigua = ref(Number(props.cantidad));
 
 const validarGasto = () => {
   if (!props.nombre || !props.cantidad || !props.categoria) {
@@ -108,10 +118,21 @@ const validarGasto = () => {
       error.value = "";
     }, 2000);
   } else if (props.cantidad > props.disponible) {
-    error.value = "HAS EXCEDIDO EL PRESUPUESTO";
-    setTimeout(() => {
-      error.value = "";
-    }, 2000);
+    if (!props.id) {
+      error.value = "HAS EXCEDIDO EL PRESUPUESTO";
+      setTimeout(() => {
+        error.value = "";
+      }, 2000);
+    } else {
+      if (props.cantidad > cantidadAntigua.value + props.disponible) {
+        error.value = "HAS EXCEDIDO EL PRESUPUESTO";
+        setTimeout(() => {
+          error.value = "";
+        }, 2000);
+      } else {
+        emit("guardar-gasto");
+      }
+    }
   } else {
     emit("guardar-gasto");
   }
@@ -180,5 +201,17 @@ const validarGasto = () => {
 }
 .contenedor-formulario.cerrar {
   opacity: 0;
+}
+.btn-eliminar {
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  background-color: #ef4444;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--blanco);
+  margin-top: 10rem;
+  cursor: pointer;
 }
 </style>
