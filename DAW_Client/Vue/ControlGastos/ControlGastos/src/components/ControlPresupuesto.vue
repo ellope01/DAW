@@ -1,37 +1,56 @@
 <script setup>
-import { defineAsyncComponent } from "vue";
+import { computed } from "vue";
 import imagen from "../assets/grafico.jpg";
 import { cambioMoneda } from "../helpers/index";
+import "vue3-circle-progress/dist/circle-progress.css";
+import CircleProgress from "vue3-circle-progress";
+
 const props = defineProps({
-    presupuesto: {
-        type: Number,
-        required: true,
-    },
-    disponible: {
-        type: Number,
-        required: true,
-    },
+  presupuesto: {
+    type: Number,
+    required: true,
+  },
+  disponible: {
+    type: Number,
+    required: true,
+  },
+  gastado: {
+    type: Number,
+    required: true,
+  },
+});
+
+const porcentaje = computed(() => {
+  return ((props.gastado / props.presupuesto) * 100).toFixed(0);
 });
 </script>
 
 <template>
   <div class="dos-columnas">
     <div class="contenedor-grafico">
-      <img :src="imagen" alt="imagen" />
+      <p class="porcentaje">{{ porcentaje }}%</p>
+      <CircleProgress
+        :percent="porcentaje"
+        :size="250"
+        :border-width="30"
+        :border-bg-width="30"
+        fill-color="#2b82f6"
+        empy-color="#e1e1e1"
+      />
     </div>
     <div class="contenedor-presupuesto">
       <button class="reset-app">Resetear app</button>
       <p>
         <span>Presupuesto: </span>
-        {{cambioMoneda(presupuesto)}}
+        {{ cambioMoneda(presupuesto) }}
       </p>
       <p>
         <span>Disponible: </span>
-        {{cambioMoneda(disponible)}}
+        {{ cambioMoneda(disponible) }}
       </p>
       <p>
         <span>Gastado: </span>
-        0$
+        {{ cambioMoneda(gastado) }}
       </p>
     </div>
   </div>
@@ -87,5 +106,20 @@ const props = defineProps({
 .contenedor-presupuesto span {
   font-weight: 900;
   color: var(--azul);
+}
+.contenedor-grafico {
+  position: relative;
+}
+.porcentaje {
+  position: absolute;
+  margin: auto;
+  top: calc(50% - 1.5rem);
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 100;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--gris-oscuro);
 }
 </style>

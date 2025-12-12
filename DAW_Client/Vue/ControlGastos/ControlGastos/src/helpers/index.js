@@ -9,3 +9,12 @@ export const generarID = () => {
   const random = Math.random().toString(36).substring(2);
   return fecha + random;
 }
+
+export const formatearFecha = (fecha) => {
+  const opciones = {
+    year: 'numeric',
+    month: 'long',
+    day: '2-digit'
+  }
+  return fecha.toLocaleDateString("es-ES", opciones)
+}

@@ -4,15 +4,17 @@ import ControlPresupuesto from "./components/ControlPresupuesto.vue";
 import Modal from "./components/Modal.vue";
 import iconoNuevoGasto from "../src/assets/nuevo-gasto.svg";
 import { generarID } from "./helpers";
-import { reactive, ref } from "vue";
+import Gasto from "./components/Gasto.vue";
+import { reactive, ref, watch } from "vue";
 
 const presupuesto = ref(0);
 const disponible = ref(0);
+const gastos = ref([]);
+const gastado = ref(0);
 const modal = reactive({
   mostrar: false,
   animar: false,
 });
-
 const gasto = reactive({
   nombre: "",
   cantidad: "",
@@ -21,7 +23,19 @@ const gasto = reactive({
   fecha: new Date(),
 });
 
-const gastos = ref([]);
+watch(
+  gastos,
+  () => {
+    const total = gastos.value.reduce((total, gasto) => {
+      return total + gasto.cantidad;
+    }, 0);
+    gastado.value = total;
+    disponible.value = presupuesto.value - gastado.value;
+  },
+  {
+    deep: true,
+  }
+);
 
 const definirPresupuesto = (cantidad) => {
   presupuesto.value = cantidad;
@@ -43,44 +57,72 @@ const ocultarModal = () => {
 };
 
 const guardarGasto = () => {
-  console.log(gasto);
-  gasto.id = generarID();
-  gastos.value.push({ ...gasto });
+  if (gasto.id) {
+    const ind = gastos.value.findIndex((g) => g.id === gasto.id);
+    gastos.value[ind] = { ...gasto };
+  } else {
+    console.log(gasto);
+    gasto.id = generarID();
+    gastos.value.push({ ...gasto });
+  }
+  ocultarModal();
+};
+
+const seleccionarGasto = (id) => {
+  const encontrar = gastos.value.find((gast) => gast.id === id);
+  gasto.nombre = encontrar.nombre;
+  gasto.cantidad = encontrar.cantidad;
+  gasto.categoria = encontrar.categoria;
+  gasto.id = encontrar.id;
+  gasto.fecha = encontrar.fecha;
+
+  mostrarModal();
+  return encontrar;
 };
 </script>
 
 <template>
-  <header>
-    <h1>Planificador de Gastos</h1>
-    <div class="contenedor-header contenedor sombra">
-      <Presupuesto
-        v-if="presupuesto === 0"
-        @definir-presupuesto="definirPresupuesto"
-      />
-      <ControlPresupuesto
-        v-if="presupuesto > 0"
-        v-bind:presupuesto="presupuesto"
+  <div :class="{ fijar: modal.mostrar }">
+    <header>
+      <h1>Planificador de Gastos</h1>
+      <div class="contenedor-header contenedor sombra">
+        <Presupuesto
+          v-if="presupuesto === 0"
+          @definir-presupuesto="definirPresupuesto"
+        />
+        <ControlPresupuesto
+          v-if="presupuesto > 0"
+          v-bind:presupuesto="presupuesto"
+          v-bind:disponible="disponible"
+          v-bind:gastado="gastado"
+        />
+      </div>
+    </header>
+    <main v-if="presupuesto > 0">
+      <div class="crear-gasto" @click="mostrarModal()">
+        <img :src="iconoNuevoGasto" alt="icono nuevo gasto" />
+      </div>
+      <Modal
+        :modal="modal"
+        v-if="modal.mostrar === true"
+        @ocultar-modal="ocultarModal"
+        @guardar-gasto="guardarGasto"
+        v-model:nombre="gasto.nombre"
+        v-model:cantidad="gasto.cantidad"
+        v-model:categoria="gasto.categoria"
         v-bind:disponible="disponible"
       />
-    </div>
-  </header>
-  <main v-if="presupuesto > 0">
-    <div class="crear-gasto" @click="mostrarModal()">
-      <img :src="iconoNuevoGasto" alt="icono nuevo gasto" />
-    </div>
-    <Modal
-      :modal="modal"
-      v-if="modal.mostrar === true"
-      @ocultar-modal="ocultarModal"
-      @guardar-gasto="guardarGasto"
-      v-model:nombre="gasto.nombre"
-      v-model:cantidad="gasto.cantidad"
-      v-model:categoria="gasto.categoria"
-    />
-    <div class="listado-gastos contenedor">
-      <h2>{{ gastos.length > 0 ? "Gastos:" : "NO hay gastos" }}</h2>
-    </div>
-  </main>
+      <div class="listado-gastos contenedor">
+        <h2>{{ gastos.length > 0 ? "Gastos:" : "NO hay gastos" }}</h2>
+        <Gasto
+          v-for="g in gastos"
+          :gasto="g"
+          :key="g.id"
+          @seleccionar-gasto="seleccionarGasto"
+        />
+      </div>
+    </main>
+  </div>
 </template>
 
 <style>
@@ -152,5 +194,9 @@ header h1 {
 .listado-gastos h2 {
   font-weight: 900;
   color: var(--gris-oscuro);
+}
+.fijar {
+  overflow: hidden;
+  height: 100vh;
 }
 </style>

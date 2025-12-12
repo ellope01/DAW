@@ -90,6 +90,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  disponible: {
+    type: Number,
+    required: true,
+  },
 });
 
 const validarGasto = () => {
@@ -103,11 +107,12 @@ const validarGasto = () => {
     setTimeout(() => {
       error.value = "";
     }, 2000);
-  } else {
-    error.value = "El gasto se ha guardado correctamente";
+  } else if (props.cantidad > props.disponible) {
+    error.value = "HAS EXCEDIDO EL PRESUPUESTO";
     setTimeout(() => {
       error.value = "";
     }, 2000);
+  } else {
     emit("guardar-gasto");
   }
 };
