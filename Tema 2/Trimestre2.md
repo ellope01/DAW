@@ -104,5 +104,10 @@ Creamos una nueva
 
 
 
+Para la pagina web tenemos que activar, website_sale (poner icono)
+tema, y la plantilla
+
 
 //algo tipo e-comerce
+como editar el css directamente en la pagina web, 
+    sitio -> editor html/csss
