@@ -9,7 +9,7 @@
       <div class="detalles">
         <p class="categoria">{{ gasto.categoria }}</p>
         <p class="nombre" @click="$emit('seleccionar-gasto', gasto.id)">
-          {{ gasto.nombre }}
+          {{ gasto.nombre }} (haz click para editar)
         </p>
         <p class="fecha">
           <span>{{ formatearFecha(gasto.fecha) }}</span>
