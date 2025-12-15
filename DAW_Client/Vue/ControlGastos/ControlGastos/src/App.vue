@@ -6,13 +6,17 @@ import iconoNuevoGasto from "../src/assets/nuevo-gasto.svg";
 import { generarID } from "./helpers";
 import Gasto from "./components/Gasto.vue";
 import Filtro from "./components/Filtro.vue";
-import { reactive, ref, watch, computed } from "vue";
+import { reactive, ref, watch, computed, onMounted } from "vue";
 
 const presupuesto = ref(0);
 const disponible = ref(0);
 const gastos = ref([]);
 const gastado = ref(0);
-const filtro = ref('');
+const filtro = ref("");
+watch(presupuesto, (nuevoPresupuesto) => {
+  localStorage.setItem("presupuesto", nuevoPresupuesto);
+});
+
 const modal = reactive({
   mostrar: false,
   animar: false,
@@ -28,6 +32,7 @@ const gasto = reactive({
 watch(
   gastos,
   () => {
+    localStorage.setItem("gastos", JSON.stringify(gastos.value));
     if (modal.mostrar === false) {
       reiniciarGasto();
     } else {
@@ -42,6 +47,29 @@ watch(
     deep: true,
   }
 );
+
+onMounted(() => {
+  const presupuestoLS = localStorage.getItem("presupuesto");
+  if (presupuestoLS) {
+    presupuesto.value = Number(presupuestoLS);
+    disponible.value = Number(presupuestoLS);
+  }
+
+  const gastosLS = localStorage.getItem("gastos");
+  if (gastosLS) {
+    gastos.value = JSON.parse(gastosLS).map((g) => ({
+      ...g,
+      fecha: new Date(g.fecha),
+    }));
+
+    const total = gastos.value.reduce((total, gasto) => {
+      return total + gasto.cantidad;
+    }, 0);
+
+    gastado.value = total;
+    disponible.value = presupuesto.value - gastado.value;
+  }
+});
 
 const definirPresupuesto = (cantidad) => {
   presupuesto.value = cantidad;
@@ -107,9 +135,24 @@ const filtroGastos = computed(() => {
   if (!filtro.value) {
     return gastos.value;
   }
-  return gastos.value.filter(g => g.categoria === filtro.value);
+  return gastos.value.filter((g) => g.categoria === filtro.value);
 });
 
+const resetearApp = () => {
+  const confirmar = confirm(
+    "¿Seguro que quieres reiniciar presupuesto y gastos?"
+  );
+
+  if (!confirmar) return;
+
+  localStorage.removeItem("presupuesto");
+  localStorage.removeItem("gastos");
+
+  presupuesto.value = 0;
+  disponible.value = 0;
+  gastado.value = 0;
+  gastos.value = [];
+};
 </script>
 
 <template>
@@ -126,10 +169,11 @@ const filtroGastos = computed(() => {
           v-bind:presupuesto="presupuesto"
           v-bind:disponible="disponible"
           v-bind:gastado="gastado"
+          @resetear-App="resetearApp"
         />
       </div>
     </header>
-    <main v-if="presupuesto > 0">
+    <main v-if="presupuesto">
       <div class="crear-gasto" @click="mostrarModal()">
         <img :src="iconoNuevoGasto" alt="icono nuevo gasto" />
       </div>

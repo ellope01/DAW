@@ -19,6 +19,7 @@ const props = defineProps({
     required: true,
   },
 });
+const emit = defineEmits(["resetear-App"]);
 
 const porcentaje = computed(() => {
   return ((props.gastado / props.presupuesto) * 100).toFixed(0);
@@ -39,7 +40,9 @@ const porcentaje = computed(() => {
       />
     </div>
     <div class="contenedor-presupuesto">
-      <button class="reset-app">Resetear app</button>
+      <button class="reset-app" @click="emit('resetear-App')">
+        Resetear app
+      </button>
       <p>
         <span>Presupuesto: </span>
         {{ cambioMoneda(presupuesto) }}
