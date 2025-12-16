@@ -1,0 +1,26 @@
+:root {
+    --color-primario: #003A7F;
+    /* Azul oscuro */
+    --color-secundario: #0094E9;
+    /*Azul más claro */
+    --color-texto-principal: #000;
+    /* Negro */
+    --color-texto-secundario: #FFF;
+    /* Blanco */
+    --color-fondo-principal: #FFF;
+    /* Blanco */
+    --fuente-principal: 'Quicksand', sans-serif;
+    /* --espaciado-base: 1rem; */
+}
+
+.logo{
+    width: 35%;
+}
+
+.menu{
+    font-size: 5vw;
+}
+.menuTexto{
+    border-top: 3px solid rgb(0, 0, 0, 0.2);
+    
+}
