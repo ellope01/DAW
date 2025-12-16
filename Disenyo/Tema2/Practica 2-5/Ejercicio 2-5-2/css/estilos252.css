@@ -2,43 +2,87 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
     padding: 20px;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 30px;
+    font-size: 2.5em;
+    margin-bottom: 5%;
 }
 
 h2 {
-    margin-bottom: 10px;
+    font-size: 2em;
+    margin-bottom: 2%;
+    margin-top: 4%;
 }
 
-/* CONTENEDOR PRINCIPAL */
+
 .contenedor {
     display: flex;
-    flex-direction: column; /* 1 columna por defecto */
-    gap: 20px;
+    flex-direction: column;
+    gap: 3%;
 }
 
-/* BLOQUES */
+
 .bloque {
     width: 100%;
 }
 
-/* COLUMNA DERECHA (descripcion + contenido) */
 .derecha {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2%;
 }
 
-/* ===== TABLET: 2 COLUMNAS ===== */
+.datos ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+datos ul li {
+    display: inline;
+    margin: 0;
+}
+
+.contenido-libro {
+    margin-left: 5%;
+}
+
+li,
+p {
+    font-size: 1.4em;
+}
+
+.contenido h2 {
+    margin-bottom: 3%;
+}
+
+.contenido p {
+    margin-bottom: 3%;
+}
+
+.contenido ul {
+    margin-top: 0;
+    margin-bottom: 2%;
+}
+
+
 @media (min-width: 600px) {
+    .contenido h2 {
+        margin-bottom: 4%;
+    }
+
+    .contenido p {
+        margin-bottom: 4%;
+    }
+
     .contenedor {
         flex-direction: row;
     }
@@ -50,10 +94,43 @@ h2 {
     .derecha {
         width: 60%;
     }
+
+    .datos ul {
+        list-style: disc;
+        padding-left: 2%;
+    }
+
+    .contenido-libro {
+        display: flex;
+        gap: 2%;
+        list-style: none;
+    }
+
+    .contenido-libro li {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    li,
+    p {
+        font-size: 1.5em;
+    }
 }
 
-/* ===== ESCRITORIO: 3 COLUMNAS ===== */
 @media (min-width: 1200px) {
+    .contenido h2 {
+        margin-bottom: 5%;
+    }
+
+    .contenido p {
+        margin-bottom: 5%;
+    }
+
+    li,
+    p {
+        font-size: 1.6em;
+    }
+
     .contenedor {
         flex-direction: row;
     }
@@ -70,5 +147,16 @@ h2 {
     .descripcion,
     .contenido {
         width: 50%;
+    }
+
+    .contenido-libro {
+        display: block;
+        list-style: disc;
+        padding-left: 20px;
+    }
+
+    .contenido-libro li {
+        display: list-item;
+        margin-bottom: 15px;
     }
 }
