@@ -24,6 +24,7 @@ const emit = defineEmits(["resetear-App"]);
 const porcentaje = computed(() => {
   return ((props.gastado / props.presupuesto) * 100).toFixed(0);
 });
+
 </script>
 
 <template>
