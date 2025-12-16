@@ -53,6 +53,12 @@ span.fecha {
 }
 
 @media screen and (min-width: 600px) and (max-width: 1199px) {
+    h2 {
+        border-bottom: none;
+        width: auto;
+        padding-bottom: 0;
+    }
+
     .info {
         flex-direction: row;
         font-size: 1.3em;
@@ -89,9 +95,14 @@ span.fecha {
 
 
 @media screen and (min-width: 1200px) {
+    h2 {
+        border-bottom: none;
+        width: auto;
+        padding-bottom: 0;
+    }
+
     .info {
         flex-direction: row;
-        gap: 20%;
     }
 
     .datos-personales,
@@ -102,12 +113,13 @@ span.fecha {
 
     .columna-derecha {
         flex-direction: row;
-        gap: 20%;
+        display: contents;
+        gap: 10%;
     }
 
     ul {
         list-style: disc;
-        padding-left: 20px;
+        padding-left: 5%;
     }
 
     ul li {
