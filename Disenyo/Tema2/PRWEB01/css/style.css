@@ -1,3 +1,10 @@
+/*DUDAS
+    - la linea de que color es?
+    - las mejores son en todos los dispositivos?
+
+*/
+
+
 :root {
     --color-primario: #003A7F;
     /* Azul oscuro */
@@ -13,9 +20,12 @@
     /* --espaciado-base: 1rem; */
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
+    font-family: var(--fuente-principal);
 }
 
 .logo {
@@ -23,7 +33,7 @@
 }
 
 .menu {
-    font-size: 5vw;
+    font-size: 6vw;
 
 }
 
@@ -34,12 +44,152 @@
 .menu li a {
     color: var(--color-primario);
     text-decoration: none;
-    border-top: 1px solid var(--color-primario, rgba(0, 0, 0, 0.4));
-    box-shadow: 0 -2px 1.5px var(--color-texto-principal, rgba(0, 0, 0, 0.4));
+    border-top: 0.3px solid var(--color-primario, rgba(0, 0, 0, 0.4));
+    box-shadow: 0 -1.5px 2.5px var(--color-texto-principal, rgba(0, 0, 0, 0.4));
     display: flex;
     justify-content: center;
 }
 
+/*Para cambiar el color del seleccionado en el menu*/
 .menu li a.active {
     color: var(--color-secundario);
+}
+
+.sec1 {
+    background-image: url("../img/fondo-interred-p.jpg");
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sec1Titulo {
+    color: var(--color-texto-secundario);
+    font-size: 10vw;
+    text-align: center;
+    padding: 20% 10% 5% 10%;
+}
+
+.sec1Inf {
+    color: var(--color-texto-secundario);
+    font-size: 5vw;
+    text-align: center;
+    padding: 5% 10%;
+}
+
+.sec1Boton {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-secundario);
+    justify-content: center;
+    width: 40%;
+    height: 8%;
+    border-radius: 5px;
+    border: var(--color-secundario);
+}
+
+
+.sec2 {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-secundario);
+    display: flex;
+    flex-direction: column;
+    padding: 7%;
+    align-items: center;
+}
+
+.sec2Titulo {
+    font-size: 6.5vw;
+    text-align: center;
+}
+
+.sec2Info {
+    font-size: 4.5vw;
+    padding-top: 2%;
+}
+
+.imgEmpresa4 {
+    padding-top: 5%;
+    width: 90%;
+}
+
+.sec3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sec3Titulo {
+    font-size: 7vw;
+    font-weight: 600;
+    text-align: center;
+    padding: 7%;
+    padding-bottom: 2%;
+}
+
+
+.colorTit3 {
+    color: var(--color-secundario);
+}
+
+.sec3Desc {
+    padding-bottom: 5%;
+    display: flex;
+    align-items: center;
+    padding: 7%;
+
+}
+
+
+.icono {
+    font-size: 40vw;
+    color: var(--color-fondo-principal);
+}
+
+.sec3Info {
+    font-size: 6.7vw;
+    font-weight: 700;
+    margin: 4% 0% 15% 0%;
+}
+
+.botonRedondo {
+    width: 80%;
+    border-radius: 80%;
+    background-color: var(--color-secundario);
+    border: var(--color-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20%;
+}
+
+.especialidades {
+    background-image: url("../img/fondo-servicios-p.jpg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.especialidadesTitulo {
+    color: var(--color-primario);
+    font-size: 7.5vw;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.imagenEspecialidades{
+    margin: 10% 7% 3% 7% ;
+    width: 80%;
+}
+
+.especialidadesInfo{
+    color: var(--color-primario);
+    font-size: 6vw;
+    font-weight: bold;
 }
