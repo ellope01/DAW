@@ -13,14 +13,33 @@
     /* --espaciado-base: 1rem; */
 }
 
-.logo{
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
     width: 35%;
 }
 
-.menu{
+.menu {
     font-size: 5vw;
+
 }
-.menuTexto{
-    border-top: 3px solid rgb(0, 0, 0, 0.2);
-    
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a {
+    color: var(--color-primario);
+    text-decoration: none;
+    border-top: 1px solid var(--color-primario, rgba(0, 0, 0, 0.4));
+    box-shadow: 0 -2px 1.5px var(--color-texto-principal, rgba(0, 0, 0, 0.4));
+    display: flex;
+    justify-content: center;
+}
+
+.menu li a.active {
+    color: var(--color-secundario);
 }
