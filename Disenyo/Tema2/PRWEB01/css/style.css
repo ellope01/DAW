@@ -1,7 +1,7 @@
 /*DUDAS
     - la linea de que color es?
     - las mejores son en todos los dispositivos?
-
+    - color footer
 */
 
 
@@ -21,7 +21,6 @@
 }
 
 
-
 * {
     margin: 0;
     padding: 0;
@@ -33,8 +32,8 @@
 }
 
 .menu {
-    font-size: 6vw;
-
+    font-size: 7vw;
+    font-weight: 550;
 }
 
 .menu li {
@@ -44,8 +43,7 @@
 .menu li a {
     color: var(--color-primario);
     text-decoration: none;
-    border-top: 0.3px solid var(--color-primario, rgba(0, 0, 0, 0.4));
-    box-shadow: 0 -1.5px 2.5px var(--color-texto-principal, rgba(0, 0, 0, 0.4));
+    border-top: 2px solid rgba(0, 0, 0, 0.308);
     display: flex;
     justify-content: center;
 }
@@ -84,9 +82,9 @@
     background-color: var(--color-secundario);
     color: var(--color-texto-secundario);
     justify-content: center;
-    width: 40%;
-    height: 8%;
-    border-radius: 5px;
+    width: 35%;
+    height: 13vw;
+    border-radius: 5%;
     border: var(--color-secundario);
 }
 
@@ -167,7 +165,6 @@
 
 .especialidades {
     background-image: url("../img/fondo-servicios-p.jpg");
-    height: 100vh;
     width: 100%;
     background-size: cover;
     display: flex;
@@ -183,13 +180,120 @@
     margin-top: 5%;
 }
 
-.imagenEspecialidades{
-    margin: 10% 7% 3% 7% ;
+.imagenEspecialidades {
+    margin: 5% 7% 3% 7%;
     width: 80%;
 }
 
-.especialidadesInfo{
+.especialidadesInfo {
     color: var(--color-primario);
-    font-size: 6vw;
+    font-size: 6.9vw;
+    margin: 0% 10% 0% 10%;
     font-weight: bold;
+}
+
+.especialidadesTexto {
+    color: var(--color-primario);
+    padding: 4% 9%;
+    font-size: 5vw;
+}
+
+.especialidadesBoton {
+    color: var(--color-texto-secundario);
+    background-color: var(--color-secundario);
+    border: var(--color-secundario);
+    border-radius: 5%;
+    height: 7vh;
+    width: 35%;
+    font-size: 3.8vw;
+    margin-bottom: 5%;
+}
+
+.proyectos {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.proyectoTitulo {
+    font-size: 8vw;
+    font-weight: 700;
+    text-align: center;
+    margin: 10% 0% 3% 0%;
+}
+
+.proyectoNombre {
+    margin: 5% 0% 1% 0%;
+    font-size: 6vw;
+    font-weight: 700;
+}
+
+.imagenProyecto {
+    border-radius: 3%;
+    margin-bottom: 3%;
+}
+
+
+footer {
+    background-color: var(--color-texto-principal);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footerTexto {
+    padding-top: 3%;
+    color: var(--color-texto-secundario);
+    font-size: 3vw;
+}
+
+.iconoRedes {
+    color: var(--color-fondo-principal);
+    font-size: 6.5vw;
+
+}
+
+.iconoFooter {
+    width: 30%;
+    display: flex;
+    margin-top: 2%;
+    justify-content: space-around;
+}
+
+
+.exitos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15%;
+
+}
+
+.exitoTitulo {
+    font-size: 7vw;
+    text-align: center;
+    font-weight: 600;
+    margin: 4% 0%;
+}
+
+.exitoTexto {
+    font-size: 4.8vw;
+    margin-top: 4%;
+}
+
+.fondoExito {
+    background-color: var(--color-secundario);
+    width: 100%;
+    height: 10vw;
+    border-radius: 5%;
+    padding-top: 5%;
+    padding-left: 3%;
+    margin-top: 8%;
+}
+
+.exitoSubtitulo {
+    color: var(--color-texto-secundario);
+    font-weight: 600;
+    font-size: 6vw;
 }
