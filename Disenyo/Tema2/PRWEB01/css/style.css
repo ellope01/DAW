@@ -1,7 +1,7 @@
 /*DUDAS
     - la linea de que color es?
     - las mejores son en todos los dispositivos?
-    - color footer
+    - color pagina de web
 */
 
 
@@ -233,24 +233,25 @@
     margin-bottom: 3%;
 }
 
-
 footer {
     background-color: var(--color-texto-principal);
     display: flex;
     align-items: center;
     flex-direction: column;
+
 }
 
 .footerTexto {
     padding-top: 3%;
     color: var(--color-texto-secundario);
     font-size: 3vw;
+    opacity: .7;
 }
 
 .iconoRedes {
     color: var(--color-fondo-principal);
     font-size: 6.5vw;
-
+    opacity: .7;
 }
 
 .iconoFooter {
@@ -296,4 +297,89 @@ footer {
     color: var(--color-texto-secundario);
     font-weight: 600;
     font-size: 6vw;
+}
+
+.infoServicios {
+    background-color: var(--color-secundario);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 15%;
+}
+
+.areaServicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15%;
+}
+
+.iconoServicio {
+    font-size: 28vw;
+    color: var(--color-fondo-principal);
+}
+
+.serviciosTitulo {
+    margin-top: 15%;
+    color: var(--color-fondo-principal);
+    font-size: 6vw;
+    font-weight: 600;
+}
+
+.textoSistemas {
+    margin-top: 3%;
+    color: var(--color-texto-secundario);
+    font-size: 4.8vw;
+}
+
+.text2Sistemas {
+    background-color: var(--color-fondo-principal);
+    border: 1px solid var(--color-primario);
+    border-radius: 1.5%;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.texto2Sistemas {
+    font-size: 3vw;
+    margin-bottom: 1%;
+}
+
+
+.puntosServicios{
+        margin-top: 5%;
+
+}
+
+.puntosServicios li {
+    list-style: none;
+    padding-left: 10% ;
+}
+
+.contenidoWeb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconoWeb{
+    margin-top: 70%;
+    color: var(--color-secundario);
+    font-size: 40vw;
+}
+
+.tituloWeb{
+    color: var(--color-primario);
+    font-size: 6vw;
+    font-weight: 700;
+    margin-top: 15%;
+}
+
+.infoWeb{
+    text-align: center;
+    font-size: 4vw;
+    padding: 0% 10% ;
+    margin-bottom: 70%;
 }
