@@ -56,10 +56,12 @@
 .sec1 {
     background-image: url("../img/fondo-interred-p.jpg");
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
@@ -68,7 +70,6 @@
     color: var(--color-texto-secundario);
     font-size: 10vw;
     text-align: center;
-    padding: 20% 10% 5% 10%;
 }
 
 .sec1Inf {
@@ -78,11 +79,25 @@
     padding: 5% 10%;
 }
 
+
+.aContacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+
 .sec1Boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color-secundario);
     color: var(--color-texto-secundario);
-    justify-content: center;
     width: 35%;
+    font-size: .9rem;
+    text-decoration: none;
     height: 13vw;
     border-radius: 5%;
     border: var(--color-secundario);
@@ -166,6 +181,7 @@
 .especialidades {
     background-image: url("../img/fondo-servicios-p.jpg");
     width: 100%;
+    background-attachment: fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -348,38 +364,145 @@ footer {
 }
 
 
-.puntosServicios{
-        margin-top: 5%;
+.puntosServicios {
+    margin-top: 5%;
 
 }
 
 .puntosServicios li {
     list-style: none;
-    padding-left: 10% ;
+    padding-left: 10%;
 }
 
-.contenidoWeb{
+.contenidoWeb {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.iconoWeb{
+.iconoWeb {
     margin-top: 70%;
     color: var(--color-secundario);
     font-size: 40vw;
 }
 
-.tituloWeb{
+.tituloWeb {
     color: var(--color-primario);
     font-size: 6vw;
     font-weight: 700;
     margin-top: 15%;
 }
 
-.infoWeb{
+.infoWeb {
     text-align: center;
     font-size: 4vw;
-    padding: 0% 10% ;
+    padding: 0% 10%;
     margin-bottom: 70%;
+    color: var(--color-primario);
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.formularioTitulo {
+    margin-top: 7%;
+    font-size: 7vw;
+    font-weight: 650;
+    text-align: center;
+    color: var(--color-primario);
+}
+
+
+.formularioDiv {
+    margin: 3%;
+    border: 1.9px solid var(--color-texto-principal);
+    border-radius: 2%;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+}
+
+.etiquetaFormulario {
+    font-size: 4vw;
+    color: var(--color-primario);
+
+}
+
+.input {
+    color: var(--color-secundario);
+    border: 1px solid var(--color-secundario);
+    border-radius: 5%;
+    min-height: 5vh;
+    padding-left: 5%;
+    font-weight: 800;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.formularioSeccion {
+    margin-bottom: 5%;
+}
+
+.botones {
+    display: flex;
+}
+
+.boton {
+    background-color: var(--color-secundario);
+    border: var(--color-secundario);
+    border-radius: 10%;
+    color: var(--color-texto-secundario);
+    width: 40%;
+    height: 5vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-weight: 700;
+}
+
+.sectionContacto {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+
+
+.tituloDetallesContanto {
+    color: var(--color-primario);
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.detallesContato {
+    margin-top: 2%;
+    font-size: .75rem;
+    color: var(--color-primario);
+}
+
+
+
+.iconoFijo {
+    position: fixed;
+    bottom: 2%;
+    left: 80%;
+    background-color: var(--color-primario);
+    border-radius: 50%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vh;
+    height: 6vh;
+}
+
+.iconoFijoEstilos {
+    color: var(--color-fondo-principal);
+    font-size: 4vh;
+
 }
