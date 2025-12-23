@@ -222,6 +222,13 @@
     margin-top: 5%;
 }
 
+.especialidad {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
 .imagenEspecialidades {
     margin: 5% 7% 3% 7%;
     width: 80%;
@@ -711,6 +718,9 @@ footer {
         font-size: var(--tamaño-titulos);
     }
 
+    .especialidad{
+        align-items: center;
+    }
     .imagenEspecialidades {
         width: 30%;
     }
@@ -766,6 +776,7 @@ footer {
         height: 5vh;
         padding-top: 2%;
     }
+
 
     .areaServicio {
         background-color: var(--color-fondo-principal);
@@ -836,16 +847,367 @@ footer {
         height: 6vh;
         font-size: var(--tamaño-mediano);
     }
-    .detallesContato{
+
+    .detallesContato {
         font-size: var(--tamaño-pequeño);
     }
 
-    .footerTexto{
+    .footerTexto {
         font-size: 1.4rem;
     }
-    .iconoRedes{
+
+    .iconoRedes {
         font-size: 5vw;
         padding-bottom: 5%;
+    }
+
+}
+
+@media screen and (min-width: 1250px) and (max-width: 1920px) {
+
+    .menu ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 2%;
+    }
+
+    .menu ul li a {
+        font-size: 2rem;
+        border: none;
+        padding: -20%;
+        margin-right: -20%;
+        justify-content: space-between;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 10vh;
+    }
+
+    .menu {
+        width: 60%;
+        align-items: end;
+    }
+
+    .logo {
+        width: 13%;
+        margin-right: 30%;
+    }
+
+    .sec1 {
+        height: 90vh;
+        background-image: url("../img/fondo-interred-g.jpg");
+    }
+
+    .sec1Titulo {
+        font-size: 4rem;
+    }
+
+    .sec1Inf {
+        padding-top: 0%;
+        font-size: 1.5rem;
+        padding-bottom: 0%;
+    }
+
+    .sec1Boton {
+        height: 5vh;
+        width: 30%;
+        font-size: 1.5rem;
+    }
+
+    .sec2Titulo,
+    .sec3Titulo {
+        font-size: 3rem;
+    }
+
+    .sec2Info,
+    .sec3Desc {
+        font-size: 2rem;
+    }
+
+    .imgEmpresa4 {
+        width: 30%;
+    }
+
+    .sec3Desc {
+        margin-top: -7%;
+    }
+
+
+    .icono {
+        font-size: var(--tamaño-titulos);
+    }
+
+    .sec3Info {
+        font-size: var(--tamaño-pequeño);
+        text-align: center;
+    }
+
+    .botonRedondo {
+        width: 30%;
+        padding: 10%;
+        margin-top: 10%;
+    }
+
+    .icono1 {
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+    }
+
+
+    .padre {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 2%;
+        margin-top: -5%;
+        margin-bottom: 5%;
+    }
+
+    .texto3icono {
+        flex-direction: row-reverse;
+    }
+
+    .texto3icono2 {
+        flex-direction: row;
+    }
+
+    .texto3icono,
+    .texto3icono2 {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .textoCentrado {
+        display: flex;
+        padding-top: 15%;
+        width: 100%;
+        height: 7vh;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+
+
+    .formularioDiv {
+        padding: 4% 10% 10% 7%;
+    }
+
+    .formularioTitulo {
+        font-size: 4rem;
+        margin-top: 4%;
+    }
+
+    .etiquetaFormulario {
+        border-radius: 5%;
+        font-size: 2.5rem;
+    }
+
+    .input {
+        font-size: 2rem;
+    }
+
+    .botones {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .boton {
+        width: 35%;
+        height: 7vh;
+        font-size: 2rem;
+    }
+
+    .tituloDetallesContanto {
+        font-size: 4rem;
+    }
+
+    .sectionContacto {
+        text-align: center;
+    }
+
+    .detallesContato {
+        font-size: 1.2rem;
+    }
+
+    .colorMarcado {
+        font-weight: 700;
+    }
+
+    footer {
+        height: 20vh;
+    }
+
+    .footerTexto {
+        font-size: 1.5rem;
+    }
+
+    .iconoFooter {
+        width: 20%;
+    }
+
+    .iconoRedes {
+        font-size: 3rem;
+    }
+
+    .iconoWeb {
+        font-size: 15rem;
+        margin-top: 15%;
+    }
+
+    .tituloWeb {
+        margin-top: 3%;
+        font-size: 4rem;
+    }
+
+    .infoWeb {
+        font-size: 2rem;
+        margin-bottom: 15%;
+    }
+
+    .exitoTitulo {
+        font-size: 4rem;
+    }
+
+    .exitoTexto {
+        font-size: 2rem;
+    }
+
+    .exitoSubtitulo {
+        font-size: 3rem;
+    }
+
+    .fondoExito {
+        height: 8vh;
+        padding-top: 3%;
+        margin-top: 4%;
+    }
+
+    .imagenExito {
+        width: 50%;
+    }
+
+    .exitoFinal {
+        margin-left: -6%;
+    }
+
+    .infoServicios {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 5% 2%;
+        gap: 3%;
+    }
+
+    .areaServicio {
+        background-color: var(--color-fondo-principal);
+        justify-content: center;
+        width: 32%;
+        margin: 0;
+        height: 70vh;
+        padding: 5% 3% 5% 3%;
+    }
+
+    .textoSistemas {
+        color: var(--color-primario);
+        text-align: center;
+    }
+
+    .iconoServicio {
+        font-size: 5rem;
+        color: var(--color-primario);
+    }
+
+    .serviciosTitulo {
+        font-size: 2rem;
+        color: var(--color-primario);
+    }
+
+    .textoSistemas {
+        font-size: 1.4rem;
+        margin: 0%;
+    }
+
+    .text2Sistemas {
+        border: none;
+    }
+
+    .texto2Sistemas {
+        font-size: 1.1rem;
+        padding-left: 6%;
+    }
+
+    .puntosServicios {
+        margin: 2%;
+    }
+
+    .muestraProyectos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+    }
+
+    .proyecto {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
+
+    .proyectoTitulo {
+        font-size: 5rem;
+        margin-top: 2%;
+        margin-bottom: -2%;
+
+    }
+
+    .proyectoNombre {
+        margin-top: 1%;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .imagenProyecto {
+        width: 90%;
+        border-radius: 10px;
+        margin-left: 5%;
+    }
+
+    .seccionEspecialidades{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .imagenEspecialidades{
+        width: 28vw
+    }
+    .especialidades{
+        background-image: url("../img/fondo-servicios-g.jpg");
+    }
+    .especialidadesTitulo{
+        font-size: 3rem;
+        margin-top: 2%;
+    }
+    .especialidadesInfo{
+        font-size: 2rem;
+    }
+    .aContacto{
+        width: 130%;
+    }
+    .especialidad{
+        margin-top: 2%;
+        align-items:center ;
+        justify-content: start;
+    }
+    .especialidadesTexto{
+        font-size: 1rem;
     }
 
 }
