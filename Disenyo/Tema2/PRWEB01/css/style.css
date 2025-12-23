@@ -28,6 +28,7 @@
     margin: 0;
     padding: 0;
     font-family: var(--fuente-principal);
+    box-sizing: border-box;
 }
 
 .logo {
@@ -159,7 +160,6 @@
 
 }
 
-
 .icono {
     font-size: 35vw;
     color: var(--color-fondo-principal);
@@ -184,6 +184,14 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.textoEscondido {
+    visibility: hidden;
+}
+
+.imagenOculta {
+    visibility: hidden;
 }
 
 .botonRedondo {
@@ -664,8 +672,8 @@ footer {
     }
 
     .botonRedondo {
-        width: 30%;
-        padding: 10%;
+        width: 20%;
+        padding: 5%;
         margin-top: 10%;
     }
 
@@ -673,6 +681,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 5%;
+        justify-content: start;
     }
 
 
@@ -680,10 +689,27 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        width: 100%;
+        width: 80%;
         gap: 2%;
+        align-items: self-start;
         margin-top: -5%;
-        margin-bottom: 5%;
+
+    }
+
+    .divOcultoD {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        width: 77%;
+        height: 10vh;
+    }
+
+    .divOcultoI {
+        display: flex;
+        text-align: start;
+        flex-direction: column;
+        width: 77%;
+        height: 10vh;
     }
 
     .texto3icono {
@@ -697,15 +723,15 @@ footer {
     .texto3icono,
     .texto3icono2 {
         display: flex;
-        justify-content: space-around;
+        justify-content: start;
         width: 100%;
     }
 
     .textoCentrado {
         display: flex;
-        padding-top: 15%;
-        width: 100%;
-        height: 7vh;
+        margin-top: 20%;
+        width: 20vh;
+        height: 6vh;
         flex-direction: row-reverse;
         justify-content: center;
     }
@@ -718,9 +744,10 @@ footer {
         font-size: var(--tamaño-titulos);
     }
 
-    .especialidad{
+    .especialidad {
         align-items: center;
     }
+
     .imagenEspecialidades {
         width: 30%;
     }
@@ -946,55 +973,6 @@ footer {
         text-align: center;
     }
 
-    .botonRedondo {
-        width: 30%;
-        padding: 10%;
-        margin-top: 10%;
-    }
-
-    .icono1 {
-        display: flex;
-        flex-direction: column;
-        gap: 5%;
-    }
-
-
-    .padre {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        gap: 2%;
-        margin-top: -5%;
-        margin-bottom: 5%;
-    }
-
-    .texto3icono {
-        flex-direction: row-reverse;
-    }
-
-    .texto3icono2 {
-        flex-direction: row;
-    }
-
-    .texto3icono,
-    .texto3icono2 {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-
-    .textoCentrado {
-        display: flex;
-        padding-top: 15%;
-        width: 100%;
-        height: 7vh;
-        flex-direction: row-reverse;
-        justify-content: center;
-    }
-
-
-
     .formularioDiv {
         padding: 4% 10% 10% 7%;
     }
@@ -1151,7 +1129,7 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        padding: 5%;
+        padding-left: 5%;
     }
 
     .proyecto {
@@ -1163,51 +1141,152 @@ footer {
     .proyectoTitulo {
         font-size: 5rem;
         margin-top: 2%;
-        margin-bottom: -2%;
-
+        margin-bottom: 2%;
     }
 
     .proyectoNombre {
         margin-top: 1%;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 600;
-        text-align: center;
+        text-align: justify;
     }
 
     .imagenProyecto {
         width: 90%;
         border-radius: 10px;
-        margin-left: 5%;
     }
 
-    .seccionEspecialidades{
+    .seccionEspecialidades {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .imagenEspecialidades{
-        width: 28vw
+
+    .imagenEspecialidades {
+        width: 20vw
     }
-    .especialidades{
+
+    .especialidades {
         background-image: url("../img/fondo-servicios-g.jpg");
+        width: 100%;
     }
-    .especialidadesTitulo{
+
+    .especialidadesTitulo {
         font-size: 3rem;
         margin-top: 2%;
     }
-    .especialidadesInfo{
+
+    .especialidadesInfo {
         font-size: 2rem;
     }
-    .aContacto{
-        width: 130%;
+
+    .aContacto {
+        width: 100%;
     }
-    .especialidad{
+
+    .sec1Boton {
+        font-size: .95rem;
+    }
+
+    .especialidad {
         margin-top: 2%;
-        align-items:center ;
+        align-items: center;
         justify-content: start;
     }
-    .especialidadesTexto{
+
+    .especialidadesTexto {
         font-size: 1rem;
     }
 
+
+    .botonRedondo {
+        width: 25%;
+        padding: 7%;
+    }
+    .icono{
+        font-size: 1.7vw ;
+    }
+    .icono1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 33%;
+    }
+
+    .imagenOculta {
+        visibility: visible;
+        width: 100%;
+        margin-top: 20%;
+    }
+
+    .sec3Info {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: -5%;
+    }
+
+    .padre {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+        gap: 2%;
+        align-items: self-start;
+        margin-top: -5%;
+    }
+
+    .divOcultoD {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        height: 13vh;
+        margin-right: 10%;
+    }
+
+    .divOcultoI {
+        display: flex;
+        text-align: start;
+        flex-direction: column;
+        width: 100%;
+        height: 13vh;
+    }
+
+    .texto3icono {
+        flex-direction: row-reverse;
+        margin-right: 50%;
+    }
+
+    .sec3Desc {
+        font-size: 1.5rem;
+    }
+
+    .texto3icono2 {
+        flex-direction: row;
+        margin-left: -5%;
+    }
+
+    .texto3icono,
+    .texto3icono2 {
+        display: flex;
+        justify-content: start;
+        width: 100%;
+    }
+
+    .textoCentrado {
+        display: flex;
+        width: 30vh;
+        height: 6vh;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    .textoEscondido {
+        visibility: visible;
+        font-size: .8rem;
+        width: 100%;
+        padding-bottom: 3%;
+        text-align: center;
+        margin-top: -3%;
+    }
 }
