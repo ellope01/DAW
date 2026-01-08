@@ -560,27 +560,16 @@ footer {
 }
 
 
-
-.iconoFijo {
-    text-decoration: none;
+#ir-arriba {
     position: fixed;
-    bottom: 2%;
-    left: 80%;
-    background-color: var(--color-primario);
-    border-radius: 50%;
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6vh;
-    height: 6vh;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: var(--color-primario);
+    text-decoration: none;
+    z-index: 99999;
+    line-height: 0;
 }
-
-.iconoFijoEstilos {
-    color: var(--color-fondo-principal);
-    font-size: 4vh;
-}
-
 
 @media screen and (min-width: 750px) and (max-width: 1249px) {
 
@@ -897,7 +886,7 @@ footer {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        gap:3%
+        gap: 3%
     }
 
     .menu ul li a {
@@ -1195,9 +1184,11 @@ footer {
         width: 25%;
         padding: 7%;
     }
-    .icono{
-        font-size: 1.7vw ;
+
+    .icono {
+        font-size: 1.7vw;
     }
+
     .icono1 {
         display: flex;
         flex-direction: column;
@@ -1282,7 +1273,7 @@ footer {
         margin-top: -3%;
     }
 
-    .iconoFijo{
-        left:90%
+    .iconoFijo {
+        left: 90%
     }
 }
