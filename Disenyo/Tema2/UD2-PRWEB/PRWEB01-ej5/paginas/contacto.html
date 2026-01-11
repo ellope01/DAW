@@ -7,18 +7,10 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap');
     </style>
     <title>Contacto | Intered Servicios de Red</title>
     <link rel="icon" type="image/x-icon" href="../img/iconos/favicon.ico">
-
-    <link rel="icon" type="image/png" sizes="32x32" href="../img/iconos/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/iconos/favicon-16x16.png">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="../img/iconos/apple-touch-icon.png">
-
-    <link rel="icon" type="image/png" sizes="192x192" href="../img/iconos/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="384x384" href="../img/iconos/android-chrome-384x384.png">
 
     <link rel="manifest" href="../img/iconos/manifest.json">
 
@@ -28,63 +20,69 @@
 <body>
     <header>
         <img class="logo" alt="logoInterRed" src="../img/logo-interred-c03.svg" />
-        <nav class="menu">
-            <ul>
-                <li><a class="menuTexto " href="../index.html">INICIO</a></li>
-                <li><a class="menuTexto" href="./nosotros.html">NOSOTROS</a></li>
-                <li><a class="menuTexto " href="./servicios.html">SERVICIOS</a></li>
-                <li><a class="menuTexto" href="./webs.html">WEBS</a></li>
-                <li><a class="menuTexto active" href="./contacto.html">CONTACTO</a></li>
-            </ul>
-        </nav>
+
     </header>
-    <section class="sec1">
-        <span class="sec1Titulo">¡Escribenos!</span>
-        <span class="sec1Inf">Estamos listos para ayudarte</span>
-    </section>
+
+
+    <h1 class="titulo">Contacta con nosotros</h1>
 
     <form class="formulario">
-        <span class="formularioTitulo">Formulario de contacto</span>
+        <span class="contactoTitulo">Formulario</span>
         <div class="formularioDiv">
             <div class="formularioSeccion">
-                <label class="etiquetaFormulario">Nombre</label><br>
+                <label class="etiquetaFormulario">Nombre:</label><br>
                 <input type="text" placeholder="Introduce tu nombre" class="input" required /><br>
             </div>
             <div class="formularioSeccion">
-                <label class="etiquetaFormulario">Email</label><br>
+                <label class="etiquetaFormulario">Email:</label><br>
                 <input type="email" placeholder="Introduce tu email" class="input" required /><br>
             </div>
             <div class="formularioSeccion">
-                <label class="etiquetaFormulario"> Mensaje</label>
+                <label class="etiquetaFormulario"> Mensaje:</label>
                 <textarea rows="5" placeholder="Introduce tu mensaje" class="input" required></textarea>
             </div>
-            <div class="botones">
-                <button class="boton" type="submit">Enviar</button>
-                <button class="boton" type="reset">Limpiar</button>
+            <div class="boton">
+                <button class="botonFormulario" type="submit">Enviar Formulario</button>
             </div>
         </div>
     </form>
 
-    <section class="sectionContacto">
-        <span class="tituloDetallesContanto">Detalles de contacto</span>
-        <span class="detallesContato">Este sitio web es una simulación a modo de demostración que utiliza diseño
-            adaptable (responsive). Este diseño junto con los cambios necesarios se podría realizar perfectamente para
-            una empresa o negocio.</span>
-        <span class="detallesContato">Todos los servicios detallados en esta web de simulación se pueden realizar
-            también. Si estas interesado en uno o más servicios, por favor, ponte en contacto conmigo a través de este
-            formulario.</span>
-        <span class="detallesContato colorMarcado">Muchas Gracias!!!</span>
+    <section class="infoContacto">
+        <h2 class="contactoTitulo">Horario de atención</h2>
+        <p class="infoTextoContacto">Lunes a Viernes: 09:00 - 19:00</p>
+        <p class="infoTextoContacto">Sabados: 10:00 - 14:00</p>
+        <p class="infoTextoContacto">Domingos: Cerrado</p>
+    </section>
+
+    <section class="infoContacto">
+        <h2 class="contactoTitulo">Dirección</h2>
+        <p class="infoTextoContacto">Calle Margarita 152, España</p>
+    </section>
+
+    <section class="llamarContacto">
+        <div class="divLlamar">
+            <p class="infollamar">Llamanos</p>
+            <i class="fa-brands fa-whatsapp iconoLlamada"></i>
+        </div>
     </section>
 
     <footer>
-        <span class="footerTexto">2025 © INTERRED Todos los derechos reservados</span>
-        <div class="iconoFooter">
-            <i class="fa-brands fa-facebook-f iconoRedes"></i>
-            <i class="fa-brands fa-x-twitter iconoRedes"></i>
-            <i class="fa-brands fa-square-youtube iconoRedes"></i>
+        <div class="divTextoFooter">
+            <div class="paginas">
+                <p>Contactanos</p>
+                <p>Especialidades</p>
+                <p>Nuestros Valores</p>
+            </div>
+            <div class="iconoFooter">
+                <i class="fa-brands fa-facebook-f iconoLlamada"></i>
+                <i class="fa-brands fa-x-twitter iconoLlamada"></i>
+                <i class="fa-brands fa-square-youtube iconoLlamada"></i>
+            </div>
         </div>
+
+        <div class="textoFooterAbajo">
+            <span>2025 © INTERRED Todos los derechos reservados</span>
+        </div>
+
     </footer>
-    <a href="#" class="iconoFijo">
-        <i class="fa-solid fa-arrow-up iconoFijoEstilos"></i>
-    </a>
 </body>

@@ -1,26 +1,15 @@
-/*DUDAS
-    - la linea de que color es?
-    - las mejores son en todos los dispositivos?
-    - color pagina de web
-*/
-
-
 :root {
-    --color-primario: #003A7F;
+    --color-primario: #91070C;
     /* Azul oscuro */
-    --color-secundario: #0094E9;
+    --color-secundario: #646E78;
     /*Azul más claro */
     --color-texto-principal: #000;
     /* Negro */
     --color-texto-secundario: #FFF;
     /* Blanco */
-    --color-fondo-principal: #FFF;
-    /* Blanco */
-    --fuente-principal: 'Quicksand', sans-serif;
+    --fuente-principal: "Hepta Slab", serif;
+
     /* --espaciado-base: 1rem; */
-    --tamaño-grande: 2rem;
-    --tamaño-mediano: 1rem;
-    --tamaño-pequeño: 0.8rem;
 }
 
 
@@ -35,1254 +24,123 @@
     width: 35%;
 }
 
-.menu {
-    font-size: var(--tamaño-grande);
-    font-weight: 550;
-}
-
-.menu li {
-    list-style: none;
-}
-
-.menu li a {
-    color: var(--color-primario);
-    text-decoration: none;
-    border-top: 2px solid rgba(0, 0, 0, 0.308);
-    display: flex;
-    justify-content: center;
-}
-
-/*Para cambiar el color del seleccionado en el menu*/
-.menu li a.active {
-    color: var(--color-secundario);
-}
-
-.sec1 {
-    background-image: url("../img/fondo-interred-p.jpg");
-    width: 100%;
-    height: 50vh;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sec1Titulo {
-    color: var(--color-texto-secundario);
-    font-size: var(--tamaño-grande);
+.titulo {
+    padding: 7% 0% 4% 0%;
+    font-size: 1.5rem;
     text-align: center;
-}
-
-.sec1Inf {
-    color: var(--color-texto-secundario);
-    font-size: var(--tamaño-mediano);
-    text-align: center;
-    padding: 5% 10%;
-}
-
-
-.aContacto {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 10vh;
-}
-
-
-.sec1Boton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-secundario);
-    color: var(--color-texto-secundario);
-    width: 35%;
-    font-size: var(--tamaño-pequeño);
-    text-decoration: none;
-    height: 13vw;
-    border-radius: 5%;
-    border: var(--color-secundario);
-}
-
-
-.sec2 {
-    background-color: var(--color-secundario);
-    color: var(--color-texto-secundario);
-    display: flex;
-    flex-direction: column;
-    padding: 7% 7% 1.5% 7%;
-    align-items: center;
-}
-
-.sec2Titulo {
-    font-size: 6.5vw;
-    text-align: center;
-    font-weight: 600;
-}
-
-.sec2Info {
-    font-size: 4.5vw;
-    padding-top: 2%;
-}
-
-.imgEmpresa4 {
-    padding-top: 5%;
-    width: 90%;
-}
-
-.sec3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sec3Titulo {
-    font-size: 7vw;
-    font-weight: 600;
-    text-align: center;
-    padding: 7%;
-    padding-bottom: 2%;
-}
-
-
-.colorTit3 {
-    color: var(--color-secundario);
-}
-
-.sec3Desc {
-    padding-bottom: 5%;
-    display: flex;
-    align-items: center;
-    padding: 7%;
-
-}
-
-.icono {
-    font-size: 35vw;
-    color: var(--color-fondo-principal);
-}
-
-.sec3Info {
-    font-size: 6.7vw;
     font-weight: 700;
-    margin: 4% 0% 15% 0%;
-}
-
-.padre {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-}
-
-.icono1,
-.texto3icono,
-.texto3icono2 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.textoEscondido {
-    visibility: hidden;
-}
-
-.imagenOculta {
-    visibility: hidden;
-}
-
-.botonRedondo {
-    width: 80%;
-    height: 80%;
-    border-radius: 80%;
-    background-color: var(--color-secundario);
-    border: var(--color-secundario);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20%;
-}
-
-.botonRedondoNube {
-    width: 120%;
-    padding: 30%;
-}
-
-
-.especialidades {
-    background-image: url("../img/fondo-servicios-p.jpg");
-    width: 100%;
-    background-attachment: fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.especialidadesTitulo {
-    color: var(--color-primario);
-    font-size: 7.5vw;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 5%;
-}
-
-.especialidad {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.imagenEspecialidades {
-    margin: 5% 7% 3% 7%;
-    width: 80%;
-}
-
-.especialidadesInfo {
-    color: var(--color-primario);
-    font-size: 6.9vw;
-    margin: 0% 10% 0% 10%;
-    font-weight: bold;
-}
-
-.especialidadesTexto {
-    color: var(--color-primario);
-    padding: 4% 9%;
-    font-size: 5vw;
-}
-
-.especialidadesBoton {
-    color: var(--color-texto-secundario);
-    background-color: var(--color-secundario);
-    border: var(--color-secundario);
-    border-radius: 5%;
-    height: 7vh;
-    width: 35%;
-    font-size: 3.8vw;
-    margin-bottom: 5%;
-}
-
-.proyectos {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.proyectoTitulo {
-    font-size: 8vw;
-    font-weight: 700;
-    text-align: center;
-    margin: 10% 0% 3% 0%;
-}
-
-.muestaPrroyectos {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.proyecto {
-    display: flex;
-    flex-direction: column;
-}
-
-.proyectoNombre {
-    margin: 5% 0% 1% 0%;
-    font-size: 6vw;
-    font-weight: 700;
-    text-align: center;
-
-}
-
-.imagenProyecto {
-    border-radius: 3%;
-    margin-bottom: 3%;
-}
-
-footer {
-    background-color: var(--color-texto-principal);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-}
-
-.footerTexto {
-    padding-top: 3%;
-    color: var(--color-texto-secundario);
-    font-size: 3vw;
-    opacity: .7;
-}
-
-.iconoRedes {
-    color: var(--color-fondo-principal);
-    font-size: 6.5vw;
-    opacity: .7;
-}
-
-.iconoFooter {
-    width: 30%;
-    display: flex;
-    margin-top: 2%;
-    justify-content: space-around;
-}
-
-
-.exitos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 15%;
-
-}
-
-.exitoTitulo {
-    font-size: 7vw;
-    text-align: center;
-    font-weight: 600;
-    margin: 4% 0%;
-}
-
-.exitoTexto {
-    font-size: 4.8vw;
-    margin-top: 4%;
-}
-
-.fondoExito {
-    background-color: var(--color-secundario);
-    width: 100%;
-    height: 10vw;
-    border-radius: 5%;
-    padding-top: 5%;
-    padding-left: 3%;
-    margin-top: 8%;
-}
-
-.exitoSubtitulo {
-    color: var(--color-texto-secundario);
-    font-weight: 600;
-    font-size: 6vw;
-}
-
-.infoServicios {
-    background-color: var(--color-secundario);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 15%;
-}
-
-.areaServicio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 15%;
-}
-
-.iconoServicio {
-    font-size: 28vw;
-    color: var(--color-fondo-principal);
-}
-
-.serviciosTitulo {
-    margin-top: 15%;
-    color: var(--color-fondo-principal);
-    font-size: 6vw;
-    font-weight: 600;
-}
-
-.textoSistemas {
-    margin-top: 3%;
-    color: var(--color-texto-secundario);
-    font-size: 4.8vw;
-}
-
-.text2Sistemas {
-    background-color: var(--color-fondo-principal);
-    border: 1px solid var(--color-primario);
-    border-radius: 1.5%;
-    padding: 3%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 5%;
-}
-
-.texto2Sistemas {
-    font-size: 3vw;
-    margin-bottom: 1%;
-}
-
-
-.puntosServicios {
-    margin-top: 5%;
-
-}
-
-.puntosServicios li {
-    list-style: none;
-    padding-left: 10%;
-}
-
-.contenidoWeb {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.iconoWeb {
-    margin-top: 70%;
-    color: var(--color-secundario);
-    font-size: 40vw;
-}
-
-.tituloWeb {
-    color: var(--color-primario);
-    font-size: 6vw;
-    font-weight: 700;
-    margin-top: 15%;
-}
-
-.infoWeb {
-    text-align: center;
-    font-size: 4vw;
-    padding: 0% 10%;
-    margin-bottom: 70%;
-    color: var(--color-primario);
 }
 
 .formulario {
     display: flex;
     flex-direction: column;
-    align-items: center;
-
+    padding-left: 10%;
+    padding-bottom: 8%;
 }
 
-.formularioTitulo {
-    margin-top: 7%;
-    font-size: 7vw;
-    font-weight: 650;
-    text-align: center;
-    color: var(--color-primario);
+.contactoTitulo {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-bottom: 2%;
 }
-
 
 .formularioDiv {
-    margin: 3%;
-    border: 1.9px solid var(--color-texto-principal);
-    border-radius: 2%;
-    height: 100%;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    padding: 10%;
+    padding-left: 3%;
 }
-
-.etiquetaFormulario {
-    font-size: 4vw;
-    color: var(--color-primario);
-
-}
-
-.input {
-    color: var(--color-secundario);
-    border: 1px solid var(--color-secundario);
-    border-radius: 5%;
-    min-height: 5vh;
-    padding-left: 5%;
-    font-weight: 800;
-    font-size: 1rem;
-    width: 100%;
-}
-
-.input::placeholder {
-    color: var(--color-secundario);
-    opacity: 1;
-}
-
-
-.input:focus {
-    border: 2px solid var(--color-texto-principal);
-    outline: none;
-    color: var(--color-texto-principal);
-    font-weight: 400;
-}
-
-
-
 
 .formularioSeccion {
-    margin-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 4%;
 }
 
-.botones {
-    display: flex;
+
+
+.etiquetaFormulario {
+    color: var(--color-primario);
+    font-weight: 600;
+    margin-right: 2%;
 }
 
 .boton {
-    background-color: var(--color-secundario);
-    border: var(--color-secundario);
-    border-radius: 10%;
+    padding-top: 3%;
+    margin-left: 10%;
+}
+
+.botonFormulario {
+    background-color: var(--color-primario);
+    border: var(--color-primario) 2px solid;
+    color: var(--color-texto-secundario);
+    border-radius: 60px;
+    width: 70%;
+    height: 5vh;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.infoContacto {
+    margin-left: 10%;
+}
+
+.infoTextoContacto {
+    padding-left: 5%;
+    font-size: .8rem;
+}
+
+.llamarContacto {
+    display: flex;
+    justify-content: end;
+    padding-top: 5%;
+}
+
+.divLlamar {
+    background-color: #25D366;
     color: var(--color-texto-secundario);
     width: 40%;
-    height: 5vh;
-    margin-left: 5%;
-    margin-right: 5%;
-    font-weight: 700;
-}
-
-.boton:hover {
-    background-color: var(--color-primario);
-}
-
-.sectionContacto {
+    height: 5.5vh;
+    border-radius: 50px;
     display: flex;
+    gap: 7%;
+    flex-direction: row;
+}
+
+.iconoLlamada {
+    color: #FFF;
+    font-size: 190%;
+    padding-top: 2%;
+}
+
+.infollamar{
+    padding: 5% 0% 0% 9%;
+}
+
+footer{
+    background-color: var(--color-texto-principal);
+    margin-top: 5%;
+    height: 10vh;
+    color:var(--color-texto-secundario);
+    font-size: .6rem;
+    display: flex;
+    gap: 5%;
     flex-direction: column;
-    margin: 5%;
 }
-
-
-.tituloDetallesContanto {
-    color: var(--color-primario);
-    font-weight: 700;
-    font-size: 1.3rem;
-    text-align: center;
-}
-
-.detallesContato {
-    margin-top: 2%;
-    font-size: .75rem;
-    color: var(--color-primario);
-}
-
-
-
-.iconoFijo {
-    text-decoration: none;
-    position: fixed;
-    bottom: 2%;
-    left: 80%;
-    background-color: var(--color-primario);
-    border-radius: 50%;
-    height: 5vh;
+.divTextoFooter{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6vh;
-    height: 6vh;
+    padding-left: 1%;
+}
+.paginas{
+    display: flex;
+    gap: 3.5%;
+    padding: 5% 0% 3% 3%;
+    width: 80%;
+}
+.iconoFooter{
+    padding-top: 6%;
+}
+.textoFooterAbajo{
+    padding-left: 4%;
+    margin-top: -1%;
+    font-size: .6rem;
 }
 
-.iconoFijoEstilos {
-    color: var(--color-fondo-principal);
-    font-size: 4vh;
-}
 
-
-@media screen and (min-width: 750px) and (max-width: 1249px) {
-
-
-    :root {
-        --tamaño-grande: 3.5rem;
-        --tamaño-titulos: 2rem;
-        --tamaño-mediano: 1.5rem;
-        --tamaño-pequeño: 1rem;
-    }
-
-    .menu ul {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .menu ul li a {
-        font-size: 1.4rem;
-        border: none;
-        padding: 55%;
-    }
-
-    header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: 10vh;
-    }
-
-    .menu {
-        width: 100%;
-    }
-
-    .logo {
-        width: 25%;
-        margin-right: 1.5%;
-    }
-
-    .sec1 {
-        height: 100vh;
-        background-image: url("../img/fondo-interred-m.jpg");
-    }
-
-    .sec1Titulo {
-        padding-left: 10%;
-        padding-right: 10%;
-        font-size: var(--tamaño-grande);
-    }
-
-    .sec1Inf {
-        padding: 5% 15%;
-        font-size: var(--tamaño-titulos);
-    }
-
-    .sec1Boton {
-        height: 5vh;
-        width: 25%;
-    }
-
-    .sec2 {
-        padding: 7% 10% 7% 10%;
-    }
-
-    .sec2Titulo {
-        font-size: 2.5rem;
-    }
-
-    .sec2Info {
-        font-size: var(--tamaño-mediano);
-    }
-
-    .sec3Titulo {
-        font-size: var(--tamaño-titulos);
-    }
-
-    .sec3Desc {
-        padding: .5% 0% 7% 12%;
-        display: flex;
-        font-size: var(--tamaño-mediano);
-    }
-
-    .icono {
-        font-size: var(--tamaño-titulos);
-    }
-
-    .sec3Info {
-        font-size: var(--tamaño-pequeño);
-        text-align: center;
-    }
-
-    .botonRedondo {
-        width: 20%;
-        padding: 5%;
-        margin-top: 10%;
-    }
-
-    .icono1 {
-        display: flex;
-        flex-direction: column;
-        gap: 5%;
-        justify-content: start;
-    }
-
-
-    .padre {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 80%;
-        gap: 2%;
-        align-items: self-start;
-        margin-top: -5%;
-
-    }
-
-    .divOcultoD {
-        display: flex;
-        text-align: center;
-        flex-direction: column;
-        width: 77%;
-        height: 10vh;
-    }
-
-    .divOcultoI {
-        display: flex;
-        text-align: start;
-        flex-direction: column;
-        width: 77%;
-        height: 10vh;
-    }
-
-    .texto3icono {
-        flex-direction: row-reverse;
-    }
-
-    .texto3icono2 {
-        flex-direction: row;
-    }
-
-    .texto3icono,
-    .texto3icono2 {
-        display: flex;
-        justify-content: start;
-        width: 100%;
-    }
-
-    .textoCentrado {
-        display: flex;
-        margin-top: 20%;
-        width: 20vh;
-        height: 6vh;
-        flex-direction: row-reverse;
-        justify-content: center;
-    }
-
-    .especialidades {
-        background-image: url("../img/fondo-servicios-m.jpg");
-    }
-
-    .especialidadesTitulo {
-        font-size: var(--tamaño-titulos);
-    }
-
-    .especialidad {
-        align-items: center;
-    }
-
-    .imagenEspecialidades {
-        width: 30%;
-    }
-
-    .especialidadesInfo {
-        font-size: var(--tamaño-titulos);
-    }
-
-    .especialidadesTexto {
-        font-size: var(--tamaño-mediano);
-        padding-bottom: 4%;
-    }
-
-
-    .muestraProyectos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .proyecto {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .proyectoNombre {
-        font-size: var(--tamaño-pequeño);
-        font-weight: 600;
-        text-align: center;
-    }
-
-    .imagenProyecto {
-        width: 90%;
-        border-radius: 10px;
-        margin-left: 5%;
-    }
-
-    .exitoTitulo {
-        font-size: var(--tamaño-titulos);
-    }
-
-    .exitoTexto {
-        font-size: var(--tamaño-mediano);
-        padding: 2%;
-    }
-
-    .exitoSubtitulo {
-        font-size: var(--tamaño-titulos);
-    }
-
-    .fondoExito {
-        height: 5vh;
-        padding-top: 2%;
-    }
-
-
-    .areaServicio {
-        background-color: var(--color-fondo-principal);
-        width: 85%;
-    }
-
-    .iconoServicio,
-    .serviciosTitulo,
-    .textoSistemas {
-        color: var(--color-primario);
-        text-align: center;
-    }
-
-    .iconoServicio {
-        padding-top: 15%;
-        margin-bottom: -5%;
-    }
-
-    .serviciosTitulo {
-        margin-bottom: 3%;
-        font-size: var(--tamaño-titulos);
-    }
-
-    .textoSistemas {
-        font-size: var(--tamaño-mediano);
-        margin: 0% 10% 0% 10%;
-
-    }
-
-    .text2Sistemas {
-        border: none;
-        padding-left: 20%;
-        margin-bottom: 10%;
-    }
-
-    .texto2Sistemas {
-        font-size: 0.9rem;
-    }
-
-    .puntosServicios {
-        margin: 2%;
-    }
-
-    .iconoWeb {
-        font-size: 25vw;
-        margin-bottom: -12%;
-    }
-
-    .tituloWeb {
-        font-size: var(--tamaño-titulos);
-    }
-
-    .infoWeb {
-        font-size: var(--tamaño-mediano);
-    }
-
-    .formularioTitulo,
-    .tituloDetallesContanto {
-        font-size: var(--tamaño-titulos);
-    }
-
-    .etiquetaFormulario,
-    .input {
-        font-size: var(--tamaño-mediano);
-    }
-
-    .boton {
-        height: 6vh;
-        font-size: var(--tamaño-mediano);
-    }
-
-    .detallesContato {
-        font-size: var(--tamaño-pequeño);
-    }
-
-    .footerTexto {
-        font-size: 1.4rem;
-    }
-
-    .iconoRedes {
-        font-size: 5vw;
-        padding-bottom: 5%;
-    }
-
-}
-
-@media screen and (min-width: 1250px) and (max-width: 1920px) {
-
-    .menu ul {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap:3%
-    }
-
-    .menu ul li a {
-        border: none;
-    }
-
-    header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: 10vh;
-    }
-
-    .menu {
-        align-items: end;
-    }
-
-    .logo {
-        width: 15%;
-        margin-right: 25%;
-    }
-
-    .sec1 {
-        height: 90vh;
-        background-image: url("../img/fondo-interred-g.jpg");
-    }
-
-    .sec1Titulo {
-        font-size: 4rem;
-    }
-
-    .sec1Inf {
-        padding-top: 0%;
-        font-size: 1.5rem;
-        padding-bottom: 0%;
-    }
-
-    .sec1Boton {
-        height: 5vh;
-        width: 30%;
-        font-size: 1.5rem;
-    }
-
-    .sec2Titulo,
-    .sec3Titulo {
-        font-size: 3rem;
-    }
-
-    .sec2Info,
-    .sec3Desc {
-        font-size: 2rem;
-    }
-
-    .imgEmpresa4 {
-        width: 30%;
-    }
-
-    .sec3Desc {
-        margin-top: -7%;
-    }
-
-
-    .icono {
-        font-size: var(--tamaño-titulos);
-    }
-
-    .sec3Info {
-        font-size: var(--tamaño-pequeño);
-        text-align: center;
-    }
-
-    .formularioDiv {
-        padding: 4% 10% 10% 7%;
-    }
-
-    .formularioTitulo {
-        font-size: 4rem;
-        margin-top: 4%;
-    }
-
-    .etiquetaFormulario {
-        border-radius: 5%;
-        font-size: 2.5rem;
-    }
-
-    .input {
-        font-size: 2rem;
-    }
-
-    .botones {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .boton {
-        width: 35%;
-        height: 7vh;
-        font-size: 2rem;
-    }
-
-    .tituloDetallesContanto {
-        font-size: 4rem;
-    }
-
-    .sectionContacto {
-        text-align: center;
-    }
-
-    .detallesContato {
-        font-size: 1.2rem;
-    }
-
-    .colorMarcado {
-        font-weight: 700;
-    }
-
-    footer {
-        height: 13vh;
-    }
-
-    .footerTexto {
-        font-size: 1.5rem;
-    }
-
-    .iconoFooter {
-        width: 20%;
-    }
-
-    .iconoRedes {
-        font-size: 3rem;
-    }
-
-    .iconoWeb {
-        font-size: 15rem;
-        margin-top: 15%;
-    }
-
-    .tituloWeb {
-        margin-top: 3%;
-        font-size: 4rem;
-    }
-
-    .infoWeb {
-        font-size: 2rem;
-        margin-bottom: 15%;
-    }
-
-    .exitoTitulo {
-        font-size: 4rem;
-    }
-
-    .exitoTexto {
-        font-size: 2rem;
-    }
-
-    .exitoSubtitulo {
-        font-size: 3rem;
-    }
-
-    .fondoExito {
-        height: 8vh;
-        padding-top: 3%;
-        margin-top: 4%;
-    }
-
-    .imagenExito {
-        width: 50%;
-    }
-
-    .infoServicios {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 5% 2%;
-        gap: 3%;
-    }
-
-    .areaServicio {
-        background-color: var(--color-fondo-principal);
-        justify-content: center;
-        width: 32%;
-        margin: 0;
-        height: 70vh;
-        padding: 5% 3% 5% 3%;
-    }
-
-    .textoSistemas {
-        color: var(--color-primario);
-        text-align: center;
-    }
-
-    .iconoServicio {
-        font-size: 5rem;
-        color: var(--color-primario);
-    }
-
-    .serviciosTitulo {
-        font-size: 2rem;
-        color: var(--color-primario);
-    }
-
-    .textoSistemas {
-        font-size: 1.4rem;
-        margin: 0%;
-    }
-
-    .text2Sistemas {
-        border: none;
-    }
-
-    .texto2Sistemas {
-        font-size: 1.1rem;
-        padding-left: 6%;
-    }
-
-    .puntosServicios {
-        margin: 2%;
-    }
-
-    .muestraProyectos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        padding-left: 5%;
-    }
-
-    .proyecto {
-        display: flex;
-        flex-direction: column;
-        width: 25%;
-    }
-
-    .proyectoTitulo {
-        font-size: 5rem;
-        margin-top: 2%;
-        margin-bottom: 2%;
-    }
-
-    .proyectoNombre {
-        margin-top: 1%;
-        font-size: 1.2rem;
-        font-weight: 600;
-        text-align: justify;
-    }
-
-    .imagenProyecto {
-        width: 90%;
-        border-radius: 10px;
-    }
-
-    .seccionEspecialidades {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .imagenEspecialidades {
-        width: 20vw
-    }
-
-    .especialidades {
-        background-image: url("../img/fondo-servicios-g.jpg");
-        width: 100%;
-    }
-
-    .especialidadesTitulo {
-        font-size: 3rem;
-        margin-top: 2%;
-    }
-
-    .especialidadesInfo {
-        font-size: 2rem;
-    }
-
-    .aContacto {
-        width: 100%;
-    }
-
-    .sec1Boton {
-        font-size: .95rem;
-    }
-
-    .especialidad {
-        margin-top: 2%;
-        align-items: center;
-        justify-content: start;
-    }
-
-    .especialidadesTexto {
-        font-size: 1rem;
-    }
-
-
-    .botonRedondo {
-        width: 25%;
-        padding: 7%;
-    }
-    .icono{
-        font-size: 1.7vw ;
-    }
-    .icono1 {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        width: 33%;
-    }
-
-    .imagenOculta {
-        visibility: visible;
-        width: 100%;
-        margin-top: 20%;
-    }
-
-    .sec3Info {
-        font-size: 1rem;
-        text-align: center;
-        margin-bottom: -5%;
-    }
-
-    .padre {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 80%;
-        gap: 2%;
-        align-items: self-start;
-        margin-top: -5%;
-    }
-
-    .divOcultoD {
-        display: flex;
-        text-align: center;
-        flex-direction: column;
-        width: 100%;
-        height: 13vh;
-        margin-right: 10%;
-    }
-
-    .divOcultoI {
-        display: flex;
-        text-align: start;
-        flex-direction: column;
-        width: 100%;
-        height: 13vh;
-    }
-
-    .texto3icono {
-        flex-direction: row-reverse;
-        margin-right: 50%;
-    }
-
-    .sec3Desc {
-        font-size: 1.5rem;
-    }
-
-    .texto3icono2 {
-        flex-direction: row;
-        margin-left: -5%;
-    }
-
-    .texto3icono,
-    .texto3icono2 {
-        display: flex;
-        justify-content: start;
-        width: 100%;
-    }
-
-    .textoCentrado {
-        display: flex;
-        width: 30vh;
-        height: 6vh;
-        flex-direction: row-reverse;
-        justify-content: center;
-    }
-
-    .textoEscondido {
-        visibility: visible;
-        font-size: .8rem;
-        width: 100%;
-        padding-bottom: 3%;
-        text-align: center;
-        margin-top: -3%;
-    }
-
-    .iconoFijo{
-        left:90%
-    }
-}
