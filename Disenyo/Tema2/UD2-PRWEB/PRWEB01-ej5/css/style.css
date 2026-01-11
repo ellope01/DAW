@@ -110,37 +110,60 @@
     padding-top: 2%;
 }
 
-.infollamar{
+.infollamar {
     padding: 5% 0% 0% 9%;
 }
 
-footer{
+footer {
     background-color: var(--color-texto-principal);
     margin-top: 5%;
     height: 10vh;
-    color:var(--color-texto-secundario);
+    color: var(--color-texto-secundario);
     font-size: .6rem;
     display: flex;
     gap: 5%;
     flex-direction: column;
 }
-.divTextoFooter{
+
+.divTextoFooter {
     display: flex;
     padding-left: 1%;
 }
-.paginas{
+
+.paginas {
     display: flex;
     gap: 3.5%;
     padding: 5% 0% 3% 3%;
     width: 80%;
 }
-.iconoFooter{
+
+.iconoFooter {
     padding-top: 6%;
 }
-.textoFooterAbajo{
+
+.textoFooterAbajo {
     padding-left: 4%;
     margin-top: -1%;
     font-size: .6rem;
 }
 
+.rojoTexto {
+    color: var(--color-primario);
+    font-weight: 700;
+}
 
+.valores1 {
+    padding: 0% 3% 0% 3%;
+}
+
+.texto {
+    font-size: .8rem;
+}
+
+.textoImagenes {
+    display: flex;
+    flex-direction: column;
+}
+.imagenValores{
+    width: 60%;
+}
