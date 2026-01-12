@@ -40,6 +40,7 @@
             type="text"
             class="p-3 w-full rounded-lg focus:outline-none bg-white"
             placeholder="Nombre o Ingrediente: ej.Vodka, Tequila, etc"
+            v-model="store.busqueda.nombre"
           />
         </div>
 
@@ -53,6 +54,7 @@
           <select
             id="categoria"
             class="p-3 w-full rounded-lg focus:outline-none bg-white"
+            v-model="store.busqueda.categoria"
           >
             <option value="">--Seleccione--</option>
             <option
