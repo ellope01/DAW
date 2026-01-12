@@ -8,8 +8,6 @@
     --color-texto-secundario: #FFF;
     /* Blanco */
     --fuente-principal: "Hepta Slab", serif;
-
-    /* --espaciado-base: 1rem; */
 }
 
 
@@ -176,4 +174,39 @@ footer {
 
 .textoValor {
     padding-left: 6%;
+}
+
+.portada{
+    height: 100vh;
+    background-color: #0E1929;
+
+}
+.imgPortada{
+    width: 100%;
+    padding-top: 40%;
+}
+
+.infoPartners{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgPartners{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+}
+
+.imgEspecialidades{
+    width: 70%;
+}
+.partnersTitulo, .especialidadesTitulo{
+    font-weight: 500;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+.especialidadesTitulo{
+    margin-top: 5%;
 }
