@@ -21,7 +21,7 @@
 }
 
 .logo {
-    width: 35%;
+    width: 20%;
 }
 
 .titulo {
@@ -152,7 +152,7 @@ footer {
     font-weight: 700;
 }
 
-.valores1 {
+.valores1, .valores2 {
     padding: 0% 3% 0% 3%;
 }
 
@@ -160,10 +160,20 @@ footer {
     font-size: .8rem;
 }
 
-.textoImagenes {
+.valor1,
+.valor2 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    margin: 4%;
+
 }
-.imagenValores{
-    width: 60%;
+
+.imagenValores {
+    width: 65%;
+    border-radius: 20px;
+}
+
+.textoValor {
+    padding-left: 6%;
 }
