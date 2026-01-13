@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 
-header{
+header {
     margin: 5%;
     display: flex;
     justify-content: space-between;
@@ -30,8 +30,19 @@ header{
     width: 20%;
 }
 
-.iconoHeader{
+.iconoHeader {
     font-size: 2.5rem;
+}
+
+.imgCarrusel {
+    width: 80%;
+}
+
+.carrusel {
+    display: flex;
+    overflow-x: scroll;
+    width: 90%;
+    margin-bottom: 5%;
 }
 
 .titulo {
@@ -296,24 +307,26 @@ footer {
     text-align: center;
 }
 
-.especialidades{
+.especialidades {
     margin-left: 5%;
 }
 
-.imgEspecialidad{
+.imgEspecialidad {
     width: 40%;
 }
-.textoPartners{
+
+.textoPartners {
     margin-left: 5%;
     font-size: .7rem;
 }
-.opiniones{
+
+.opiniones {
     width: 90%;
     display: flex;
     gap: 5%;
 }
 
-.opinion{
+.opinion {
     background-color: var(--color-secundario-transparent);
     display: flex;
     flex-direction: column;
@@ -325,19 +338,20 @@ footer {
     border-radius: 10px;
 }
 
-.imgPartner{
+.imgPartner {
     width: 80%;
     border-radius: 15px;
 }
 
-.estrella{
+.estrella {
     color: #ffee00;
     margin-top: 7%;
 }
 
-.textoPartner{
+.textoPartner {
     font-size: .7rem;
 }
-.usuario{
+
+.usuario {
     padding: 5% 0%;
 }
