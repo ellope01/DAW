@@ -6,6 +6,7 @@
     --color-texto-principal: #000;
     /* Negro */
     --color-texto-secundario: #FFF;
+    --color-secundario-transparent: #646E7845;
     /* Blanco */
     --fuente-principal: "Hepta Slab", serif;
 }
@@ -150,7 +151,8 @@ footer {
     font-weight: 700;
 }
 
-.valores1, .valores2 {
+.valores1,
+.valores2 {
     padding: 0% 3% 0% 3%;
 }
 
@@ -176,42 +178,45 @@ footer {
     padding-left: 6%;
 }
 
-.portada{
+.portada {
     height: 100vh;
     background-color: #0E1929;
 
 }
-.imgPortada{
+
+.imgPortada {
     width: 100%;
     padding-top: 40%;
 }
 
-.infoPartners{
+.infoPartners {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.imgPartners{
+.imgPartners {
     width: 95%;
     display: flex;
     justify-content: center;
 }
 
-.imgEspecialidades{
+.imgEspecialidades {
     width: 70%;
 }
-.partnersTitulo, .especialidadesTitulo{
+
+.partnersTitulo,
+.especialidadesTitulo {
     font-weight: 500;
     align-self: flex-start;
     margin-left: 10%;
 }
 
-.especialidadesTitulo{
+.especialidadesTitulo {
     margin-top: 5%;
 }
 
-.encabezado{
+.encabezado {
     background-image: url("../img/imagenInfo.jpg");
     width: 100%;
     height: 50vh;
@@ -223,4 +228,105 @@ footer {
     color: var(--color-texto-secundario);
     padding: 5%;
     gap: 5%;
+    margin-bottom: 5%;
+}
+
+
+
+.servicioInfo {
+    font-size: .7rem;
+    text-align: center;
+    width: 110%;
+}
+
+.servicio {
+    background-color: var(--color-secundario-transparent);
+    width: 85%;
+    border-radius: 10px;
+    display: flex;
+    height: 20vh;
+    margin-top: 3%;
+}
+
+.imgServicio {
+    width: 50%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagenesServicios {
+    width: 60%;
+    border-radius: 10px;
+}
+
+.textoServicio {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 40%;
+}
+
+.infoTitulo {
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 2% 0% 0% 5%;
+    align-self: flex-start;
+}
+
+.servicioTitulo {
+    text-align: center;
+}
+
+.especialidades{
+    margin-left: 5%;
+}
+
+.imgEspecialidad{
+    width: 40%;
+}
+.textoPartners{
+    margin-left: 5%;
+    font-size: .7rem;
+}
+.opiniones{
+    width: 90%;
+    display: flex;
+    gap: 5%;
+}
+
+.opinion{
+    background-color: var(--color-secundario-transparent);
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+.imgPartner{
+    width: 80%;
+    border-radius: 15px;
+}
+
+.estrella{
+    color: #ffee00;
+    margin-top: 7%;
+}
+
+.textoPartner{
+    font-size: .7rem;
+}
+.usuario{
+    padding: 5% 0%;
 }
