@@ -424,3 +424,8 @@ footer {
     margin-top: 0;
     color: #333;
 }
+
+.enlaces{
+    color: var(--color-texto-secundario);
+    text-decoration: none;
+}
