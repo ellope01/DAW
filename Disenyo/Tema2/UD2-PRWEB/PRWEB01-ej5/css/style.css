@@ -355,3 +355,72 @@ footer {
 .usuario {
     padding: 5% 0%;
 }
+
+
+.imgEspecialidad {
+    width: 200px; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+
+/* --- Estilos del Contenedor del Modal  */
+.contenedorModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75); /* Oscurece el fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Para que esté por encima de todo */
+    
+    /* Escondido por defecto */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* LA MAGIA: Cuando el ID coincide con la URL (#modal1) */
+.contenedorModal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* --- Caja Blanca del Modal --- */
+.modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    
+}
+
+
+
+/* --- Botón Cerrar (X) --- */
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #666;
+    line-height: 1;
+}
+
+.btn-cerrar:hover {
+    color: #000;
+}
+
+/* --- Contenido Interno --- */
+.modal-body h2 {
+    margin-top: 0;
+    color: #333;
+}
