@@ -45,7 +45,8 @@ function iniciar() {
 	retrasar = document.getElementById('retrasar');
 	reiniciar = document.getElementById('reiniciar');
 	silenciar = document.getElementById('silenciar');
-
+	menosVolumen = document.getElementById('menosVolumen');
+	masVolumen = document.getElementById('masVolumen');
 	/* obtener los objetos del resto de elementos necesarios */
 
 	play.addEventListener('click', accionPlay, false);
@@ -53,7 +54,8 @@ function iniciar() {
 	retrasar.addEventListener('click', retrasarFun, false);
 	reiniciar.addEventListener('click', reiniciarFun, false);
 	silenciar.addEventListener('click', silenciarFun, false);
-
+	menosVolumen.addEventListener('click', menosVolumenFun, false);
+	masVolumen.addEventListener('click', masVolumenFun, false);
 	/* crear los manejadores de eventos para el resto de botones */
 
 	barra.addEventListener('click', desplazarMedio, false);
@@ -88,6 +90,21 @@ function silenciarFun() {
 		silenciar.value = 'escuchar';
 	}
 
+}
+
+
+function menosVolumenFun() {
+	if (!medio.ended && !medio.paused) {
+		medio.volume -= 0.1
+		console.log(medio.volume)
+	}
+}
+
+function masVolumenFun() {
+	if (!medio.ended && !medio.paused) {
+		medio.volume += 0.1
+		console.log(medio.volume)
+	}
 }
 
 
