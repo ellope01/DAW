@@ -7,9 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-white: #fff;
-    --spacing: 0.25rem;
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -163,34 +162,33 @@
   }
 }
 @layer utilities {
-  .table {
-    display: table;
+  .mx-auto {
+    margin-inline: auto;
   }
-  .border-collapse {
-    border-collapse: collapse;
+  .flex {
+    display: flex;
   }
-  .resize {
-    resize: both;
+  .w-\[20\%\] {
+    width: 20%;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .w-\[95\%\] {
+    width: 95%;
   }
-  .bg-blue-500 {
-    background-color: var(--color-blue-500);
+  .w-full {
+    width: 100%;
   }
-  .p-4 {
-    padding: calc(var(--spacing) * 4);
+  .flex-row {
+    flex-direction: row;
   }
-  .text-white {
-    color: var(--color-white);
+  .items-center {
+    align-items: center;
   }
-  .underline {
-    text-decoration-line: underline;
+  .justify-between {
+    justify-content: space-between;
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -199,15 +197,10 @@
 .test {
   color: red;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+.imagenFondo {
+  background-image: url("../sources/img/platos/PapirosBerenice.png");
+  height: 36vh;
+  object-position: cover();
 }
 @property --tw-blur {
   syntax: "*";
@@ -265,8 +258,6 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;

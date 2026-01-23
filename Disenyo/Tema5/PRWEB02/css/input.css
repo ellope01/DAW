@@ -2,3 +2,9 @@
 .test {
   color: red;
 }
+
+.imagenFondo{
+  background-image: url("../sources/img/platos/PapirosBerenice.png");
+  height: 36vh;
+  object-position: cover();
+}
