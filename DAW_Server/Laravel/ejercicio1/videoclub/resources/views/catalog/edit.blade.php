@@ -12,30 +12,29 @@
                         @csrf
                         <div class="form-group">
                             <label for="title">Título</label>
-                            <input type="text" name="title" id="title" class="form-control"
-                                value="{{ $pelicula["title"] }}">
+                            <input type="text" name="title" id="title" class="form-control" value="{{ $peliculaEdit->title }}">
                         </div>
 
                         <div class="form-group">
                             <label for="anyo">Año</label>
-                            <input type="text" name="anyo" id="anyo" class="form-control" value="{{ $pelicula["year"] }}">
+                            <input type="text" name="anyo" id="anyo" class="form-control" value="{{ $peliculaEdit->year }}">
                         </div>
 
                         <div class="form-group">
                             <label for="dir">Director</label>
-                            <input type="text" name="dir" id="dir" class="form-control" value="{{ $pelicula["director"] }}">
+                            <input type="text" name="dir" id="dir" class="form-control" value="{{ $peliculaEdit->director }}">
                         </div>
 
                         <div class="form-group">
                             <label for="poster">Poster</label>
                             <input type="text" name="poster" id="poster" class="form-control"
-                                value="{{ $pelicula["poster"] }}">
+                                value="{{ $peliculaEdit->poster }}">
                         </div>
 
                         <div class="form-group">
                             <label for="synopsis">Resumen</label>
                             <textarea name="synopsis" id="synopsis" class="form-control"
-                                rows="3">{{ $pelicula["synopsis"] }}</textarea>
+                                rows="3">{{ $peliculaEdit->synopsis }}</textarea>
                         </div>
 
                         <div class="form-group text-center">
