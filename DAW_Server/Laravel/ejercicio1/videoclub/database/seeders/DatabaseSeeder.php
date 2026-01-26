@@ -194,14 +194,25 @@ class DatabaseSeeder extends Seeder
         }
     }
 
+    private function seedUsers()
+    {
+        User::create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'password' => '1234'
+        ]);
+        User::create([
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'password' => '1234'
+        ]);
+    }
+
     public function run(): void
     {
         // User::factory(10)->create();
         self::seedCatalog();
+        self::seedUsers();
         $this->command->info('Tabla catálogo inicializada con datos!');
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
     }
 }

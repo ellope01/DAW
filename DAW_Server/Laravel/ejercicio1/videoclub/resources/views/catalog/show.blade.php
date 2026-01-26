@@ -29,7 +29,7 @@
                             pelicula</button>
                     </a>
                     <button type="button" class="btn" style="background-color:white;border:1px solid black"><strong>
-                            <</strong> Volver al inicio</button>
+                            </strong> Volver al inicio</button>
                 </div>
             @endif
         </div>
