@@ -71,7 +71,7 @@ onMounted(() => {
   }
 });
 
-const definirPresupuesto = (cantidad) => {
+const definirPrfiltroesupuesto = (cantidad) => {
   presupuesto.value = cantidad;
   disponible.value = presupuesto.value;
 };
