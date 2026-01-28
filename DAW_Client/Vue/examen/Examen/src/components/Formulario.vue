@@ -32,6 +32,9 @@ const validarCita = () => {
   <div class="md:w-1/2 px-5">
     <h2 class="font-black text-3xl text-center">Seguimiento Pacientes</h2>
 
+    <p class="text-lg mt-5 text-center mb-10">
+        Añade Citas de Pacientes y <span class="text-indigo-600 font-bold">Administralas</span>
+    </p>
     <Alerta v-if="error">
       {{ error }}
     </Alerta>

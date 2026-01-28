@@ -32,6 +32,14 @@ const guardarCita = () => {
     id: null,
   });
 };
+
+
+const borrarCita = (email) => {
+  const index = citas.value.findIndex((c) => c.email === email);
+  if (index !== -1) {
+    citas.value.splice(index, 1);
+  }
+};
 </script>
 
 <template>
@@ -60,25 +68,55 @@ const guardarCita = () => {
       <div
         v-for="citaItem in citas"
         :key="citaItem.id"
-        class="bg-white shadow-md rounded-lg p-5 mb-5"
+        class="mx-5 my-10 bg-white shadow-md px-5 py-10 rounded-xl"
       >
-        <p>
-          <span class="font-bold">Mascota:</span> {{ citaItem.nombreMascota }}
+        <p class="font-bold mb-3 text-gray-700 uppercase">ID:
+          <span class="font-normal normal-case"
+            >{{ citaItem.nombreMascota }}</span
+          >
         </p>
-        <p>
-          <span class="font-bold">Propietario:</span>
-          {{ citaItem.nombrePropietario }}
+        <p class="font-bold mb-3 text-gray-700 uppercase">Mascota:
+          <span class="font-normal normal-case"
+            >{{ citaItem.nombreMascota }}</span
+          >
         </p>
-        <p><span class="font-bold">Email:</span> {{ citaItem.email }}</p>
-        <p><span class="font-bold">Fecha:</span> {{ citaItem.cita }}</p>
-        <p><span class="font-bold">Síntomas:</span> {{ citaItem.sintomas }}</p>
+        <p class="font-bold mb-3 text-gray-700 uppercase">Propietario:
+          <span class="font-normal normal-case">
+            {{ citaItem.nombrePropietario }}</span
+          >
+        </p>
+        <p class="font-bold mb-3 text-gray-700 uppercase">Email:
+          <span class="font-normal normal-case">
+            {{ citaItem.email }}</span
+          >
+        </p>
+        <p class="font-bold mb-3 text-gray-700 uppercase">Fecha:
+          <span class="font-normal normal-case">
+            {{ citaItem.fecha }}</span
+          >
+        </p>
+        <p class="font-bold mb-3 text-gray-700 uppercase">Sintomas:
+          <span class="font-normal normal-case">
+            {{ citaItem.sintomas }}</span
+          >
+        </p>
 
-        <button
-          class="mt-3 bg-indigo-600 text-white px-3 py-1 rounded"
-          @click="Object.assign(cita, citaItem)"
-        >
-          Editar
-        </button>
+        <div class="grid md:grid-cols-2 gap-5 mt-10">
+          <button
+            type="button"
+            class="block w-full py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg"
+          >
+            Editar
+          </button>
+          <button
+            type="button"
+            class="block w-full py-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-lg"
+          @click="borrarCita(citaItem.email)"
+
+          >
+            Eliminar
+          </button>
+        </div>
       </div>
     </div>
   </div>
