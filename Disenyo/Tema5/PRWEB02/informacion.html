@@ -13,40 +13,104 @@
     <link rel="manifest" href="./sources/img/logo//site.webmanifest" />
 </head>
 
-<body class="bg-[#D9C5A0] w-full">
-    <header class="flex flex-row justify-between w-[95%] mx-auto">
+<body class="bg-[#D9C5A0] w-full font-serif">
+
+    <!-- HEADER -->
+    <header class="flex flex-row justify-between items-center w-[95%] mx-auto py-6 border-b-2 border-[#3b2f2f]">
         <div>
-            <img alt="logo" src="./sources/img/logo.png" class="w-[30%]" />
+            <img alt="logo" src="./sources/img/logo.png" class="w-32" />
         </div>
-        <div class="flex items-center">
-            <p class="text-3xl">Menu</p>
-        </div>
+        <nav class="flex items-center gap-6">
+            <p class="text-2xl font-bold hover:underline cursor-pointer">Inicio</p>
+            <p class="text-2xl font-bold hover:underline cursor-pointer">Sobre Nosotros</p>
+            <p class="text-2xl font-bold hover:underline cursor-pointer">Carta</p>
+            <p class="text-2xl font-bold hover:underline cursor-pointer">Pedidos</p>
+        </nav>
     </header>
 
-    <section>
-        <p class="text-4xl">Sobre Nosotros</p>
-        <p>Alejandría no es solo un nombre. Es una promesa.
-
-            En el siglo III a.C., la gran Biblioteca de Alejandría se erigió como el faro del conocimiento humano, un
-            lugar donde convergían sabiduría, cultura y diálogo de todos los rincones del mundo conocido.
-
-            Hoy, en esta Alejandría, rescatamos ese espíritu de descubrimiento y encuentro. Somos el lugar moderno donde
-            se reúnen las ideas de todo el mundo. Aquí, las recetas son como manuscritos antiguos, las palabras de una
-            historia sobre la comida son los ingredientes, y cada vez que comemos, tenemos una conversación que nos
-            llena el corazón y el estómago.
-
-            Te invitamos a sentarte a nuestra mesa. A ser parte, por una noche, de la leyenda. A escribir, con cada
-            bocado, tu propio capítulo.</p>
-        <img alt="imagenCocina" src="./sources/img/cocina.png">
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section class="max-w-5xl mx-auto py-16 px-6 flex flex-col md:flex-row items-center gap-10">
+        <div class="md:w-1/2">
+            <h1 class="text-4xl font-bold mb-6">Sobre Nosotros</h1>
+            <p class="text-lg leading-relaxed mb-6">
+                Alejandría no es solo un nombre. Es una promesa.<br><br>
+                En el siglo III a.C., la gran Biblioteca de Alejandría se erigió como el faro del conocimiento humano,
+                un lugar donde convergían sabiduría, cultura y diálogo de todos los rincones del mundo conocido.<br><br>
+                Hoy, en esta Alejandría, rescatamos ese espíritu de descubrimiento y encuentro. Somos el lugar moderno
+                donde se reúnen las ideas de todo el mundo. Aquí, las recetas son como manuscritos antiguos, las
+                palabras de una historia sobre la comida son los ingredientes, y cada vez que comemos, tenemos una
+                conversación que nos llena el corazón y el estómago.<br><br>
+                Te invitamos a sentarte a nuestra mesa. A ser parte, por una noche, de la leyenda. A escribir, con cada
+                bocado, tu propio capítulo.
+            </p>
+        </div>
+        <div class="md:w-1/2">
+            <img alt="imagenCocina" src="./sources/img/cocina.png" class="rounded-xl shadow-lg w-full object-cover" />
+        </div>
     </section>
-    <section id="videoSitio">
-    <h2>Para ver un poco el restaurante </h2>
-        <video id="medio" width="720" height="400">
-            <source src="sources/videos/recorridoRestaurante.mp4" />
-        </video>
+
+    <!-- SECCIÓN VIDEO -->
+    <section id="videoSitio" class="max-w-5xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold mb-6 text-center">Para ver un poco el restaurante</h2>
+        <div class="flex justify-center">
+            <video class="rounded-xl shadow-lg w-full md:w-3/4" controls>
+                <source src="sources/videos/recorridoRestaurante.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
     </section>
-    <section id="googleMaps">
-        <p>Puedes encontrarnos: googleMaps</p>
-        <i></i>
+
+    <!-- SECCIÓN GOOGLE MAPS -->
+    <section id="googleMaps" class="max-w-5xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold mb-6 text-center">Encuéntranos</h2>
+        <div class="flex justify-center">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3081.7615959049435!2d-0.4686509589377724!3d39.42951517173347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6051c6c56cfbf7%3A0x342b9d1e78f763c!2sIES%20Serra%20Perenxisa!5e0!3m2!1ses!2ses!4v1769655209167!5m2!1ses!2ses"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </section>
+
+    <footer class="bg-[#3b2f2f] text-white py-8 mt-10">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-6">
+
+            <!-- Texto del footer -->
+            <div class="text-center md:text-left">
+                <p class="italic">"Cada plato es un fragmento de historia."</p>
+                <p class="text-sm mt-1">Bibliotheca Ignis · Alejandría eterna</p>
+            </div>
+
+            <!-- Redes sociales con iconos SVG -->
+            <div class="flex items-center gap-4 justify-center md:justify-end">
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/" target="_blank" class="hover:text-[#FFD700] transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 5.004 3.657 9.128 8.438 9.878v-6.987h-2.54v-2.89h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 17.004 22 12z" />
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/" target="_blank" class="hover:text-[#FFD700] transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.338 3.608 1.313.975.975 1.251 2.242 1.313 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.338 2.633-1.313 3.608-.975.975-2.242 1.251-3.608 1.313-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.338-3.608-1.313-.975-.975-1.251-2.242-1.313-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.338-2.633 1.313-3.608C4.521 2.501 5.788 2.225 7.154 2.163 8.42 2.105 8.8 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.072 5.77.132 4.672.362 3.708 1.326c-.964.964-1.194 2.062-1.254 3.344C2.012 5.668 2 6.077 2 9.335v5.33c0 3.258.012 3.667.072 4.947.06 1.282.29 2.38 1.254 3.344.964.964 2.062 1.194 3.344 1.254 1.28.06 1.689.072 4.947.072s3.667-.012 4.947-.072c1.282-.06 2.38-.29 3.344-1.254.964-.964 1.194-2.062 1.254-3.344.06-1.28.072-1.689.072-4.947v-5.33c0-3.258-.012-3.667-.072-4.947-.06-1.282-.29-2.38-1.254-3.344-.964-.964-2.062-1.194-3.344-1.254C15.668.012 15.259 0 12 0z" />
+                        <circle cx="12" cy="12" r="3.6" />
+                    </svg>
+                </a>
+
+                <!-- Twitter -->
+                <a href="https://www.twitter.com/" target="_blank" class="hover:text-[#FFD700] transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.865 9.865 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.384 4.482A13.944 13.944 0 0 1 1.671 3.149a4.916 4.916 0 0 0 1.523 6.574 4.902 4.902 0 0 1-2.229-.616v.06a4.917 4.917 0 0 0 3.946 4.827 4.903 4.903 0 0 1-2.224.085 4.918 4.918 0 0 0 4.588 3.417 9.867 9.867 0 0 1-6.102 2.104c-.396 0-.788-.023-1.175-.069a13.945 13.945 0 0 0 7.548 2.212c9.057 0 14.01-7.514 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z" />
+                    </svg>
+                </a>
+
+            </div>
+
+        </div>
+    </footer>
+
 </body>

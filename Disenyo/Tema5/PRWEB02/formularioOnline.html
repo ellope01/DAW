@@ -1,52 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRWEB02-Alejandria Nosotros</title>
-    <link rel="stylesheet" href="./css/output.css">
-    <link rel="icon" type="image/png" href="./sources/img/logo/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./sources/img/logo//favicon.svg" />
-    <link rel="shortcut icon" href="./sources/img/logo//favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./sources/img/logo//apple-touch-icon.png" />
-    <link rel="manifest" href="./sources/img/logo//site.webmanifest" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibliotheca Ignis - Pedido Online</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
+<body class="bg-[#f4efe6] text-[#3b2f2f]">
 
-<body class="bg-[#D9C5A0] w-full">
-    <header class="flex flex-row justify-between w-[95%] mx-auto">
-        <div>
-            <img alt="logo" src="./sources/img/logo.png" class="w-[30%]" />
+  <!-- HERO -->
+  <section class="bg-cover bg-center h-64 flex items-center justify-center"
+           style="background-image: url('./sources/img/alejandria-fondo.jpg');">
+    <div class="bg-black/50 p-6 rounded-xl text-center text-white">
+      <h1 class="text-4xl font-bold">Pide Aquí Online</h1>
+      <p class="mt-2 italic">Tus sabores favoritos de Alejandría, directo a tu casa</p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE PEDIDO -->
+  <section class="max-w-5xl mx-auto p-6 mt-10 bg-[#fdf5e6] rounded-xl shadow-lg">
+    <h2 class="text-3xl font-bold mb-6 text-center">Formulario de Pedido</h2>
+    <form class="flex flex-col gap-6">
+
+      <!-- DATOS DEL CLIENTE -->
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex flex-col">
+          <label class="mb-1 font-semibold">Nombre:</label>
+          <input type="text" placeholder="Nombre completo" class="p-2 border rounded-md" required>
         </div>
-        <div class="flex items-center">
-            <p class="text-3xl">Menu</p>
+        <div class="flex flex-col">
+          <label class="mb-1 font-semibold">Correo electrónico:</label>
+          <input type="email" placeholder="correo@ejemplo.com" class="p-2 border rounded-md" required>
         </div>
-    </header>
+      </div>
 
-    <section id="enunciado">
-        <h1 class="text-4xl mt-4 p-2">Pide Aqui online</h1>
-    </section>
+      <!-- ENTRADAS -->
+      <h3 class="text-2xl font-bold mt-4">Entradas</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="panFaros" name="platos" value="Pan de Faros">
+          <label for="panFaros" class="font-semibold">Pan de Faros</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="hummus" name="platos" value="Hummus de la Biblioteca">
+          <label for="hummus" class="font-semibold">Hummus de la Biblioteca</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="dolmades" name="platos" value="Dolmades de Ptolomeo">
+          <label for="dolmades" class="font-semibold">Dolmades de Ptolomeo</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="ensaladaNilo" name="platos" value="Ensalada del Nilo">
+          <label for="ensaladaNilo" class="font-semibold">Ensalada del Nilo</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+      </div>
 
-    <section id="reservarMesas">
-        <form>
-            <label>Su nombre:</label>
-            <input placeholder="Nombre ">
-            <br>
-            <label>Correo electronico :</label>
-            <input placeholder="Correo de confirmación ">
-            <br>
-            <label>Número de personas:</label>
-            <input placeholder="Cuantos ">
-            <br>
-            <label>Fecha de reserva :</label>
-            <input placeholder="Dia ">
-            <br>
-            <label>Hora preferida:</label>
-            <input placeholder="tiempo">
-            <button>
-                Pedir en Alejandría
-            </button>
-        </form>
+      <!-- PLATOS PRINCIPALES -->
+      <h3 class="text-2xl font-bold mt-4">Platos principales</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="moussaka" name="platos" value="Moussaka de Hipatia">
+          <label for="moussaka" class="font-semibold">Moussaka de Hipatia</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="cuscus" name="platos" value="Cuscús Alejandrino">
+          <label for="cuscus" class="font-semibold">Cuscús Alejandrino</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="risotto" name="platos" value="Risotto de Faros">
+          <label for="risotto" class="font-semibold">Risotto de Faros</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="tagine" name="platos" value="Tagine del Desierto">
+          <label for="tagine" class="font-semibold">Tagine del Desierto</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+      </div>
 
-    </section>
+      <!-- ESPECIALES -->
+      <h3 class="text-2xl font-bold mt-4">Especiales</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="veganoCleopatra" name="platos" value="Plato Vegano de Cleopatra">
+          <label for="veganoCleopatra" class="font-semibold">Plato Vegano de Cleopatra</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="gyros" name="platos" value="Gyros Vegetal">
+          <label for="gyros" class="font-semibold">Gyros Vegetal</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+      </div>
+
+      <!-- POSTRES -->
+      <h3 class="text-2xl font-bold mt-4">Postres</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="baklava" name="platos" value="Baklava">
+          <label for="baklava" class="font-semibold">Baklava</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="datiles" name="platos" value="Dátiles del Oasis">
+          <label for="datiles" class="font-semibold">Dátiles del Oasis</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+      </div>
+
+      <!-- BEBIDAS -->
+      <h3 class="text-2xl font-bold mt-4">Bebidas</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="hibisco" name="platos" value="Infusión de Hibisco">
+          <label for="hibisco" class="font-semibold">Infusión de Hibisco</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="menta" name="platos" value="Té de Menta">
+          <label for="menta" class="font-semibold">Té de Menta</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="limonada" name="platos" value="Limonada de Granada">
+          <label for="limonada" class="font-semibold">Limonada de Granada</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
+          <input type="checkbox" id="vino" name="platos" value="Vino especiado">
+          <label for="vino" class="font-semibold">Vino especiado</label>
+          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        </div>
+      </div>
+
+      <!-- DETALLES DE ENTREGA -->
+      <div class="grid md:grid-cols-2 gap-4 mt-6">
+        <div class="flex flex-col">
+          <label class="mb-1 font-semibold">Dirección de entrega:</label>
+          <input type="text" placeholder="Calle, número, ciudad" class="p-2 border rounded-md" required>
+        </div>
+        <div class="flex flex-col">
+          <label class="mb-1 font-semibold">Comentarios adicionales:</label>
+          <input type="text" placeholder="Alérgenos, horarios especiales..." class="p-2 border rounded-md">
+        </div>
+      </div>
+
+      <button type="submit" class="mt-6 bg-[#3b2f2f] text-white p-3 rounded-xl font-bold hover:bg-[#5a4a3c] transition">
+        Realizar Pedido
+      </button>
+    </form>
+  </section>
+
+
+  <footer class="bg-[#3b2f2f] text-white text-center p-6 mt-10">
+    <p class="italic">"Cada plato es un fragmento de historia."</p>
+    <p class="text-sm mt-2">Bibliotheca Ignis · Alejandría eterna</p>
+  </footer>
+
 </body>
+</html>
