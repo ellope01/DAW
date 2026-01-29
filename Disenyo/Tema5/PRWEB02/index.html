@@ -4,30 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRWEB02-Alejandria</title>
+    <title>Alejandría | La Biblioteca del Paladar</title>
     <link rel="stylesheet" href="./css/output.css">
     <link rel="icon" type="image/png" href="./sources/img/logo/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./sources/img/logo//favicon.svg" />
-    <link rel="shortcut icon" href="./sources/img/logo//favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./sources/img/logo//apple-touch-icon.png" />
-    <link rel="manifest" href="./sources/img/logo//site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="./sources/img/logo/favicon.svg" />
+    <link rel="shortcut icon" href="./sources/img/logo/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./sources/img/logo/apple-touch-icon.png" />
+    <link rel="manifest" href="./sources/img/logo/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
-
 </head>
 
-<body class="bg-[#D9C5A0] w-full pt-[73px]">
-    <nav class="bg-[#D9C5A0]/95 backdrop-blur fixed w-full z-50 top-0 border-b border-[#d9c5a0] shadow-lg mb-5">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+<body class="bg-[#D9C5A0] w-full pt-[70px] font-sans antialiased">
 
+    <nav class="bg-[#3b2f2f] fixed w-full z-50 top-0 border-b border-[#d9c5a0] shadow-lg">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div class="flex items-center gap-3">
-                <img src="./sources/img/logoBueno.png" class="w-10 h-10 rounded-full" alt="logo">
-                <span class="text-[#f4efe6] font-bold text-xl">Alejandría</span>
+                <img src="./sources/img/logoBueno.png" class="w-10 h-10 rounded-full border border-[#d9c5a0]"
+                    alt="logo">
+                <span class="text-[#f4efe6] font-bold text-xl">Bibliotheca Ignis</span>
             </div>
 
             <button data-collapse-toggle="navbar-default" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-[#f4efe6] rounded md:hidden hover:bg-[#d9c5a0]/20 focus:outline-none focus:ring-0"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-[#d9c5a0] rounded-lg md:hidden hover:bg-white/10 focus:outline-none"
                 aria-controls="navbar-default" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
+                <span class="sr-only">Abrir menú</span>
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -35,121 +36,146 @@
 
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="flex flex-col md:flex-row gap-6 mt-4 md:mt-0 text-[#f4efe6] font-medium">
-                    <li><a href="index.html" class="hover:text-[#d9c5a0]">Inicio</a></li>
-                    <li><a href="carta.html" class="hover:text-[#d9c5a0]">Carta</a></li>
-                    <li><a href="formularios.html" class="hover:text-[#d9c5a0]">Pedir Mesa</a></li>
-                    <li><a href="formularios.html" class="hover:text-[#d9c5a0]">Para llevar</a></li>
-                    <li><a href="informacion.html" class="hover:text-[#d9c5a0]">Nosotros</a></li>
-                    <li><a href="subscripcion.html" class="hover:text-[#d9c5a0]">subscripcion</a></li>
-                    <li><a href="servicios.html" class="hover:text-[#d9c5a0]">Nuestros servicios</a></li>
-
+                    <li><a href="index.html" class="text-[#d9c5a0] py-2 block">Indice</a></li>
+                    <li><a href="informacion.html" class="hover:text-[#d9c5a0] transition py-2 block">Nosotros</a></li>
+                    <li><a href="carta.html" class="hover:text-[#d9c5a0] transition py-2 block">Carta</a></li>
+                    <li><a href="formularios.html" class="hover:text-[#d9c5a0] transition py-2 block">Reservar</a></li>
+                    <li><a href="servicios.html" class="hover:text-[#d9c5a0] transition py-2 block">Servicios</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="relative h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+        <div
+            class="imagenFondo absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105">
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h2 class="text-[#f4efe6] text-3xl md:text-6xl font-extrabold drop-shadow-2xl">
+                IGNIS
+            </h2>
+            <p class="text-[#d9c5a0] text-lg md:text-2xl mt-2 font-light italic">La biblioteca del paladar</p>
+        </div>
+    </div>
 
-    <div class="imagenFondo">
-        <h2 class="text-stone-200/45 text-4xl font-bold px-11 py-7">ALEJANDRIA La biblioteca del paladar.</h2>
-    </div>
-    <div class="flex flex-row justify-between h-[40vh] items-center">
-        <div class="flex flex-col p-6 text-amber-950">
-            <p class="text-xl">Descubre nuestra</p>
-            <button class="papiroFondo mt-4 font-bold text-2xl">
-                Carta
-            </button>
+    <main class="max-w-screen-xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+            <div class="w-full md:w-1/2 text-center md:text-left order-2 md:order-1">
+                <h3 class="text-3xl md:text-5xl font-serif text-amber-950 mb-4">Descubre nuestra cocina</h3>
+                <p class="text-amber-900/80 mb-8 text-lg">Sabores ancestrales traídos al mundo moderno.</p>
+                <a href="carta.html"
+                    class="papiroFondo inline-block px-10 py-4 font-bold text-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                    Ver Carta
+                </a>
+            </div>
+            <div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
+                <img alt="plato estrella" src="./sources/img/platos/platoEstrella.png"
+                    class="rounded-3xl shadow-2xl w-full max-w-md h-auto object-cover transform rotate-2 hover:rotate-0 transition-duration-500" />
+            </div>
         </div>
-        <div class="px-4">
-            <img alt="plato estrella " src="./sources/img/platos/platoEstrella.png" class="rounded-3xl h-[35vh] " />
-        </div>
-    </div>
-    <section id="opiniones" class="flex  flex-wrap justify-center gap-4 mt-5 ">
-        <div class="bg-[#5D9CB3] w-[45%] rounded-3xl">
-            <p class="text-white/60 text-lg text-center pt-3">Reseña</p>
-            <p class="text-white/70 text-center">Hipatia de Alejandria</p>
-            <div class="flex flex-row justify-evenly px-3 pt-1.5">
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
+    </main>
+
+    <section id="opiniones" class="max-w-screen-xl mx-auto px-6 py-16">
+        <h2 class="text-center text-amber-950 text-3xl font-bold mb-12">Lo que dicen los sabios</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-[#5D9CB3] p-6 rounded-3xl shadow-xl transform hover:scale-105 transition-all">
+                <div class="flex flex-col items-center">
+                    <p class="text-white/60 uppercase tracking-widest text-xs mb-1">Reseña</p>
+                    <p class="text-white font-serif text-xl mb-3">Hipatia de Alejandría</p>
+                    <div class="flex gap-1 mb-4">
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                    </div>
+                    <img src="./sources/img/reseñas/hipatia.png"
+                        class="w-32 h-32 rounded-full border-4 border-white/20 object-cover mb-4" />
+                    <p class="text-white/90 italic text-center text-sm">"Un lugar donde el pensamiento y el sabor se
+                        encuentran en perfecta armonía."</p>
+                </div>
             </div>
-            <div class="flex justify-center mt-3">
-                <img alt="imagen de la persona" src="./sources/img/reseñas/hipatia.png" class="w-[70%] rounded-2xl" />
+
+            <div class="bg-[#5D9CB3] p-6 rounded-3xl shadow-xl transform hover:scale-105 transition-all">
+                <div class="flex flex-col items-center">
+                    <p class="text-white/60 uppercase tracking-widest text-xs mb-1">Reseña</p>
+                    <p class="text-white font-serif text-xl mb-3">Julio César</p>
+                    <div class="flex gap-1 mb-4">
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                    </div>
+                    <img src="./sources/img/reseñas/julioCesar.png"
+                        class="w-32 h-32 rounded-full border-4 border-white/20 object-cover mb-4" />
+                    <p class="text-white/90 italic text-center text-sm">"Veni, vidi… y pedí repetir. Una conquista para
+                        el paladar."</p>
+                </div>
             </div>
-            <p class="text-white/60 text-m pt-3 px-3 mb-3">Un lugar donde el pensamiento y el sabor se encuentran</p>
-        </div>
-        <div class="bg-[#5D9CB3] w-[45%] rounded-3xl">
-            <p class="text-white/60 text-lg text-center pt-3">Reseña</p>
-            <p class="text-white/70 text-center">Nombre persona</p>
-            <div class="flex flex-row justify-evenly px-3 pt-1.5">
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
+
+            <div
+                class="bg-[#5D9CB3] p-6 rounded-3xl shadow-xl transform hover:scale-105 transition-all sm:col-span-2 lg:col-span-1 mx-auto lg:mx-0 w-full max-w-sm lg:max-w-none">
+                <div class="flex flex-col items-center">
+                    <p class="text-white/60 uppercase tracking-widest text-xs mb-1">Reseña</p>
+                    <p class="text-white font-serif text-xl mb-3">Cleopatra</p>
+                    <div class="flex gap-1 mb-4">
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                        <img alt="star" src="./sources/img/reseña.png" class="w-5 h-5" />
+                    </div>
+                    <img src="./sources/img/reseñas/cleopatra.png"
+                        class="w-32 h-32 rounded-full border-4 border-white/20 object-cover mb-4" />
+                    <p class="text-white/90 italic text-center text-sm">"Jamás probé banquete tan digno de un palacio.
+                        Sublime."</p>
+                </div>
             </div>
-            <div class="flex justify-center mt-3">
-                <img alt="imagen de la persona" src="./sources/img/reseñas/julioCesar.png"
-                    class="w-[70%] rounded-2xl" />
-            </div>
-            <p class="text-white/60 text-m pt-3 px-3">Veni, vidi… y pedí repetir.</p>
-        </div>
-        <div class="bg-[#5D9CB3] w-[45%] rounded-3xl">
-            <p class="text-white/60 text-lg text-center pt-3">Reseña</p>
-            <p class="text-white/70 text-center">Nombre persona</p>
-            <div class="flex flex-row justify-evenly px-3 pt-1.5">
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-                <img alt="reseña" src="./sources/img/reseña.png" class="rounded-full w-6" />
-            </div>
-            <div class="flex justify-center mt-3">
-                <img alt="imagen de la persona" src="./sources/img/reseñas/cleopatra.png" class="w-[70%] rounded-2xl" />
-            </div>
-            <p class="text-white/60 text-m pt-3 px-3 mb-3">Jamás probé banquete tan digno de un palacio.</p>
         </div>
     </section>
 
-    <footer class="bg-[#3b2f2f] text-white py-10 mt-10">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-8">
+    <footer class="bg-[#3b2f2f] text-white py-12">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left items-center">
 
-            <!-- Texto del restaurante -->
-            <div class="md:w-1/3 text-center md:text-left">
-                <p class="italic mb-2">"Cada plato es un fragmento de historia."</p>
-                <p class="text-sm">Bibliotheca Ignis · Alejandría eterna</p>
+                <div>
+                    <h4 class="text-2xl font-bold text-[#d9c5a0] mb-2">Alejandría</h4>
+                    <p class="italic text-gray-400">"Cada plato es un fragmento de historia."</p>
+                    <p class="text-xs mt-4 text-gray-500">&copy; 2024 Bibliotheca Ignis</p>
+                </div>
+
+                <div
+                    class="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-semibold uppercase tracking-wider">
+                    <a href="index.html" class="hover:text-[#d9c5a0] transition">Inicio</a>
+                    <a href="carta.html" class="hover:text-[#d9c5a0] transition">Carta</a>
+                    <a href="formularios.html" class="hover:text-[#d9c5a0] transition">Reserva</a>
+                    <a href="servicios.html" class="hover:text-[#d9c5a0] transition">Servicios</a>
+                </div>
+
+                <div class="flex justify-center md:justify-end gap-6 text-2xl">
+                    <a href="#" class="hover:text-[#1877F2] transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-[#1DA1F2] transition"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-[#FF0000] transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="hover:text-[#E4405F] transition"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
-
-            <!-- Navegación bonita -->
-            <nav class="md:w-1/3">
-                <ul
-                    class="flex flex-col md:flex-row justify-center md:justify-between gap-4 md:gap-6 text-[#f4efe6] font-semibold">
-                    <li><a href="index.html" class="hover:text-[#FFD700] transition">Inicio</a></li>
-                    <li><a href="carta.html" class="hover:text-[#FFD700] transition">Carta</a></li>
-                    <li><a href="formularios.html" class="hover:text-[#FFD700] transition">Pedir Mesa</a></li>
-                    <li><a href="formularios.html" class="hover:text-[#FFD700] transition">Para llevar</a></li>
-                    <li><a href="informacion.html" class="hover:text-[#FFD700] transition">Nosotros</a></li>
-                    <li><a href="subscripcion.html" class="hover:text-[#FFD700] transition">Suscripción</a></li>
-                    <li><a href="servicios.html" class="hover:text-[#FFD700] transition">Servicios</a></li>
-                </ul>
-            </nav>
-
-            <div>
-                <i class="fa-brands fa-facebook-f color-white"></i>
-                <i class="fa-brands fa-x-twitter color-white"></i>
-                <i class="fa-brands fa-square-youtube text-white"></i>
-            </div>
-
-
         </div>
     </footer>
 
     <script>
-        const btn = document.getElementById('menu-button');
-        const menu = document.getElementById('navbar-default');
+        // Script menú móvil
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('menu-button');
+            const menu = document.getElementById('navbar-default');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
         });
     </script>
 </body>
+
+</html>

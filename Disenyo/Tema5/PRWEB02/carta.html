@@ -4,28 +4,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bibliotheca Ignis</title>
+  <title>Alejandría | La Carta</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
   <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    .font-serif-title {
+      font-family: 'Playfair Display', serif;
+    }
 
+    .font-ancient {
+      font-family: 'Cinzel', serif;
+    }
+  </style>
 </head>
 
-<body class="bg-[#fdf5e6] w-full pt-[73px]">
-  <nav class="bg-[#D9C5A0]/95 backdrop-blur fixed w-full z-50 top-0 border-b border-[#d9c5a0] shadow-lg mb-5">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+<body class="bg-[#fdf5e6] w-full pt-[90px] font-sans text-amber-950">
 
+  <nav class="bg-[#3b2f2f] fixed w-full z-50 top-0 border-b border-[#d9c5a0] shadow-lg">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <div class="flex items-center gap-3">
-        <img src="./sources/img/logoBueno.png" class="w-10 h-10 rounded-full" alt="logo">
-        <span class="text-[#f4efe6] font-bold text-xl">Alejandría</span>
+        <img src="./sources/img/logoBueno.png" class="w-10 h-10 rounded-full border border-[#d9c5a0]" alt="logo">
+        <span class="text-[#f4efe6] font-bold text-xl">Bibliotheca Ignis</span>
       </div>
 
       <button data-collapse-toggle="navbar-default" type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-[#f4efe6] rounded md:hidden hover:bg-[#d9c5a0]/20 focus:outline-none focus:ring-0"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-[#d9c5a0] rounded-lg md:hidden hover:bg-white/10 focus:outline-none"
         aria-controls="navbar-default" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
+        <span class="sr-only">Abrir menú</span>
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -33,141 +42,149 @@
 
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <ul class="flex flex-col md:flex-row gap-6 mt-4 md:mt-0 text-[#f4efe6] font-medium">
-          <li><a href="index.html" class="hover:text-[#d9c5a0]">Inicio</a></li>
-          <li><a href="carta.html" class="hover:text-[#d9c5a0]">Carta</a></li>
-          <li><a href="formularios.html" class="hover:text-[#d9c5a0]">Pedir Mesa</a></li>
-          <li><a href="formularios.html" class="hover:text-[#d9c5a0]">Para llevar</a></li>
-          <li><a href="informacion.html" class="hover:text-[#d9c5a0]">Nosotros</a></li>
-          <li><a href="subscripcion.html" class="hover:text-[#d9c5a0]">subscripcion</a></li>
-          <li><a href="servicios.html" class="hover:text-[#d9c5a0]">Nuestros servicios</a></li>
-
+          <li><a href="index.html" class="hover:text-[#d9c5a0] transition py-2 block">Inicio</a></li>
+          <li><a href="informacion.html" class="text-[#d9c5a0] py-2 block">Carta</a></li>
+          <li><a href="formularios.html" class="hover:text-[#d9c5a0] transition py-2 block">Reservar</a></li>
+          <li><a href="informacion.html" class="hover:text-[#d9c5a0] transition py-2 block">Nosotros</a></li>
+          <li><a href="servicios.html" class="hover:text-[#d9c5a0] transition py-2 block">Servicios</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <section class="max-w-5xl mx-auto py-16 px-6">
+  <section class="max-w-4xl mx-auto py-16 px-6">
 
-    <p class="text-center italic mb-12 text-lg">"Cuando la biblioteca ardió, los libros se perdieron… pero las recetas
-      sobrevivieron."</p>
+    <div class="text-center mb-16">
+      <h1 class="font-ancient text-4xl md:text-5xl border-y-2 border-amber-900/20 py-4 inline-block px-10">La Carta</h1>
+      <p class="mt-6 italic text-lg text-amber-900/70 max-w-xl mx-auto">
+        "Cuando la biblioteca ardió, los libros se perdieron… pero los sabores sobrevivieron."
+      </p>
+    </div>
 
-
-    <h2 class="text-3xl mb-6 border-b-2 border-[#3b2f2f]">Entradas - Pergaminos iniciales</h2>
-    <div class="grid md:grid-cols-2 gap-6 mb-12">
-      <div>
-        <h3 class="font-bold">Pan de Faros</h3>
-        <p>Pan artesanal con aceite de oliva, za'atar y sal marina.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">Hummus de la Biblioteca</h3>
-        <p>Crema de garbanzos con tahini, limón y comino.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">Dolmades de Ptolomeo</h3>
-        <p>Hojas de parra rellenas de arroz especiado.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">Ensalada del Nilo</h3>
-        <p>Tomate, pepino, aceitunas, feta y granada.</p>
+    <div class="mb-16">
+      <h2 class="font-ancient text-2xl mb-8 flex items-center gap-4 text-[#3b2f2f]">
+        <span class="bg-[#3b2f2f] text-white px-3 py-1 text-sm">I</span> Pergaminos Iniciales
+      </h2>
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+        <div class="border-b border-amber-900/10 pb-2">
+          <h3 class="font-serif-title font-bold text-xl">Pan de Faros</h3>
+          <p class="text-sm text-amber-900/60 italic">Pan artesanal con aceite de oliva, za'atar y sal marina.</p>
+        </div>
+        <div class="border-b border-amber-900/10 pb-2">
+          <h3 class="font-serif-title font-bold text-xl">Hummus de la Biblioteca</h3>
+          <p class="text-sm text-amber-900/60 italic">Crema de garbanzos con tahini, limón y comino.</p>
+        </div>
+        <div class="border-b border-amber-900/10 pb-2">
+          <h3 class="font-serif-title font-bold text-xl">Dolmades de Ptolomeo</h3>
+          <p class="text-sm text-amber-900/60 italic">Hojas de parra rellenas de arroz especiado.</p>
+        </div>
+        <div class="border-b border-amber-900/10 pb-2">
+          <h3 class="font-serif-title font-bold text-xl">Ensalada del Nilo</h3>
+          <p class="text-sm text-amber-900/60 italic">Tomate, pepino, aceitunas, feta y granada.</p>
+        </div>
       </div>
     </div>
 
-    <h2 class="text-3xl mb-6 border-b-2 border-[#3b2f2f]">Platos principales - Sabiduría eterna</h2>
-    <div class="grid md:grid-cols-2 gap-6 mb-12">
-      <div>
-        <h3 class="font-bold">Moussaka de Hipatia</h3>
-        <p>Berenjena, patata y soja con especias.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">Cuscús Alejandrino</h3>
-        <p>Sémola con verduras, pasas y ras el hanout.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">Risotto de Faros</h3>
-        <p>Setas, azafrán y queso curado.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">Tagine del Desierto</h3>
-        <p>Verduras, albaricoque, almendras y canela.</p>
-      </div>
-    </div>
-
-    <h2 class="text-3xl mb-6 border-b-2 border-[#3b2f2f]">Especiales - Textos prohibidos</h2>
-    <div class="grid md:grid-cols-2 gap-6 mb-12">
-      <div>
-        <h3 class="font-bold">Plato Vegano de Cleopatra</h3>
-        <p>Hummus, falafel, ensalada y pita.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">Gyros Vegetal</h3>
-        <p>Proteína vegetal con salsa de yogur.</p>
+    <div class="mb-16 bg-[#3b2f2f] text-[#f4efe6] p-10 rounded-3xl shadow-xl">
+      <h2 class="font-ancient text-2xl mb-8 text-[#d9c5a0] text-center uppercase tracking-widest">Sabiduría Eterna</h2>
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+        <div>
+          <h3 class="font-serif-title font-bold text-xl text-white">Moussaka de Hipatia</h3>
+          <p class="text-sm text-[#d9c5a0]/70 italic">Berenjena, patata y soja con especias.</p>
+        </div>
+        <div>
+          <h3 class="font-serif-title font-bold text-xl text-white">Cuscús Alejandrino</h3>
+          <p class="text-sm text-[#d9c5a0]/70 italic">Sémola con verduras, pasas y ras el hanout.</p>
+        </div>
+        <div>
+          <h3 class="font-serif-title font-bold text-xl text-white">Risotto de Faros</h3>
+          <p class="text-sm text-[#d9c5a0]/70 italic">Setas, azafrán y queso curado.</p>
+        </div>
+        <div>
+          <h3 class="font-serif-title font-bold text-xl text-white">Tagine del Desierto</h3>
+          <p class="text-sm text-[#d9c5a0]/70 italic">Verduras, albaricoque, almendras y canela.</p>
+        </div>
       </div>
     </div>
 
-
-    <h2 class="text-3xl mb-6 border-b-2 border-[#3b2f2f]">🍯 Postres - El último pergamino</h2>
-    <div class="grid md:grid-cols-2 gap-6 mb-12">
-      <div>
-        <h3 class="font-bold">Baklava</h3>
-        <p>Masa filo, pistacho y miel.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">Dátiles del Oasis</h3>
-        <p>Rellenos de almendra y cacao.</p>
+    <div class="mb-16">
+      <h2 class="font-ancient text-2xl mb-8 flex items-center gap-4 text-[#3b2f2f]">
+        <span class="bg-[#3b2f2f] text-white px-3 py-1 text-sm">II</span> Textos Prohibidos
+      </h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="p-6 border-2 border-dashed border-[#3b2f2f]/20 rounded-xl">
+          <h3 class="font-serif-title font-bold text-xl">Plato Vegano de Cleopatra</h3>
+          <p class="text-sm text-amber-900/60 italic mt-1">Un banquete real: Hummus, falafel, ensalada fresca y pan pita
+            caliente.</p>
+        </div>
+        <div class="p-6 border-2 border-dashed border-[#3b2f2f]/20 rounded-xl">
+          <h3 class="font-serif-title font-bold text-xl">Gyros Vegetal</h3>
+          <p class="text-sm text-amber-900/60 italic mt-1">Proteína vegetal marinada con hierbas finas y salsa de yogur
+            artesanal.</p>
+        </div>
       </div>
     </div>
 
-    <h2 class="text-3xl mb-6 border-b-2 border-[#3b2f2f]">🍷 Bebidas - Elixires del saber</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div>
-        <h3 class="font-bold">Infusión de Hibisco</h3>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="bg-white/50 p-8 rounded-2xl shadow-inner border border-amber-900/5">
+        <h2 class="font-ancient text-xl mb-6 text-[#3b2f2f]">El Último Pergamino</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-serif-title font-bold text-lg">Baklava</h3>
+            <p class="text-sm text-amber-900/60 italic">Capas crujientes de masa filo, pistacho y miel.</p>
+          </div>
+          <div>
+            <h3 class="font-serif-title font-bold text-lg">Dátiles del Oasis</h3>
+            <p class="text-sm text-amber-900/60 italic">Dátiles carnosos rellenos de almendra y cacao puro.</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3 class="font-bold">Té de Menta</h3>
-      </div>
-      <div>
-        <h3 class="font-bold">Limonada de Granada</h3>
-      </div>
-      <div>
-        <h3 class="font-bold">Vino especiado</h3>
+
+      <div class="bg-white/50 p-8 rounded-2xl shadow-inner border border-amber-900/5">
+        <h2 class="font-ancient text-xl mb-6 text-[#3b2f2f]">Elixires del Saber</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <p class="font-bold text-sm">Infusión de Hibisco</p>
+          <p class="font-bold text-sm">Té de Menta</p>
+          <p class="font-bold text-sm">Limonada de Granada</p>
+          <p class="font-bold text-sm">Vino Especiado</p>
+        </div>
       </div>
     </div>
 
   </section>
 
+  <footer class="bg-[#3b2f2f] text-white py-12 mt-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="text-center md:text-left">
+        <p class="italic text-[#d9c5a0] text-lg mb-1">"Cada plato es un fragmento de historia."</p>
+        <p class="text-sm opacity-60">Bibliotheca Ignis · Alejandría eterna</p>
+      </div>
 
-    <footer class="bg-[#3b2f2f] text-white py-10 mt-10">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-8">
+      <nav>
+        <ul class="flex flex-wrap justify-center gap-4 text-xs font-bold uppercase tracking-widest">
+          <li><a href="index.html" class="hover:text-[#d9c5a0]">Inicio</a></li>
+          <li><a href="carta.html" class="hover:text-[#d9c5a0]">Carta</a></li>
+          <li><a href="formularios.html" class="hover:text-[#d9c5a0]">Reservas</a></li>
+          <li><a href="informacion.html" class="hover:text-[#d9c5a0]">Nosotros</a></li>
+        </ul>
+      </nav>
 
-            <!-- Texto del restaurante -->
-            <div class="md:w-1/3 text-center md:text-left">
-                <p class="italic mb-2">"Cada plato es un fragmento de historia."</p>
-                <p class="text-sm">Bibliotheca Ignis · Alejandría eterna</p>
-            </div>
+      <div class="flex gap-6 text-2xl">
+        <a href="#" class="hover:text-[#d9c5a0] transition"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="hover:text-[#d9c5a0] transition"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-[#d9c5a0] transition"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 
-            <!-- Navegación bonita -->
-            <nav class="md:w-1/3">
-                <ul
-                    class="flex flex-col md:flex-row justify-center md:justify-between gap-4 md:gap-6 text-[#f4efe6] font-semibold">
-                    <li><a href="index.html" class="hover:text-[#FFD700] transition">Inicio</a></li>
-                    <li><a href="carta.html" class="hover:text-[#FFD700] transition">Carta</a></li>
-                    <li><a href="formularios.html" class="hover:text-[#FFD700] transition">Pedir Mesa</a></li>
-                    <li><a href="formularios.html" class="hover:text-[#FFD700] transition">Para llevar</a></li>
-                    <li><a href="informacion.html" class="hover:text-[#FFD700] transition">Nosotros</a></li>
-                    <li><a href="subscripcion.html" class="hover:text-[#FFD700] transition">Suscripción</a></li>
-                    <li><a href="servicios.html" class="hover:text-[#FFD700] transition">Servicios</a></li>
-                </ul>
-            </nav>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('[data-collapse-toggle="navbar-default"]');
+      const menu = document.getElementById('navbar-default');
+      if (btn) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    });
+  </script>
 
-            <div>
-                <i class="fa-brands fa-facebook-f color-white"></i>
-                <i class="fa-brands fa-x-twitter color-white"></i>
-                <i class="fa-brands fa-square-youtube text-white"></i>
-            </div>
-
-
-        </div>
-    </footer>
 </body>
 
 </html>

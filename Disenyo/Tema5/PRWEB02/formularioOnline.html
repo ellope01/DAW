@@ -4,28 +4,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bibliotheca Ignis - Pedido Online</title>
+  <title>Alejandría | Pedido Completo</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
     rel="stylesheet">
   <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    /* Estilo para que la tarjeta se ilumine al marcar el checkbox oculto */
+    input[type="checkbox"]:checked+label {
+      border-color: #3b2f2f;
+      background-color: #ffffff;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
 
+    input[type="checkbox"]:checked+label .check-icon {
+      color: #3b2f2f;
+      opacity: 1;
+    }
+  </style>
 </head>
 
-<body class="bg-[#D9C5A0] w-full pt-[73px]">
-  <nav class="bg-[#D9C5A0]/95 backdrop-blur fixed w-full z-50 top-0 border-b border-[#d9c5a0] shadow-lg mb-5">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+<body class="bg-[#D9C5A0] w-full pt-[90px] font-sans text-amber-950">
 
+  <nav class="bg-[#3b2f2f] fixed w-full z-50 top-0 border-b border-[#d9c5a0] shadow-lg">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <div class="flex items-center gap-3">
-        <img src="./sources/img/logoBueno.png" class="w-10 h-10 rounded-full" alt="logo">
-        <span class="text-[#f4efe6] font-bold text-xl">Alejandría</span>
+        <img src="./sources/img/logoBueno.png" class="w-10 h-10 rounded-full border border-[#d9c5a0]" alt="logo">
+        <span class="text-[#f4efe6] font-bold text-xl">Bibliotheca Ignis</span>
       </div>
 
       <button data-collapse-toggle="navbar-default" type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-[#f4efe6] rounded md:hidden hover:bg-[#d9c5a0]/20 focus:outline-none focus:ring-0"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-[#d9c5a0] rounded-lg md:hidden hover:bg-white/10 focus:outline-none"
         aria-controls="navbar-default" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
+        <span class="sr-only">Abrir menú</span>
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -33,199 +46,215 @@
 
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <ul class="flex flex-col md:flex-row gap-6 mt-4 md:mt-0 text-[#f4efe6] font-medium">
-          <li><a href="index.html" class="hover:text-[#d9c5a0]">Inicio</a></li>
-          <li><a href="carta.html" class="hover:text-[#d9c5a0]">Carta</a></li>
-          <li><a href="formularios.html" class="hover:text-[#d9c5a0]">Pedir Mesa</a></li>
-          <li><a href="formularios.html" class="hover:text-[#d9c5a0]">Para llevar</a></li>
-          <li><a href="informacion.html" class="hover:text-[#d9c5a0]">Nosotros</a></li>
-          <li><a href="subscripcion.html" class="hover:text-[#d9c5a0]">subscripcion</a></li>
-          <li><a href="servicios.html" class="hover:text-[#d9c5a0]">Nuestros servicios</a></li>
-
+          <li><a href="index.html" class="hover:text-[#d9c5a0] transition py-2 block">Inicio</a></li>
+          <li><a href="carta.html" class="hover:text-[#d9c5a0] transition py-2 block">Carta</a></li>
+          <li><a href="formularios.html" class="text-[#d9c5a0] py-2 block">Reservar</a></li>
+          <li><a href="informacion.html" class="hover:text-[#d9c5a0] transition py-2 block">Nosotros</a></li>
+          <li><a href="servicios.html" class="hover:text-[#d9c5a0] transition py-2 block">Servicios</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- HERO -->
-  <section class="bg-cover bg-center h-64 flex items-center justify-center"
-    style="background-image: url('./sources/img/alejandria-fondo.jpg');">
-    <div class="bg-black/50 p-6 rounded-xl text-center text-white">
-      <h1 class="text-4xl font-bold">Pide Aquí Online</h1>
-      <p class="mt-2 italic">Tus sabores favoritos de Alejandría, directo a tu casa</p>
+
+  <section class="relative h-48 flex items-center justify-center">
+    <div class="absolute inset-0 bg-[#3b2f2f] opacity-90"></div>
+    <div class="relative text-center">
+      <h1 class="text-[#f4efe6] text-3xl md:text-4xl font-serif font-bold uppercase tracking-[0.2em]">Tu Pedido Online
+      </h1>
+      <p class="text-[#d9c5a0] italic mt-2">Selecciona los tesoros que deseas recibir</p>
     </div>
   </section>
 
-  <!-- FORMULARIO DE PEDIDO -->
-  <section class="max-w-5xl mx-auto p-6 mt-10 bg-[#fdf5e6] rounded-xl shadow-lg">
-    <h2 class="text-3xl font-bold mb-6 text-center">Formulario de Pedido</h2>
-    <form class="flex flex-col gap-6">
+  <main class="max-w-5xl mx-auto p-6 md:p-12 -mt-10 relative z-10 bg-[#fdf5e6] rounded-t-[3rem] shadow-2xl mb-20">
+    <form action="#">
 
-      <!-- DATOS DEL CLIENTE -->
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="flex flex-col">
-          <label class="mb-1 font-semibold">Nombre:</label>
-          <input type="text" placeholder="Nombre completo" class="p-2 border rounded-md" required>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 bg-white/50 p-6 rounded-2xl border border-amber-900/10">
+        <div class="md:col-span-2">
+          <h2 class="font-serif font-bold text-xl border-b border-amber-900/20 pb-2">Información de Entrega</h2>
         </div>
-        <div class="flex flex-col">
-          <label class="mb-1 font-semibold">Correo electrónico:</label>
-          <input type="email" placeholder="correo@ejemplo.com" class="p-2 border rounded-md" required>
+        <input type="text" placeholder="Nombre completo"
+          class="p-3 rounded-xl border-gray-200 outline-none focus:ring-2 focus:ring-[#3b2f2f]" required>
+        <input type="tel" placeholder="Teléfono de contacto"
+          class="p-3 rounded-xl border-gray-200 outline-none focus:ring-2 focus:ring-[#3b2f2f]" required>
+        <input type="text" placeholder="Dirección completa"
+          class="md:col-span-2 p-3 rounded-xl border-gray-200 outline-none focus:ring-2 focus:ring-[#3b2f2f]" required>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl font-bold mb-6 flex items-center gap-3 text-[#3b2f2f]">
+          <span
+            class="w-8 h-8 bg-[#3b2f2f] text-[#d9c5a0] rounded-full flex items-center justify-center text-sm">01</span>
+          Entradas - Pergaminos Iniciales
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="relative">
+            <input type="checkbox" id="pan" class="hidden peer">
+            <label for="pan"
+              class="flex items-center justify-between p-4 bg-white/60 border-2 border-transparent rounded-2xl cursor-pointer hover:bg-white transition-all">
+              <div>
+                <p class="font-bold">Pan de Faros</p>
+                <p class="text-xs text-gray-500 italic">Aceite de oliva y za'atar</p>
+              </div>
+              <input type="number" min="1" value="1"
+                class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none focus:ring-0">
+            </label>
+          </div>
+          <div class="relative">
+            <input type="checkbox" id="hummus" class="hidden peer">
+            <label for="hummus"
+              class="flex items-center justify-between p-4 bg-white/60 border-2 border-transparent rounded-2xl cursor-pointer hover:bg-white transition-all">
+              <div>
+                <p class="font-bold">Hummus de la Biblioteca</p>
+                <p class="text-xs text-gray-500 italic">Garbanzos, tahini y comino</p>
+              </div>
+              <input type="number" min="1" value="1" class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none">
+            </label>
+          </div>
+          <div class="relative">
+            <input type="checkbox" id="dolmades" class="hidden peer">
+            <label for="dolmades"
+              class="flex items-center justify-between p-4 bg-white/60 border-2 border-transparent rounded-2xl cursor-pointer hover:bg-white transition-all">
+              <div>
+                <p class="font-bold">Dolmades de Ptolomeo</p>
+                <p class="text-xs text-gray-500 italic">Hojas de parra con arroz</p>
+              </div>
+              <input type="number" min="1" value="1" class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none">
+            </label>
+          </div>
+          <div class="relative">
+            <input type="checkbox" id="ensalada" class="hidden peer">
+            <label for="ensalada"
+              class="flex items-center justify-between p-4 bg-white/60 border-2 border-transparent rounded-2xl cursor-pointer hover:bg-white transition-all">
+              <div>
+                <p class="font-bold">Ensalada del Nilo</p>
+                <p class="text-xs text-gray-500 italic">Feta, aceitunas y granada</p>
+              </div>
+              <input type="number" min="1" value="1" class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none">
+            </label>
+          </div>
         </div>
       </div>
 
-      <!-- ENTRADAS -->
-      <h3 class="text-2xl font-bold mt-4">Entradas</h3>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="panFaros" name="platos" value="Pan de Faros">
-          <label for="panFaros" class="font-semibold">Pan de Faros</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="hummus" name="platos" value="Hummus de la Biblioteca">
-          <label for="hummus" class="font-semibold">Hummus de la Biblioteca</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="dolmades" name="platos" value="Dolmades de Ptolomeo">
-          <label for="dolmades" class="font-semibold">Dolmades de Ptolomeo</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="ensaladaNilo" name="platos" value="Ensalada del Nilo">
-          <label for="ensaladaNilo" class="font-semibold">Ensalada del Nilo</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-      </div>
-
-      <!-- PLATOS PRINCIPALES -->
-      <h3 class="text-2xl font-bold mt-4">Platos principales</h3>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="moussaka" name="platos" value="Moussaka de Hipatia">
-          <label for="moussaka" class="font-semibold">Moussaka de Hipatia</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="cuscus" name="platos" value="Cuscús Alejandrino">
-          <label for="cuscus" class="font-semibold">Cuscús Alejandrino</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="risotto" name="platos" value="Risotto de Faros">
-          <label for="risotto" class="font-semibold">Risotto de Faros</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="tagine" name="platos" value="Tagine del Desierto">
-          <label for="tagine" class="font-semibold">Tagine del Desierto</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl font-bold mb-6 flex items-center gap-3 text-[#3b2f2f]">
+          <span
+            class="w-8 h-8 bg-[#3b2f2f] text-[#d9c5a0] rounded-full flex items-center justify-center text-sm">02</span>
+          Platos Principales - Sabiduría Eterna
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="relative">
+            <input type="checkbox" id="moussaka" class="hidden peer">
+            <label for="moussaka"
+              class="flex items-center justify-between p-4 bg-white/60 border-2 border-transparent rounded-2xl cursor-pointer hover:bg-white transition-all">
+              <p class="font-bold">Moussaka de Hipatia</p>
+              <input type="number" min="1" value="1" class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none">
+            </label>
+          </div>
+          <div class="relative">
+            <input type="checkbox" id="cuscus" class="hidden peer">
+            <label for="cuscus"
+              class="flex items-center justify-between p-4 bg-white/60 border-2 border-transparent rounded-2xl cursor-pointer hover:bg-white transition-all">
+              <p class="font-bold">Cuscús Alejandrino</p>
+              <input type="number" min="1" value="1" class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none">
+            </label>
+          </div>
+          <div class="relative">
+            <input type="checkbox" id="risotto" class="hidden peer">
+            <label for="risotto"
+              class="flex items-center justify-between p-4 bg-white/60 border-2 border-transparent rounded-2xl cursor-pointer hover:bg-white transition-all">
+              <p class="font-bold">Risotto de Faros</p>
+              <input type="number" min="1" value="1" class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none">
+            </label>
+          </div>
+          <div class="relative">
+            <input type="checkbox" id="tagine" class="hidden peer">
+            <label for="tagine"
+              class="flex items-center justify-between p-4 bg-white/60 border-2 border-transparent rounded-2xl cursor-pointer hover:bg-white transition-all">
+              <p class="font-bold">Tagine del Desierto</p>
+              <input type="number" min="1" value="1" class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none">
+            </label>
+          </div>
         </div>
       </div>
 
-      <!-- ESPECIALES -->
-      <h3 class="text-2xl font-bold mt-4">Especiales</h3>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="veganoCleopatra" name="platos" value="Plato Vegano de Cleopatra">
-          <label for="veganoCleopatra" class="font-semibold">Plato Vegano de Cleopatra</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="gyros" name="platos" value="Gyros Vegetal">
-          <label for="gyros" class="font-semibold">Gyros Vegetal</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-      </div>
-
-      <!-- POSTRES -->
-      <h3 class="text-2xl font-bold mt-4">Postres</h3>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="baklava" name="platos" value="Baklava">
-          <label for="baklava" class="font-semibold">Baklava</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="datiles" name="platos" value="Dátiles del Oasis">
-          <label for="datiles" class="font-semibold">Dátiles del Oasis</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl font-bold mb-6 flex items-center gap-3 text-[#3b2f2f]">
+          <span
+            class="w-8 h-8 bg-[#3b2f2f] text-[#d9c5a0] rounded-full flex items-center justify-center text-sm">03</span>
+          Especiales - Textos Prohibidos
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="relative">
+            <input type="checkbox" id="cleopatra" class="hidden peer">
+            <label for="cleopatra"
+              class="flex items-center justify-between p-4 bg-white border-2 border-transparent rounded-2xl cursor-pointer shadow-sm">
+              <p class="font-bold">Plato Vegano de Cleopatra</p>
+              <input type="number" min="1" value="1" class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none">
+            </label>
+          </div>
+          <div class="relative">
+            <input type="checkbox" id="gyros" class="hidden peer">
+            <label for="gyros"
+              class="flex items-center justify-between p-4 bg-white border-2 border-transparent rounded-2xl cursor-pointer shadow-sm">
+              <p class="font-bold">Gyros Vegetal</p>
+              <input type="number" min="1" value="1" class="w-12 h-8 text-center bg-gray-100 rounded-lg border-none">
+            </label>
+          </div>
         </div>
       </div>
 
-      <!-- BEBIDAS -->
-      <h3 class="text-2xl font-bold mt-4">Bebidas</h3>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="hibisco" name="platos" value="Infusión de Hibisco">
-          <label for="hibisco" class="font-semibold">Infusión de Hibisco</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div>
+          <h2 class="font-serif text-xl font-bold mb-4 text-[#3b2f2f]">El Último Pergamino</h2>
+          <div class="space-y-3">
+            <label
+              class="flex items-center justify-between p-3 bg-white/60 rounded-xl border border-transparent cursor-pointer">
+              <span class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4 accent-[#3b2f2f]">
+                Baklava</span>
+              <input type="number" min="1" value="1" class="w-10 text-xs border-none bg-transparent">
+            </label>
+            <label
+              class="flex items-center justify-between p-3 bg-white/60 rounded-xl border border-transparent cursor-pointer">
+              <span class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4 accent-[#3b2f2f]"> Dátiles
+                Oasis</span>
+              <input type="number" min="1" value="1" class="w-10 text-xs border-none bg-transparent">
+            </label>
+          </div>
         </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="menta" name="platos" value="Té de Menta">
-          <label for="menta" class="font-semibold">Té de Menta</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="limonada" name="platos" value="Limonada de Granada">
-          <label for="limonada" class="font-semibold">Limonada de Granada</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
-        </div>
-        <div class="flex items-center gap-3 p-3 border rounded-lg bg-[#fff7e6]">
-          <input type="checkbox" id="vino" name="platos" value="Vino especiado">
-          <label for="vino" class="font-semibold">Vino especiado</label>
-          <input type="number" min="0" value="0" class="w-16 p-1 border rounded-md">
+        <div>
+          <h2 class="font-serif text-xl font-bold mb-4 text-[#3b2f2f]">Elixires del Saber</h2>
+          <div class="grid grid-cols-2 gap-2">
+            <label
+              class="text-xs flex items-center gap-1 bg-white/40 p-2 rounded-lg cursor-pointer hover:bg-white"><input
+                type="checkbox"> Hibisco</label>
+            <label
+              class="text-xs flex items-center gap-1 bg-white/40 p-2 rounded-lg cursor-pointer hover:bg-white"><input
+                type="checkbox"> Té Menta</label>
+            <label
+              class="text-xs flex items-center gap-1 bg-white/40 p-2 rounded-lg cursor-pointer hover:bg-white"><input
+                type="checkbox"> Limonada</label>
+            <label
+              class="text-xs flex items-center gap-1 bg-white/40 p-2 rounded-lg cursor-pointer hover:bg-white"><input
+                type="checkbox"> Vino Esp.</label>
+          </div>
         </div>
       </div>
 
-      <!-- DETALLES DE ENTREGA -->
-      <div class="grid md:grid-cols-2 gap-4 mt-6">
-        <div class="flex flex-col">
-          <label class="mb-1 font-semibold">Dirección de entrega:</label>
-          <input type="text" placeholder="Calle, número, ciudad" class="p-2 border rounded-md" required>
-        </div>
-        <div class="flex flex-col">
-          <label class="mb-1 font-semibold">Comentarios adicionales:</label>
-          <input type="text" placeholder="Alérgenos, horarios especiales..." class="p-2 border rounded-md">
-        </div>
+      <div class="pt-8 border-t border-amber-900/10 text-center">
+        <textarea placeholder="Notas adicionales (alergias, timbre, etc.)"
+          class="w-full p-4 rounded-2xl border-none bg-white mb-6 outline-none focus:ring-2 focus:ring-[#3b2f2f]"></textarea>
+        <button type="submit"
+          class="bg-[#3b2f2f] text-[#f4efe6] px-12 py-4 rounded-full font-bold text-lg uppercase tracking-widest hover:bg-amber-950 transition-all shadow-xl hover:shadow-2xl active:scale-95">
+          Enviar Pedido a la Cocina
+        </button>
       </div>
 
-      <button type="submit" class="mt-6 bg-[#3b2f2f] text-white p-3 rounded-xl font-bold hover:bg-[#5a4a3c] transition">
-        Realizar Pedido
-      </button>
     </form>
-  </section>
+  </main>
 
-
-  <footer class="bg-[#3b2f2f] text-white py-10 mt-10">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-8">
-
-      <!-- Texto del restaurante -->
-      <div class="md:w-1/3 text-center md:text-left">
-        <p class="italic mb-2">"Cada plato es un fragmento de historia."</p>
-        <p class="text-sm">Bibliotheca Ignis · Alejandría eterna</p>
-      </div>
-
-      <!-- Navegación bonita -->
-      <nav class="md:w-1/3">
-        <ul
-          class="flex flex-col md:flex-row justify-center md:justify-between gap-4 md:gap-6 text-[#f4efe6] font-semibold">
-          <li><a href="index.html" class="hover:text-[#FFD700] transition">Inicio</a></li>
-          <li><a href="carta.html" class="hover:text-[#FFD700] transition">Carta</a></li>
-          <li><a href="formularios.html" class="hover:text-[#FFD700] transition">Pedir Mesa</a></li>
-          <li><a href="formularios.html" class="hover:text-[#FFD700] transition">Para llevar</a></li>
-          <li><a href="informacion.html" class="hover:text-[#FFD700] transition">Nosotros</a></li>
-          <li><a href="subscripcion.html" class="hover:text-[#FFD700] transition">Suscripción</a></li>
-          <li><a href="servicios.html" class="hover:text-[#FFD700] transition">Servicios</a></li>
-        </ul>
-      </nav>
-
-      <div>
-        <i class="fa-brands fa-facebook-f color-white"></i>
-        <i class="fa-brands fa-x-twitter color-white"></i>
-        <i class="fa-brands fa-square-youtube text-white"></i>
-      </div>
-
-
-    </div>
+  <footer class="bg-[#3b2f2f] text-[#d9c5a0] py-8 text-center">
+    <p class="font-serif italic">"De la gran biblioteca a tu hogar"</p>
+    <p class="text-[10px] uppercase tracking-widest mt-2 opacity-50">Alejandría · MMXXVI</p>
   </footer>
 
 </body>
