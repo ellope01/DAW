@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="view_videojuego_form" model="ir.ui.view">
+        <field name="name">tienda.videojuego.form</field>
+        <field name="model">tienda.videojuego</field>
+        <field name="arch" type="xml">
+            <form string="Videojuego">
+                <sheet>
+                    <group>
+                        <group string="Información del Juego">
+                            <field name="nombre" placeholder="ej. The Legend of Zelda"/>
+                            <field name="consola"/>
+                            <field name="estado"/>
+                        </group>
+                        <group string="Precio y Stock">
+                            <field name="precio_base"/>
+                            <field name="descuento"/>
+                            <field name="precio_final" readonly="1"/>
+                            <field name="unidades"/>
+                            <field name="valor_stock" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_videojuego_tree" model="ir.ui.view">
+        <field name="name">tienda.videojuego.tree</field>
+        <field name="model">tienda.videojuego</field>
+        <field name="arch" type="xml">
+            <list string="Videojuegos">
+                <field name="nombre"/>
+                <field name="consola"/>
+                <field name="estado"/>
+                <field name="precio_base"/>
+                <field name="descuento" widget="boolean_toggle"/>
+                <field name="precio_final"/>
+                <field name="unidades"/>
+                <field name="valor_stock"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_videojuego_search" model="ir.ui.view">
+        <field name="name">tienda.videojuego.search</field>
+        <field name="model">tienda.videojuego</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Videojuegos">
+                <field name="nombre"/>
+                <field name="consola"/>
+                <field name="estado"/>
+                <filter string="Con Descuento" name="con_descuento" domain="[('descuento', '=', True)]"/>
+                <filter string="Sin Stock" name="sin_stock" domain="[('unidades', '=', 0)]"/>
+                <group expand="0" string="Agrupar Por">
+                    <filter string="Consola" name="group_consola" context="{'group_by':'consola'}"/>
+                    <filter string="Estado" name="group_estado" context="{'group_by':'estado'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_videojuego" model="ir.actions.act_window">
+        <field name="name">Videojuegos</field>
+        <field name="res_model">tienda.videojuego</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea tu primer videojuego
+            </p>
+            <p>
+                Haz clic en "Crear" para agregar un nuevo videojuego al inventario.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_tienda_videojuegos_root"
+              name="Tienda Videojuegos"
+              sequence="10"/>
+
+    <menuitem id="menu_videojuegos"
+              name="Videojuegos"
+              parent="menu_tienda_videojuegos_root"
+              action="action_videojuego"
+              sequence="10"/>
+
+</odoo>

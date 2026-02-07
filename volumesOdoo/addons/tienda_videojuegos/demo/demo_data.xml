@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- 
+        <record id="demo_videojuego_1" model="tienda.videojuego">
+            <field name="nombre">The Legend of Zelda: Tears of the Kingdom</field>
+            <field name="consola">switch</field>
+            <field name="precio_base">59.99</field>
+            <field name="unidades">15</field>
+            <field name="estado">nuevo</field>
+            <field name="descuento" eval="False"/>
+        </record>
+
+        <record id="demo_videojuego_2" model="tienda.videojuego">
+            <field name="nombre">God of War Ragnarök</field>
+            <field name="consola">ps5</field>
+            <field name="precio_base">69.99</field>
+            <field name="unidades">10</field>
+            <field name="estado">nuevo</field>
+            <field name="descuento" eval="True"/>
+        </record>
+
+        <record id="demo_videojuego_3" model="tienda.videojuego">
+            <field name="nombre">Elden Ring</field>
+            <field name="consola">pc</field>
+            <field name="precio_base">49.99</field>
+            <field name="unidades">8</field>
+            <field name="estado">segunda_mano</field>
+            <field name="descuento" eval="True"/>
+        </record>
+
+        <record id="demo_videojuego_4" model="tienda.videojuego">
+            <field name="nombre">Forza Horizon 5</field>
+            <field name="consola">xbox</field>
+            <field name="precio_base">59.99</field>
+            <field name="unidades">12</field>
+            <field name="estado">nuevo</field>
+            <field name="descuento" eval="False"/>
+        </record>
+
+        <record id="demo_videojuego_5" model="tienda.videojuego">
+            <field name="nombre">Cyberpunk 2077</field>
+            <field name="consola">ps5</field>
+            <field name="precio_base">39.99</field>
+            <field name="unidades">5</field>
+            <field name="estado">segunda_mano</field>
+            <field name="descuento" eval="True"/>
+        </record>
+        -->
+    </data>
+</odoo>
