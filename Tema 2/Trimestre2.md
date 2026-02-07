@@ -282,18 +282,12 @@ docker exec -it nombre_contenedor_odoo bash
 # Generar estructura automática
 odoo scaffold mi_modulo /mnt/extra-addons/
 
-# La estructura generada incluye:
-# - Modelo básico
-# - Vista de árbol y formulario
-# - Archivos de seguridad
-# - Menús de navegación
-```
+
 
 ### 3.4 Desarrollo de Modelos y Vistas
 
 **Modelo Python Básico:**
 ```python
-# models/mi_modelo.py
 from odoo import models, fields, api
 
 class MiModeloPersonalizado(models.Model):
