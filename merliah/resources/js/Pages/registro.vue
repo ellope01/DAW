@@ -92,6 +92,9 @@
                     <h1 class="text-[10rem] text-center">REGISTRO</h1>
                     <div class="flex flex-col gap-2 items-center">
                         <!--Imagen para que eliga el estilo-->
+                        <div>
+                            <!--div con las imagenes del estilo-->
+                        </div>
                         <div class="flex justify-center gap-1 mt-4">
                             <span
                                 class="w-2 h-2 rounded-full bg-[#FFBB4E]/70"

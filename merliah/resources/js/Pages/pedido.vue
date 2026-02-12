@@ -6,20 +6,27 @@
 
         <div class="h-4/5 flex items-center justify-center">
             <div
-                class="bg-[#FF9FD4]/65 h-9/10 flex items-center justify-center w-9/10 rounded-[2rem] gap-3"
+                class="bg-[#FF9FD4]/65 h-9/10 flex items-center justify-center w-9/10 rounded-[2rem]"
             >
-                <div class="bg-neutral-300 h-4/5 w-4/10 rounded-2xl">
-                    Imagen
-                </div>
-                <div class="flex flex-col">
-                    <div class="bg-neutral-300 w-4/5 h-6">
-                        <p>Información usuario</p>
+                <div class="w-full h-4/5 flex gap-8">
+                    <!--div texto-->
+                    <div
+                        class="w-1/10 h-full flex flex-col justify-center items-center ml-6"
+                    >
+                        <p class="text-6xl">P</p>
+                        <p class="text-6xl">E</p>
+                        <p class="text-6xl">D</p>
+                        <p class="text-6xl">I</p>
+                        <p class="text-6xl">D</p>
+                        <p class="text-6xl">O</p>
+                        <p class="text-6xl">S</p>
                     </div>
-                    <div class="bg-neutral-300 w-4/5 h-6">
-                        <p>Pedidos</p>
-                    </div>
-                    <div class="bg-neutral-300 w-4/5 h-6">
-                        <p>Favoritos</p>
+
+                    <!--pedidos-->
+                    <div class="flex w-4/5 h-4/5 gap-10 flex-wrap">
+                        <div class="bg-neutral-300 w-3/10 h-120"></div>
+                        <div class="bg-neutral-300 w-3/10 h-120"></div>
+                        <div class="bg-neutral-300 w-3/10 h-120"></div>
                     </div>
                 </div>
             </div>
