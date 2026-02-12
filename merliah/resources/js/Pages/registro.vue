@@ -1,5 +1,4 @@
 <template>
-    <!-- Contenedor padre con altura de viewport -->
     <div class="h-screen flex flex-col bg-white">
         <div class="bg-[#FFBB4E] h-1/10 flex items-center justify-center">
             Header
@@ -14,7 +13,7 @@
                 </div>
 
                 <!--Primer div info-->
-                <div class="h-4/5 w-5/10 rounded-2xl">
+                <div class="h-4/5 w-5/10">
                     <h1 class="text-[10rem] text-center">REGISTRO</h1>
                     <div class="flex flex-col gap-2 items-center">
                         <input
@@ -34,13 +33,13 @@
                         />
                         <div class="flex justify-center gap-1 mt-4">
                             <span
-                                class="w-2 h-2 rounded-full  bg-[#FFBB4E]"
+                                class="w-2 h-2 rounded-full bg-[#FFBB4E]"
                             ></span>
                             <span
-                                class="w-2 h-2 rounded-full  bg-[#FFBB4E]/70"
+                                class="w-2 h-2 rounded-full bg-[#FFBB4E]/70"
                             ></span>
                             <span
-                                class="w-2 h-2 rounded-full  bg-[#FFBB4E]/70"
+                                class="w-2 h-2 rounded-full bg-[#FFBB4E]/70"
                             ></span>
                         </div>
                         <button
@@ -52,7 +51,7 @@
                 </div>
 
                 <!--Segundo div info-->
-                <div class="hidden">
+                <div class="hidden h-4/5 w-5/10">
                     <h1 class="text-[10rem] text-center">REGISTRO</h1>
                     <div class="flex flex-col gap-2 items-center">
                         <input
@@ -72,13 +71,13 @@
                         />
                         <div class="flex justify-center gap-1 mt-4">
                             <span
-                                class="w-2 h-2 rounded-full  bg-[#FFBB4E]/70"
+                                class="w-2 h-2 rounded-full bg-[#FFBB4E]/70"
                             ></span>
                             <span
-                                class="w-2 h-2 rounded-full  bg-[#FFBB4E]"
+                                class="w-2 h-2 rounded-full bg-[#FFBB4E]"
                             ></span>
                             <span
-                                class="w-2 h-2 rounded-full  bg-[#FFBB4E]/70"
+                                class="w-2 h-2 rounded-full bg-[#FFBB4E]/70"
                             ></span>
                         </div>
                         <button
@@ -89,7 +88,7 @@
                     </div>
                 </div>
                 <!--Tercer div diseño-->
-                <div class="hidden">
+                <div class="hidden h-4/5 w-5/10">
                     <h1 class="text-[10rem] text-center">REGISTRO</h1>
                     <div class="flex flex-col gap-2 items-center">
                         <!--Imagen para que eliga el estilo-->

@@ -1,5 +1,4 @@
 <template>
-    <!-- Contenedor padre con altura de viewport -->
     <div class="h-screen flex flex-col bg-white">
         <div class="bg-[#FFBB4E] h-1/10 flex items-center justify-center">
             Header
