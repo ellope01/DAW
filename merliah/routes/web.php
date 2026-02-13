@@ -24,7 +24,7 @@ Route::get('/usuarioCarrito', function () {
     return Inertia::render('usuarioCarrito');
 });
 
-Route::get('/usuarioFavoritos', function () {
+Route::get('/favorito', function () {
     return Inertia::render('usuarioFavoritos');
 });
 
