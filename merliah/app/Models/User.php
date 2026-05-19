@@ -19,8 +19,16 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'apellidos',
         'email',
         'password',
+        'telefono',
+        'fecha_nacimiento',
+        'estilo_preferido',
+        'direccion',
+        'ciudad',
+        'codigo_postal',
+        'avatar',
     ];
 
     /**
@@ -43,6 +51,27 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'fecha_nacimiento' => 'date',
         ];
+    }
+
+    public function favoritos()
+    {
+        return $this->hasMany(Favorito::class, 'user_id');
+    }
+
+    public function carritos()
+    {
+        return $this->hasMany(Carrito::class, 'user_id');
+    }
+
+    public function pedidos()
+    {
+        return $this->hasMany(Pedido::class, 'user_id');
+    }
+
+    public function outfits()
+    {
+        return $this->hasMany(Outfit::class, 'user_id');
     }
 }

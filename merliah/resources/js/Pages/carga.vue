@@ -1,22 +1,24 @@
 <template>
-    <div class="h-screen flex flex-col bg-white">
-        <div class="bg-[#FFBB4E] h-1/10 flex items-center justify-center">
-            Header
-        </div>
+  <div class="min-h-screen bg-cream font-sans flex items-center justify-center">
+    <div class="text-center animate-fade-in">
+      <!-- Logo -->
+      <h1 class="text-4xl md:text-5xl font-display font-semibold text-ink tracking-[0.04em] lowercase mb-8">
+        merliah
+      </h1>
 
-        <div class="h-4/5 flex flex-col items-center justify-center bg-[#FF9FD4]/65 gap-4">
-            <img alt="logo" src="/img/logo.png" class="h-3/10"/>
-            <p class="text-4xl text-white/80">Preparando el catalogo perfecto</p>
-        </div>
+      <!-- Spinner -->
+      <div class="relative w-12 h-12 mx-auto mb-6">
+        <div class="absolute inset-0 border-2 border-sand rounded-full"></div>
+        <div class="absolute inset-0 border-2 border-transparent border-t-ink rounded-full animate-spin-slow"></div>
+      </div>
 
-        <div class="bg-[#FFBB4E] h-1/5 flex items-center justify-center">
-            Footer
-        </div>
+      <!-- Text -->
+      <p class="text-[11px] tracking-[0.3em] uppercase text-stone font-medium animate-pulse-dot">
+        Cargando tu experiencia
+      </p>
     </div>
+  </div>
 </template>
 
 <script setup>
-// Aquí puedes agregar tu lógica
 </script>
-
-<style scoped></style>
