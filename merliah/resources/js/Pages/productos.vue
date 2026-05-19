@@ -1,77 +1,212 @@
 <template>
-  <div class="min-h-screen bg-cream font-sans flex flex-col">
+  <div class="min-h-screen bg-[#F5F0EB] font-serif flex flex-col">
 
     <Header activo="tienda" />
 
-    <main class="flex-1">
+    <main class="pt-16 flex-1">
 
-      <!-- Page title -->
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-8 pb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4 border-b border-sand/60">
+      <!-- Título página -->
+      <div class="max-w-7xl mx-auto px-8 py-12 flex items-end justify-between border-b border-[#D6CAB8]">
         <div>
-          <p class="text-[11px] tracking-[0.25em] uppercase text-stone font-medium mb-2">Catálogo completo</p>
-          <h2 class="text-4xl md:text-5xl font-display text-ink tracking-tight lowercase">tienda</h2>
+          <p class="text-xs tracking-[0.3em] uppercase text-[#6B5E4E] mb-2">Catálogo completo</p>
+          <h1 class="text-6xl font-light text-[#1A1208] tracking-tight">Tienda</h1>
+        </div><template>
+  <div class="min-h-screen bg-[#F5F0EB] font-serif flex flex-col">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#F5F0EB]/90 backdrop-blur-sm border-b border-[#D6CAB8]">
+      <div class="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
+        <nav class="flex gap-8 text-xs tracking-[0.2em] uppercase text-[#6B5E4E]">
+          <a href="#" class="text-[#1A1208]">Tienda</a>
+          <a href="#" class="hover:text-[#1A1208] transition-colors">Outfits</a>
+        </nav>
+        <a href="#" class="text-2xl tracking-[0.3em] font-light text-[#1A1208] uppercase">Velour</a>
+        <div class="flex gap-6">
+          <button class="text-xs tracking-[0.2em] uppercase text-[#6B5E4E] hover:text-[#1A1208] transition-colors">Cuenta</button>
+          <button class="text-xs tracking-[0.2em] uppercase text-[#6B5E4E] hover:text-[#1A1208] transition-colors">Carrito (0)</button>
         </div>
-        <p class="text-xs text-stone tracking-wide">{{ productos.total || productos.data?.length || 0 }} productos</p>
+      </div>
+    </header>
+
+    <main class="pt-16 flex-1">
+
+      <!-- Página title -->
+      <div class="max-w-7xl mx-auto px-8 py-12 flex items-end justify-between border-b border-[#D6CAB8]">
+        <div>
+          <p class="text-xs tracking-[0.3em] uppercase text-[#6B5E4E] mb-2">Catálogo completo</p>
+          <h1 class="text-6xl font-light text-[#1A1208] tracking-tight">
+            Tienda
+          </h1>
+        </div>
+        <p class="text-xs text-[#6B5E4E] tracking-wide">48 productos</p>
       </div>
 
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8 flex gap-10">
+      <div class="max-w-7xl mx-auto px-8 py-8 flex gap-12">
 
         <!-- Sidebar filtros -->
-        <aside class="hidden md:block w-56 shrink-0">
-          <div class="sticky top-28">
+        <aside class="w-52 shrink-0">
+          <div class="sticky top-24">
+            <div class="mb-8">
+              <p class="text-xs tracking-[0.3em] uppercase text-[#1A1208] mb-4">Categoría</p>
+              <div class="flex flex-col gap-2">
+                <label v-for="cat in categorias" :key="cat" class="flex items-center gap-3 cursor-pointer group">
+                  <input type="checkbox" class="appearance-none w-3 h-3 border border-[#D6CAB8] checked:bg-[#1A1208] checked:border-[#1A1208] transition-colors" />
+                  <span class="text-xs text-[#6B5E4E] group-hover:text-[#1A1208] transition-colors tracking-wide">{{ cat }}</span>
+                </label>
+              </div>
+            </div>
 
             <div class="mb-8">
-              <p class="text-[11px] tracking-[0.2em] uppercase text-ink font-semibold mb-4">Categoría</p>
-              <div class="flex flex-col gap-2.5">
+              <p class="text-xs tracking-[0.3em] uppercase text-[#1A1208] mb-4">Precio</p>
+              <div class="flex flex-col gap-2">
+                <label v-for="precio in precios" :key="precio" class="flex items-center gap-3 cursor-pointer group">
+                  <input type="radio" name="precio" class="appearance-none w-3 h-3 border border-[#D6CAB8] checked:bg-[#1A1208] rounded-full transition-colors" />
+                  <span class="text-xs text-[#6B5E4E] group-hover:text-[#1A1208] transition-colors tracking-wide">{{ precio }}</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-xs tracking-[0.3em] uppercase text-[#1A1208] mb-4">Color</p>
+              <div class="flex gap-2 flex-wrap">
+                <button v-for="color in colores" :key="color.nombre"
+                  :style="{ backgroundColor: color.hex }"
+                  :title="color.nombre"
+                  class="w-6 h-6 rounded-full border border-[#D6CAB8] hover:scale-110 transition-transform"></button>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Grid productos -->
+        <div class="flex-1">
+          <!-- Ordenar -->
+          <div class="flex justify-end mb-8">
+            <select class="text-xs tracking-[0.2em] uppercase text-[#6B5E4E] bg-transparent border-b border-[#D6CAB8] pb-1 outline-none cursor-pointer">
+              <option>Más vendidos</option>
+              <option>Precio: menor a mayor</option>
+              <option>Precio: mayor a menor</option>
+              <option>Novedades</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-3 gap-x-6 gap-y-12">
+            <div v-for="i in 9" :key="i" class="group cursor-pointer">
+              <div class="relative aspect-[3/4] bg-[#E8DDD0] mb-4 overflow-hidden">
+                <div class="w-full h-full bg-gradient-to-b from-[#D6CAB8] to-[#C4B8A0] group-hover:scale-105 transition-transform duration-700 flex items-end p-4">
+                  <span class="text-xs text-[#8B7A65] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">Ver producto</span>
+                </div>
+                <!-- Badge nuevo -->
+                <div v-if="i === 1 || i === 4" class="absolute top-4 left-4 bg-[#1A1208] text-[#F5F0EB] text-[10px] tracking-[0.2em] uppercase px-2 py-1">
+                  Nuevo
+                </div>
+                <!-- Botón favorito -->
+                <button class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity w-8 h-8 bg-[#F5F0EB]/80 flex items-center justify-center">
+                  <span class="text-xs">♡</span>
+                </button>
+              </div>
+              <div class="flex justify-between items-start">
+                <div>
+                  <p class="text-sm text-[#1A1208] tracking-wide">Producto {{ i }}</p>
+                  <div class="flex gap-1.5 mt-1.5">
+                    <div class="w-3 h-3 rounded-full bg-[#C4B8A0] border border-[#D6CAB8]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#1A1208]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#E8C4B8] border border-[#D6CAB8]"></div>
+                  </div>
+                </div>
+                <p class="text-sm text-[#1A1208]">{{ (29 + i * 5).toFixed(2) }}€</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paginación -->
+          <div class="flex justify-center gap-2 mt-16 pb-8">
+            <button v-for="p in 4" :key="p"
+              :class="p === 1 ? 'bg-[#1A1208] text-[#F5F0EB]' : 'text-[#6B5E4E] hover:text-[#1A1208]'"
+              class="w-8 h-8 text-xs tracking-wide flex items-center justify-center transition-colors">
+              {{ p }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer minimal -->
+    <footer class="border-t border-[#D6CAB8] px-8 py-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <p class="text-xs text-[#6B5E4E] tracking-wide">© 2025 Velour</p>
+        <p class="text-xs text-[#6B5E4E] tracking-wide">Envío gratis desde 80€</p>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script setup>
+const categorias = ['Tops', 'Vestidos', 'Pantalones', 'Chaquetas', 'Accesorios']
+const precios = ['Menos de 30€', '30€ — 60€', '60€ — 100€', 'Más de 100€']
+const colores = [
+  { nombre: 'Arena', hex: '#C4B8A0' },
+  { nombre: 'Ebano', hex: '#1A1208' },
+  { nombre: 'Rosa', hex: '#E8C4B8' },
+  { nombre: 'Crema', hex: '#F5F0EB' },
+  { nombre: 'Gris', hex: '#9E9E9E' },
+]
+</script>
+
+<style scoped></style>
+        <p class="text-xs text-[#6B5E4E] tracking-wide">{{ productos.total }} productos</p>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-8 py-8 flex gap-12">
+
+        <!-- Sidebar filtros -->
+        <aside class="w-52 shrink-0">
+          <div class="sticky top-24">
+
+            <div class="mb-8">
+              <p class="text-xs tracking-[0.3em] uppercase text-[#1A1208] mb-4">Categoría</p>
+              <div class="flex flex-col gap-2">
                 <label v-for="cat in categorias" :key="cat.id" class="flex items-center gap-3 cursor-pointer group">
-                  <div class="relative w-4 h-4 border border-sand rounded-sm flex items-center justify-center group-hover:border-stone transition-colors">
-                    <input type="checkbox"
-                      :value="cat.slug"
-                      v-model="filtrosLocales.categoria"
-                      class="absolute inset-0 opacity-0 cursor-pointer" />
-                    <svg v-if="filtrosLocales.categoria?.includes?.(cat.slug)" class="w-3 h-3 text-ink" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                  </div>
-                  <span class="text-xs text-stone group-hover:text-ink transition-colors tracking-wide">{{ cat.nombre }}</span>
+                  <input type="checkbox"
+                    :value="cat.slug"
+                    v-model="filtrosLocales.categoria"
+                    class="appearance-none w-3 h-3 border border-[#D6CAB8] checked:bg-[#1A1208] checked:border-[#1A1208] transition-colors" />
+                  <span class="text-xs text-[#6B5E4E] group-hover:text-[#1A1208] transition-colors tracking-wide">{{ cat.nombre }}</span>
                 </label>
               </div>
             </div>
 
             <div class="mb-8">
-              <p class="text-[11px] tracking-[0.2em] uppercase text-ink font-semibold mb-4">Precio</p>
-              <div class="flex flex-col gap-2.5">
+              <p class="text-xs tracking-[0.3em] uppercase text-[#1A1208] mb-4">Precio</p>
+              <div class="flex flex-col gap-2">
                 <label v-for="rango in rangosPrecios" :key="rango.label" class="flex items-center gap-3 cursor-pointer group">
-                  <div class="relative w-4 h-4 border border-sand rounded-full flex items-center justify-center group-hover:border-stone transition-colors">
-                    <input type="radio" name="precio"
-                      :value="rango.value"
-                      v-model="filtrosLocales.precio"
-                      class="absolute inset-0 opacity-0 cursor-pointer" />
-                    <div v-if="filtrosLocales.precio === rango.value" class="w-2 h-2 bg-ink rounded-full"></div>
-                  </div>
-                  <span class="text-xs text-stone group-hover:text-ink transition-colors tracking-wide">{{ rango.label }}</span>
+                  <input type="radio" name="precio"
+                    :value="rango.value"
+                    v-model="filtrosLocales.precio"
+                    class="appearance-none w-3 h-3 border border-[#D6CAB8] checked:bg-[#1A1208] rounded-full transition-colors" />
+                  <span class="text-xs text-[#6B5E4E] group-hover:text-[#1A1208] transition-colors tracking-wide">{{ rango.label }}</span>
                 </label>
               </div>
             </div>
 
             <div class="mb-8">
-              <p class="text-[11px] tracking-[0.2em] uppercase text-ink font-semibold mb-4">Color</p>
+              <p class="text-xs tracking-[0.3em] uppercase text-[#1A1208] mb-4">Color</p>
               <div class="flex gap-2 flex-wrap">
                 <button v-for="color in coloresDisponibles" :key="color.nombre"
                   :style="{ backgroundColor: color.hex }"
                   :title="color.nombre"
-                  :class="filtrosLocales.color === color.nombre ? 'ring-2 ring-offset-2 ring-ink' : ''"
+                  :class="filtrosLocales.color === color.nombre ? 'ring-2 ring-offset-1 ring-[#1A1208]' : ''"
                   @click="filtrosLocales.color = filtrosLocales.color === color.nombre ? '' : color.nombre"
-                  class="w-7 h-7 rounded-full border border-sand hover:scale-110 transition-transform cursor-pointer"></button>
+                  class="w-6 h-6 rounded-full border border-[#D6CAB8] hover:scale-110 transition-transform"></button>
               </div>
             </div>
 
             <button @click="aplicarFiltros"
-              class="w-full bg-ink text-cream py-3 text-[11px] tracking-[0.2em] uppercase font-medium rounded-full hover:bg-charcoal transition-colors duration-300 mb-2">
+              class="w-full bg-[#1A1208] text-[#F5F0EB] py-3 text-xs tracking-[0.3em] uppercase hover:bg-[#6B5E4E] transition-colors duration-300 mb-2">
               Aplicar
             </button>
             <button @click="limpiarFiltros"
-              class="w-full border border-sand py-3 text-[11px] tracking-[0.2em] uppercase font-medium text-stone rounded-full hover:border-ink hover:text-ink transition-colors duration-300">
+              class="w-full border border-[#D6CAB8] py-3 text-xs tracking-[0.3em] uppercase text-[#6B5E4E] hover:border-[#1A1208] hover:text-[#1A1208] transition-colors duration-300">
               Limpiar
             </button>
           </div>
@@ -83,7 +218,7 @@
           <!-- Ordenar -->
           <div class="flex justify-end mb-8">
             <select v-model="filtrosLocales.orden" @change="aplicarFiltros"
-              class="text-[11px] tracking-[0.15em] uppercase text-stone bg-transparent border border-sand rounded-full px-4 py-2 outline-none cursor-pointer hover:border-ink transition-colors">
+              class="text-xs tracking-[0.2em] uppercase text-[#6B5E4E] bg-transparent border-b border-[#D6CAB8] pb-1 outline-none cursor-pointer">
               <option value="destacados">Más vendidos</option>
               <option value="precio_asc">Precio: menor a mayor</option>
               <option value="precio_desc">Precio: mayor a menor</option>
@@ -92,106 +227,90 @@
           </div>
 
           <!-- Sin resultados -->
-          <div v-if="productosData.length === 0" class="py-24 text-center">
-            <p class="text-3xl font-display text-ink italic mb-4">Sin resultados</p>
-            <p class="text-xs text-stone tracking-wide mb-6">Prueba con otros filtros</p>
+          <div v-if="productos.data.length === 0" class="py-24 text-center">
+            <p class="text-3xl font-light text-[#1A1208] italic mb-4">Sin resultados</p>
+            <p class="text-xs text-[#6B5E4E] tracking-wide mb-6">Prueba con otros filtros</p>
             <button @click="limpiarFiltros"
-              class="text-[11px] tracking-[0.2em] uppercase font-medium text-ink link-underline">
+              class="text-xs tracking-[0.3em] uppercase border-b border-[#1A1208] pb-0.5 text-[#1A1208]">
               Limpiar filtros
             </button>
           </div>
 
-          <div v-else class="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 stagger-children">
-            <a v-for="producto in productosData" :key="producto.id"
-              :href="'/producto/' + producto.slug"
-              class="group cursor-pointer animate-fade-in-up">
+          <div v-else class="grid grid-cols-3 gap-x-6 gap-y-12">
+            <Link v-for="producto in productos.data" :key="producto.id"
+              :href="route('producto', producto.slug)"
+              class="group cursor-pointer">
 
-              <div class="relative aspect-[3/4] bg-cream-dark rounded-2xl overflow-hidden mb-4">
+              <div class="relative aspect-[3/4] bg-[#E8DDD0] mb-4 overflow-hidden">
                 <img v-if="producto.imagen" :src="producto.imagen" :alt="producto.nombre"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div v-else
-                  class="w-full h-full bg-gradient-to-b from-sand to-taupe group-hover:scale-105 transition-transform duration-700">
+                  class="w-full h-full bg-gradient-to-b from-[#D6CAB8] to-[#C4B8A0] group-hover:scale-105 transition-transform duration-700">
                 </div>
 
                 <div v-if="producto.es_nuevo"
-                  class="absolute top-3 right-3 bg-ink text-cream text-[9px] tracking-[0.15em] uppercase font-semibold px-3 py-1 rounded-full">
+                  class="absolute top-4 left-4 bg-[#1A1208] text-[#F5F0EB] text-[10px] tracking-[0.2em] uppercase px-2 py-1">
                   Nuevo
                 </div>
                 <div v-else-if="producto.tiene_oferta"
-                  class="absolute top-3 right-3 bg-accent text-cream text-[9px] tracking-[0.15em] uppercase font-semibold px-3 py-1 rounded-full">
+                  class="absolute top-4 left-4 bg-[#C4A882] text-[#F5F0EB] text-[10px] tracking-[0.2em] uppercase px-2 py-1">
                   Oferta
                 </div>
 
-                <!-- Hover buttons -->
-                <div class="absolute bottom-3 left-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                  <button @click.prevent="toggleFavorito(producto.id)"
-                    class="w-10 h-10 bg-cream/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-cream transition-colors">
-                    <span class="text-sm">♡</span>
-                  </button>
-                  <button class="flex-1 bg-cream/90 backdrop-blur-sm text-ink text-[10px] tracking-[0.15em] uppercase font-medium rounded-full hover:bg-cream transition-colors">
-                    Vista rápida
-                  </button>
-                </div>
-              </div>
-
-              <!-- Stars -->
-              <div class="flex items-center gap-1 mb-1">
-                <div class="flex gap-0.5">
-                  <svg v-for="s in 5" :key="s" class="w-2.5 h-2.5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                </div>
-                <span class="text-[10px] text-stone">({{ producto.reviews || 0 }})</span>
+                <button @click.prevent="toggleFavorito(producto.id)"
+                  class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity w-8 h-8 bg-[#F5F0EB]/80 flex items-center justify-center hover:bg-[#F5F0EB]">
+                  <span class="text-xs">♡</span>
+                </button>
               </div>
 
               <div class="flex justify-between items-start">
                 <div>
-                  <p class="text-sm font-semibold text-ink tracking-wide uppercase">{{ producto.nombre }}</p>
-                  <div v-if="producto.colores" class="flex gap-1.5 mt-1.5">
+                  <p class="text-sm text-[#1A1208] tracking-wide">{{ producto.nombre }}</p>
+                  <div class="flex gap-1.5 mt-1.5">
                     <div v-for="color in producto.colores" :key="color.nombre"
                       :style="{ backgroundColor: color.hex }"
                       :title="color.nombre"
-                      class="w-3 h-3 rounded-full border border-sand/80"></div>
+                      class="w-3 h-3 rounded-full border border-[#D6CAB8]"></div>
                   </div>
                 </div>
-                <p class="text-sm text-ink font-medium">{{ producto.precio }}</p>
+                <p class="text-sm text-[#1A1208]">{{ producto.precio }}</p>
               </div>
-            </a>
+            </Link>
           </div>
 
           <!-- Paginación -->
           <div v-if="productos.last_page > 1" class="flex justify-center gap-2 mt-16 pb-8">
-            <button v-for="page in productos.last_page" :key="page"
-              @click="irAPagina(page)"
+            <Link v-for="page in productos.last_page" :key="page"
+              :href="productos.links[page]?.url ?? '#'"
               :class="page === productos.current_page
-                ? 'bg-ink text-cream'
-                : 'text-stone hover:text-ink hover:bg-cream-dark'"
-              class="w-9 h-9 text-[11px] tracking-wide flex items-center justify-center rounded-full transition-colors font-medium">
+                ? 'bg-[#1A1208] text-[#F5F0EB]'
+                : 'text-[#6B5E4E] hover:text-[#1A1208]'"
+              class="w-8 h-8 text-xs tracking-wide flex items-center justify-center transition-colors">
               {{ page }}
-            </button>
+            </Link>
           </div>
         </div>
       </div>
     </main>
 
-    <Footer />
+    <footer class="border-t border-[#D6CAB8] px-8 py-8">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <p class="text-xs text-[#6B5E4E] tracking-wide">© 2025 Velour</p>
+        <p class="text-xs text-[#6B5E4E] tracking-wide">Envío gratis desde 80€</p>
+      </div>
+    </footer>
   </div>
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue'
-import { Inertia as router } from '@inertiajs/inertia'
+import { reactive } from 'vue'
+import { Link, router } from '@inertiajs/vue3'
 import Header from './Partials/Header.vue'
-import Footer from './Partials/Footer.vue'
 
 const props = defineProps({
-  productos:  { type: Object, default: () => ({ data: [], total: 0, last_page: 1, current_page: 1 }) },
+  productos:  { type: Object, required: true },
   categorias: { type: Array,  default: () => [] },
   filtros:    { type: Object, default: () => ({}) },
-})
-
-const productosData = computed(() => {
-  return props.productos?.data || []
 })
 
 const rangosPrecios = [
@@ -202,56 +321,43 @@ const rangosPrecios = [
 ]
 
 const coloresDisponibles = [
-  { nombre: 'Arena',  hex: '#C4B9A8' },
-  { nombre: 'Negro',  hex: '#1A1714' },
+  { nombre: 'Arena',  hex: '#C4B8A0' },
+  { nombre: 'Ebano',  hex: '#1A1208' },
   { nombre: 'Rosa',   hex: '#E8C4B8' },
-  { nombre: 'Crema',  hex: '#FAF8F5' },
-  { nombre: 'Camel',  hex: '#C9A87C' },
+  { nombre: 'Crema',  hex: '#F5F0EB' },
+  { nombre: 'Gris',   hex: '#9E9E9E' },
 ]
 
 const filtrosLocales = reactive({
-  categoria: props.filtros.categoria ?? [],
+  categoria: props.filtros.categoria ?? '',
   precio:    props.filtros.precio    ?? '',
   color:     props.filtros.color     ?? '',
   orden:     props.filtros.orden     ?? 'destacados',
 })
 
 function aplicarFiltros() {
-  router.get('/productos', {
-    categoria: filtrosLocales.categoria,
-    precio:    filtrosLocales.precio,
-    color:     filtrosLocales.color,
-    orden:     filtrosLocales.orden,
-  }, {
-    preserveState: true,
-    preserveScroll: true,
-  })
+  const [precio_min, precio_max] = filtrosLocales.precio
+    ? filtrosLocales.precio.split('-')
+    : [null, null]
+
+  router.get(route('productos'), {
+    categoria:  filtrosLocales.categoria || undefined,
+    color:      filtrosLocales.color     || undefined,
+    precio_min: precio_min               || undefined,
+    precio_max: precio_max               || undefined,
+    orden:      filtrosLocales.orden     || undefined,
+  }, { preserveScroll: true })
 }
 
 function limpiarFiltros() {
-  filtrosLocales.categoria = []
+  filtrosLocales.categoria = ''
   filtrosLocales.precio    = ''
   filtrosLocales.color     = ''
   filtrosLocales.orden     = 'destacados'
-  aplicarFiltros()
-}
-
-function irAPagina(page) {
-  router.get('/productos', {
-    categoria: filtrosLocales.categoria,
-    precio:    filtrosLocales.precio,
-    color:     filtrosLocales.color,
-    orden:     filtrosLocales.orden,
-    page:      page,
-  }, {
-    preserveState: true,
-    preserveScroll: true,
-  })
+  router.get(route('productos'))
 }
 
 function toggleFavorito(productoId) {
-  router.post('/favorito/toggle', { producto_id: productoId }, {
-    preserveScroll: true,
-  })
+  router.post(route('favoritos.toggle'), { producto_id: productoId }, { preserveScroll: true })
 }
 </script>
