@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-8">
       <div class="flex gap-8">
         <Link v-for="tab in tabs" :key="tab.nombre"
-          :href="route(tab.ruta)"
+          :href="tab.ruta"
           :class="activo === tab.key
             ? 'border-b-2 border-[#1A1208] text-[#1A1208]'
             : 'text-[#6B5E4E] hover:text-[#1A1208]'"
@@ -16,16 +16,16 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/inertia-vue3'
 
 defineProps({
   activo: { type: String, default: 'resumen' },
 })
 
 const tabs = [
-  { key: 'resumen',     nombre: 'Resumen',     ruta: 'usuario' },
-  { key: 'pedidos',     nombre: 'Pedidos',     ruta: 'pedidos' },
-  { key: 'favoritos',   nombre: 'Favoritos',   ruta: 'favoritos' },
-  { key: 'informacion', nombre: 'Información', ruta: 'usuario.info' },
+  { key: 'resumen',     nombre: 'Resumen',     ruta: '/usuario' },
+  { key: 'pedidos',     nombre: 'Pedidos',     ruta: '/pedido' },
+  { key: 'favoritos',   nombre: 'Favoritos',   ruta: '/favorito' },
+  { key: 'informacion', nombre: 'Información', ruta: '/usuarioInfo' },
 ]
 </script>
